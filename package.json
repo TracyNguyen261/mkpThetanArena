@@ -1,0 +1,15 @@
+{
+  "name": "mkp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "chrome": "npx playwright test --headed --project='chromium'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {  
+    "@playwright/test": "^1.25.1",
+    "playwright": "^1.25.1"
+  }
+}
