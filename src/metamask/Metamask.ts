@@ -3,7 +3,7 @@ import crypto from 'crypto'
 import path from 'path'
 import fs from 'fs'
 
-const seed = ""
+const seed = "jaguar choose obey minute lawn calm club follow book seminar mesh question"
 const password = "12345678"
 
 export default class Metamask {

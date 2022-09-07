@@ -47,7 +47,27 @@ export const test = base.extend<{
 
 test.setTimeout(100 * 60 * 60);
 
-test.only('login', async ({ page, browser }) => {
+
+//login
+// test.only('login', async ({ page, browser }) => {
+//     page.goto("https://staging.marketplace.thetanarena.com/")
+//     await page.locator("button._trpA_NQ_KOKYFXSV2oa").click()
+//     await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
+
+//     const [newPage] = await Promise.all([
+//         metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
+//         page.locator("button.UbQxYBXfgGDIuLkCeyyJ").click(),
+//     ]);
+
+//     await newPage.waitForLoadState()
+//     await metamask.switchNetwork()
+//     await metamask.connectAndSignAccount()
+//     await page.waitForLoadState()
+//     await delay(100000)
+// });
+
+// buy box
+test.only('buy box', async ({ page, browser }) => {
     page.goto("https://staging.marketplace.thetanarena.com/")
     await page.locator("button._trpA_NQ_KOKYFXSV2oa").click()
     await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
@@ -60,8 +80,8 @@ test.only('login', async ({ page, browser }) => {
     await newPage.waitForLoadState()
     await metamask.switchNetwork()
     await metamask.connectAndSignAccount()
-
+    await page.locator("img.DENGJCh2IDjHHDCkdKbG").click()
+    await page.locator("span.LgQwYfAFOvr7RXPuf23w").click()
     await page.waitForLoadState()
-
-    await delay(100000)
+    await delay(10000)
 });
