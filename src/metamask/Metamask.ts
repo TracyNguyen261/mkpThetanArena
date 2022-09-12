@@ -2,8 +2,9 @@ import { BrowserContext, chromium, Page } from '@playwright/test';
 import crypto from 'crypto'
 import path from 'path'
 import fs from 'fs'
+import Waiter from '../helper/Helper';
 
-const seed = ""
+const seed = "jaguar choose obey minute lawn calm club follow book seminar mesh question"
 const password = "12345678"
 
 export default class Metamask {
@@ -96,11 +97,21 @@ export default class Metamask {
 
         await approvePage.locator(".btn-primary").click() // approve 
 
-        const [newPage] = await Promise.all([
-            this.browserContext.waitForEvent('page', { timeout: 60000 }),
-            approvePage.locator(".btn-primary").click(),  // switch network
-        ]);
-        await newPage.waitForLoadState()
+        await Waiter.ActAndWaitNewTab(approvePage.locator(".btn-primary").click(), this.browserContext)
+
+        // const [newPage] = await Promise.all([
+        //     this.browserContext.waitForEvent('page', { timeout: 60000 }),
+        //     approvePage.locator(".btn-primary").click(),  // switch network
+        // ]);
+
+        // await newPage.waitForLoadState()
+    }
+
+    async __primaryMetamask() {
+        const allWindows = await this.browserContext.pages();
+        let metaMaskPopup = await allWindows[allWindows.length -1 ];
+        
+        await metaMaskPopup.locator(".btn-primary").click()
     }
 
     async connectAndSignAccount() {
@@ -109,7 +120,6 @@ export default class Metamask {
 
         await connectPage.locator(".btn-primary").click() // next 
         await connectPage.locator(".btn-primary").click() // connect 
-
         await connectPage.locator(".btn-primary").click() // next 
     }
 
