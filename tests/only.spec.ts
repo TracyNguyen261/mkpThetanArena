@@ -78,7 +78,12 @@ test.only('buy common box ', async ({ page, browser }) => {
 
 
     await page.goto("https://staging.marketplace.thetanarena.com/")
-    await page.locator("button._trpA_NQ_KOKYFXSV2oa").click()
+    await page.locator("img.qyN2w96htGOSy3f9Xj90").click() // close daily check
+    await delay(2000)
+    await page.locator("img.qyN2w96htGOSy3f9Xj90").click() // close do quest 
+    await delay(2000)
+    await page.locator("button.YtC7SW5QBXao_Bj5rMO5",{ hasText: "Connect Wallet" }).click() // button connect wallet
+    await delay(5000)
     await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
 
     const [newPage] = await Promise.all([
@@ -90,8 +95,8 @@ test.only('buy common box ', async ({ page, browser }) => {
     await metamask.switchNetwork()
     await metamask.connectAndSignAccount()
 
-    await page.waitForLoadState()
-    await page.locator("img.DENGJCh2IDjHHDCkdKbG").click()
+    // await page.waitForLoadState()
+    // await page.locator("img.DENGJCh2IDjHHDCkdKbG").click()
 
     // kiểm tra số lượng box trong inventory 
     await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory&category=thetabox")
