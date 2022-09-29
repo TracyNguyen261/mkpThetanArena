@@ -262,16 +262,33 @@ test.only('sell hero ', async ({ page, browser }) => {
     var heroCount = await page.locator('.LoG5KRQGfS_ExpEYUM9r').count()
     for (let i = 0; i < heroCount; i++) {
         await page.locator('.LoG5KRQGfS_ExpEYUM9r').nth(i).click()
-        console.log("Start isEnabled")
-        let isSellBtn = await page.locator(`//span`, { hasText: "Sell" }).isEnabled()
-        console.log("End isEnabled")
-        if (!isSellBtn) {
-            await page.goBack()
+        console.log("Start vong for")
+
+        let sellBtnLocator = page.locator(`//span`, { hasText: "Sell" })
+
+        let isSellBtnVisible = await sellBtnLocator.isVisible()
+        if (!isSellBtnVisible) {
+            console.log("Khong tim thay sell btn")
+            await page.goBack({waitUntil: "load"})
             continue
         }
-        await page.locator(`//span`, { hasText: "Sell" }).click()
-        await delay(3000)
 
+        let isSellBtnEnable = await sellBtnLocator.isEnabled()
+        if (!isSellBtnEnable) {
+            console.log("Sell btn disabled")
+            await page.goBack({waitUntil: "load"})
+            continue
+        }
+
+        // let isSellBtn = 
+        // console.log("End isEnabled")
+        // if (!isSellBtn) {
+        //     await page.goBack()
+        //     continue
+        // }
+        await sellBtnLocator.click()
+        await delay(10000)
+        break
 
         //await expect(page.locator(`//span`, {hasText: "Sell"})).toBeVisible()
     }
