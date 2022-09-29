@@ -7,6 +7,8 @@ function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
 
+// .A1QYx9ifNzwsMmtHXou8 > div:nth-child(1)
+
 
 var metamask: Metamask
 
@@ -163,7 +165,7 @@ test('buy common box ', async ({ page, browser }) => {
 
 });
 
-test.only('buy hero ', async ({ page, browser }) => {
+test('buy hero ', async ({ page, browser }) => {
     await page.goto("https://staging.marketplace.thetanarena.com/")
     await AllPopup.ClosePopup(page);
     await delay(2000)
@@ -183,13 +185,28 @@ test.only('buy hero ', async ({ page, browser }) => {
     // chọn menu buy
     await page.locator(`//span[contains(.,"Buy")]`).click()
     await delay(2000)
-    
-    //Mua common box
-    await page.locator(`//span[contains(.,"Common box")]`).click()
+
+    await page.locator(`div.RzCtmnvJtc4BwmQPIiSK`).click() // click DDL
     await delay(2000)
-    await page.locator(`//button[contains(.,"Buy")]`).click()
-    // await page.locator(`//span[contains(.,"Purchase")]`).click()
-    await delay(2000)
+
+    await page.locator(`//span[contains(.,"Cheapest Item")]`).click()
+    // await page.locator(`.AKO9NaM23tnI_yIaFSsb`, {hasText:"Cheapest Item"}).click()
+
+    await delay(4000)
+
+
+    const PRICE_TEXT = await page.locator(`.wlYd9YCSxc4V1_yktp93 > .y0q8jlGWIeRjuoKU41e9`).nth(1).innerText()
+    const PRICE = parseFloat(PRICE_TEXT.replace(",", ""))
+    if (PRICE < 50000) {
+        await page.locator(`.pTlq4suyqtK3Lmj4MH27`).nth(1).click() // lay item dau tien trong list hero
+    }
+
+    const pageDetail = page.url()
+
+    await page.locator(`span.amttH6S21k7IsiPB9GBn`).click() // click buy
+
+
+    //span[contains(.,"Owner by me")]
 
     await Waiter.ActAndWaitNewTab(page.locator(`//button[contains(.,"Checkout")]`).click(), metamask.browserContext)
     await metamask.__primaryMetamask()
@@ -199,11 +216,121 @@ test.only('buy hero ', async ({ page, browser }) => {
     await page.locator(`//span[contains(.,"Close")]`).click()
     await delay(2000)
 
-    // kiểm tra số lượng box trong inventory 
-    await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory&category=thetabox")
-    console.log("số lượng box sau khi mua:", Texter.GetIntFromText(await page.locator('span.cF3D5iGpvsF7xF_0g5fV').innerText()))
-    await delay(10000)
+    // var isOwner = await page.locator(`span[contains(.,"Owner by me")]`).isVisible()
+    // if (!isOwner) {
+    //     test.fail()
+    // }
+    await page.goto(pageDetail)
+    await delay(3000)
+
+    await expect(page.locator(`//span`, { hasText: "Owner by me" })).toBeVisible()
+
+    // var isVisible = await page.locator(`//span`, { hasText: "Owner by me"}).isVisible()
+    // if (!isVisible ){
+    //     return false
+    // }
+
+    console.log("DONE")
+    // kiểm tra hero trong inventory 
+    // await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory")
+
+    // console.log("số lượng box sau khi mua:", Texter.GetIntFromText(await page.locator('span.cF3D5iGpvsF7xF_0g5fV').innerText()))
+    // await delay(10000)
+});
+test.only('sell hero ', async ({ page, browser }) => {
+    await page.goto("https://staging.marketplace.thetanarena.com/")
+    await AllPopup.ClosePopup(page);
+    await delay(2000)
+    await page.locator("button.YtC7SW5QBXao_Bj5rMO5", { hasText: "Connect Wallet" }).click() // button connect wallet
+    await delay(1000)
+    await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
+
+    const [newPage] = await Promise.all([
+        metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
+        page.locator("button.UbQxYBXfgGDIuLkCeyyJ").click(),
+    ]);
+
+    await newPage.waitForLoadState()
+    await metamask.switchNetwork()
+    await metamask.connectAndSignAccount()
+
+    await delay(2000)
+    await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory")
+
+    await delay(3000)
+
+    var heroCount = await page.locator('.LoG5KRQGfS_ExpEYUM9r').count()
+    for (let i = 0; i < heroCount; i++) {
+        await page.locator('.LoG5KRQGfS_ExpEYUM9r').nth(i).click()
+        console.log("Start isEnabled")
+        let isSellBtn = await page.locator(`//span`, { hasText: "Sell" }).isEnabled()
+        console.log("End isEnabled")
+        if (!isSellBtn) {
+            await page.goBack()
+            continue
+        }
+        await page.locator(`//span`, { hasText: "Sell" }).click()
+        await delay(3000)
 
 
+        //await expect(page.locator(`//span`, {hasText: "Sell"})).toBeVisible()
+    }
 
+    return
+
+
+    // chọn menu buy
+    await page.locator(`//span[contains(.,"Buy")]`).click()
+    await delay(2000)
+
+    await page.locator(`div.RzCtmnvJtc4BwmQPIiSK`).click() // click DDL
+    await delay(2000)
+
+    await page.locator(`//span[contains(.,"Cheapest Item")]`).click()
+    // await page.locator(`.AKO9NaM23tnI_yIaFSsb`, {hasText:"Cheapest Item"}).click()
+
+    await delay(4000)
+
+
+    const PRICE_TEXT = await page.locator(`.wlYd9YCSxc4V1_yktp93 > .y0q8jlGWIeRjuoKU41e9`).nth(1).innerText()
+    const PRICE = parseFloat(PRICE_TEXT.replace(",", ""))
+    if (PRICE < 50000) {
+        await page.locator(`.pTlq4suyqtK3Lmj4MH27`).nth(1).click() // lay item dau tien trong list hero
+    }
+
+    const pageDetail = page.url()
+
+    await page.locator(`span.amttH6S21k7IsiPB9GBn`).click() // click buy
+
+
+    //span[contains(.,"Owner by me")]
+
+    await Waiter.ActAndWaitNewTab(page.locator(`//button[contains(.,"Checkout")]`).click(), metamask.browserContext)
+    await metamask.__primaryMetamask()
+    // await page.waitForLoadState()
+    await page.waitForSelector(`//span[contains(.,"Close")]`, {})
+    await delay(2000)
+    await page.locator(`//span[contains(.,"Close")]`).click()
+    await delay(2000)
+
+    // var isOwner = await page.locator(`span[contains(.,"Owner by me")]`).isVisible()
+    // if (!isOwner) {
+    //     test.fail()
+    // }
+    await page.goto(pageDetail)
+    await delay(3000)
+
+    await expect(page.locator(`//span`, { hasText: "Owner by me" })).toBeVisible()
+
+    // var isVisible = await page.locator(`//span`, { hasText: "Owner by me"}).isVisible()
+    // if (!isVisible ){
+    //     return false
+    // }
+
+    console.log("DONE")
+    // kiểm tra hero trong inventory 
+    // await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory")
+
+    // console.log("số lượng box sau khi mua:", Texter.GetIntFromText(await page.locator('span.cF3D5iGpvsF7xF_0g5fV').innerText()))
+    // await delay(10000)
 });
