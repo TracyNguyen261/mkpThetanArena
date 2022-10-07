@@ -346,43 +346,47 @@ test.only('sell hero trinh ', async ({ page, browser }) => {
     await delay(1200)
 
     var pageTotal = Texter.GetIntFromText(await page.locator(`.EvpVAk_1hz05LPdtaLW7`).innerText())
-    for (let i = 1; i < pageTotal; i++) {
-        var pageNumber = await page.locator(`input[type="number"]`).fill(i.toString())
+    let sellBtnLocator = page.locator(`//span`, { hasText: "Sell" })
+    var coChonDuocHeroCoTheSellKhong = false
+    for (let i = 1; i <= pageTotal; i++) {
+        await page.locator(`input[type="number"]`).fill(i.toString())
         await page.keyboard.press('Enter')
         await delay(1000)
-        console.log("page 1")
+        console.log("page", i)
 
         var heroCount = await page.locator('.LoG5KRQGfS_ExpEYUM9r').count()
 
-        var ok = false
+        let heroLocator = page.locator('.LoG5KRQGfS_ExpEYUM9r')
+        let labelSelector = '.Dfj5fSymG7FC_pQ1ltOn'
+
         for (let j = 0; j < heroCount; j++) {
-            // console.log(`let statusLabel = await page.locator('.Dfj5fSymG7FC_pQ1ltOn').nth(i).innerText()`)
-            if (await page.locator(`.Dfj5fSymG7FC_pQ1ltOn`).nth(j).isVisible()) {
-
-                let statusLabel = await page.locator(`.Dfj5fSymG7FC_pQ1ltOn`).nth(j).innerText()
-                console.log(statusLabel)
-
-                if (statusLabel == 'SELLING') {
-                    console.log(`statusLabel == 'SELLING'`)
-                }
-
-                if (statusLabel == 'NOT MINT') {
-                    console.log(`statusLabel == 'NOT MINT'`)
-                }
-
+            // 
+            if (await heroLocator.nth(j).locator(labelSelector).isVisible()) {
                 continue
-
             }
+
+            console.log(`let statusLabel = await page.locator('.Dfj5fSymG7FC_pQ1ltOn').nth(i).innerText()`)
+            // if (await page.locator(`.Dfj5fSymG7FC_pQ1ltOn`).nth(j).isVisible()) {
+
+            //     let statusLabel = await page.locator(`.Dfj5fSymG7FC_pQ1ltOn`).nth(j).innerText()
+            //     console.log(statusLabel)
+
+            //     if (statusLabel == 'SELLING') {
+            //         console.log(`statusLabel == 'SELLING'`)
+            //     }
+
+            //     if (statusLabel == 'NOT MINT') {
+            //         console.log(`statusLabel == 'NOT MINT'`)
+            //     }
+
+            //     continue
+
+            // }
             await page.locator('.LoG5KRQGfS_ExpEYUM9r').nth(j).click()
             await delay(1000)
 
 
-            //console.log("Start vong for")
-
-            let sellBtnLocator = page.locator(`//span`, { hasText: "Sell" })
-
             //let sellBtnLocator = page.locator(`//span[contains(.,"Sell")]`)
-
             let isSellBtnVisible = await sellBtnLocator.isVisible()
             if (!isSellBtnVisible) {
                 console.log("Khong tim thay sell btn")
@@ -396,58 +400,74 @@ test.only('sell hero trinh ', async ({ page, browser }) => {
                 await page.goBack({ waitUntil: "load" })
                 continue
             }
-
-            await sellBtnLocator.click()
-            await delay(2000)
-
-            // ------- SUCCESS
-            ok = true
+            // console.log("00000")
+            coChonDuocHeroCoTheSellKhong = true
+            break
         }
-
-        if (ok) {
+        // console.log("000011111")
+        if (coChonDuocHeroCoTheSellKhong) {
+            console.log("co hero phu hop")
             break
         }
 
         //await expect(page.locator(`//span`, {hasText: "Sell"})).toBeVisible()
     }
-
-    await page.locator(`input.AI0g6_78kpjQEk7KU44r`).fill('10000')
+    // console.log("11111")
+    if (!coChonDuocHeroCoTheSellKhong) {
+        console.log("------------- KHONG CO HERO PHU HOP -------------")
+        return
+    }
+    // console.log("22222")
+    await sellBtnLocator.click()
     await delay(2000)
-    const priceSellStr = await page.locator(`input.AI0g6_78kpjQEk7KU44r`).innerText() // luu price
+
+    const price = Math.round(Math.random() * 10000 + 10000)
+    console.log("- Price:", price)
+    await page.locator(`input.AI0g6_78kpjQEk7KU44r`).fill(price.toString())
     await delay(2000)
-    const priceSellInt = parseInt(priceSellStr)
-    //console.log('priceSellStr = await page.locator(`input.AI0g6_78kpjQEk7KU44r`).innerText()')
-    await delay(2000)
+    // const priceSellStr = await page.locator(`input.AI0g6_78kpjQEk7KU44r`).innerText() // luu price
+    // await delay(2000)
+    // const priceSellInt = parseInt(priceSellStr)
+    // console.log("GIA HERO LA:",priceSellInt)
+    // await delay(2000)
 
 
 
+    console.log("- Click sell")
     await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`, { hasText: "Sell now" }).click()
     await delay(2000)
     //await Waiter.ActAndWaitNewTab(page.locator(`//button[contains(.,"Checkout")]`).click(), metamask.browserContext)
+    console.log("- Click metamask")
     await metamask.__primaryMetamask()
     await delay(2000)
-    await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`).click  // understand btn
+    await page.waitForLoadState()
+    console.log("- Click understand")
+    await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`, { hasText: "Understand" }).click()  // understand btn
+    // await delay(2000)
+    await page.waitForLoadState()
 
-    /*
+    console.log("- After understand")
+
     // check new hero tren cho'
     await page.goto('https://staging.marketplace.thetanarena.com/buy')
-    AllPopup.ClosePopup(page);
+    await AllPopup.ClosePopup(page);
     await delay(2000)
     await page.locator(`div.RzCtmnvJtc4BwmQPIiSK`).click() // click DDL filter latest
     await delay(2000)
     await page.locator(`//span[contains(.,"Latest")]`).click()
-    await page.locator(`..pTlq4suyqtK3Lmj4MH27`).first().click()
+    await page.locator(`.pTlq4suyqtK3Lmj4MH27`).first().click()
     //Check price
-    const priceHero =  parseInt(await page.locator(`.f9zZck_3CSpfmtllo7B2`).innerText())
+    const priceHero = await page.locator(`.f9zZck_3CSpfmtllo7B2`).innerText()
+    const priceNum = parseFloat(priceHero.replace(",", ""))
     await delay(2000)
-    if(priceSellInt == priceHero){
+    if (price == priceNum) {
         await delay(2000)
 
-        console.log('Gia dung roi')
+        console.log('Gia dung roi:', price)
     }
     return
     // <span class="f9zZck_3CSpfmtllo7B2">10,000 THC</span>
-*/
+
 
 
     console.log("DONE")
@@ -541,13 +561,14 @@ test('Fusion hero trinh ', async ({ page, browser }) => {
     const priceSellStr = await page.locator(`input.AI0g6_78kpjQEk7KU44r`).innerText() // luu price
     await delay(2000)
     const priceSellInt = parseInt(priceSellStr)
-    //console.log('priceSellStr = await page.locator(`input.AI0g6_78kpjQEk7KU44r`).innerText()')
+    console.log('priceSellStr = await page.locator(`input.AI0g6_78kpjQEk7KU44r`).innerText()')
     await delay(2000)
-
 
 
     await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`, { hasText: "Sell now" }).click()
     await delay(2000)
+
+    return
     //await Waiter.ActAndWaitNewTab(page.locator(`//button[contains(.,"Checkout")]`).click(), metamask.browserContext)
     await metamask.__primaryMetamask()
     await delay(2000)
