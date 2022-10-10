@@ -30,6 +30,13 @@ export class Texter {
 
         return Number.parseInt(numStr)
     }
- 
+
+
+}
+export class Price {
+     static  GetRandomPrice(min: number, max: number): number {
+        return Math.round(Math.random() * (max - min) + min);
+      }
+        //let a = getRandomPrice(50,100)
 
 }

@@ -1,6 +1,6 @@
 import { test as base, expect, chromium, BrowserContext } from '@playwright/test';
 import AllPopup from '../src/arena-helper/ArenaHelper';
-import Waiter, { Texter } from '../src/helper/Helper';
+import Waiter, { Price, Texter } from '../src/helper/Helper';
 import Metamask from '../src/metamask/Metamask';
 
 function delay(ms: number) {
@@ -240,7 +240,7 @@ test('buy hero ', async ({ page, browser }) => {
     // await delay(10000)
 });
 
-test.only('stop buy hero ', async ({ page, browser }) => {
+test('stop buy hero ', async ({ page, browser }) => {
     await page.goto("https://staging.marketplace.thetanarena.com/")
     await AllPopup.ClosePopup(page);
     await delay(2000)
@@ -295,7 +295,7 @@ test.only('stop buy hero ', async ({ page, browser }) => {
     await delay(2000)
     await page.locator(`.RKJ62RKkTu4ysVb7Q1FQ`).click();
 
- 
+    await delay(2000)
     await metamask.__primaryMetamask()
     await delay(2000)
     await page.waitForLoadState()
@@ -303,7 +303,6 @@ test.only('stop buy hero ', async ({ page, browser }) => {
     await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`, { hasText: "Understand" }).click()  // understand btn
     // await delay(2000)
     await page.waitForLoadState()
-
 
     console.log("DONE")
   
@@ -549,6 +548,162 @@ test('sell hero trinh ', async ({ page, browser }) => {
     console.log("DONE")
 
 });
+
+test.only('---- RENT OUT HERO----- ', async ({ page, browser }) => {
+    await page.goto("https://staging.marketplace.thetanarena.com/")
+    await AllPopup.ClosePopup(page);
+    await delay(2000)
+    await page.locator("button.YtC7SW5QBXao_Bj5rMO5", { hasText: "Connect Wallet" }).click() // button connect wallet
+    await delay(1000)
+    await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
+
+    const [newPage] = await Promise.all([
+        metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
+        page.locator("button.UbQxYBXfgGDIuLkCeyyJ").click(),
+    ]);
+
+    await newPage.waitForLoadState()
+    await metamask.switchNetwork()
+    await metamask.connectAndSignAccount()
+
+    await delay(2000)
+    await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory")
+
+    await delay(1200)
+
+    var pageTotal = Texter.GetIntFromText(await page.locator(`.EvpVAk_1hz05LPdtaLW7`).innerText())
+    let rentOutBtnLocator = page.locator(`//span`, { hasText: "Rent out" })
+    var coChonDuocHeroCoTheRentKhong = false
+    for (let i = 1; i <= pageTotal; i++) {
+        await page.locator(`input[type="number"]`).fill(i.toString())
+        await page.keyboard.press('Enter')
+        await delay(1000)
+        console.log("page", i)
+
+        var heroCount = await page.locator('.LoG5KRQGfS_ExpEYUM9r').count()
+
+        let heroLocator = page.locator('.LoG5KRQGfS_ExpEYUM9r')
+        let labelSelector = '.Dfj5fSymG7FC_pQ1ltOn'
+
+        for (let j = 0; j < heroCount; j++) {
+
+            if (await heroLocator.nth(j).locator(labelSelector).isVisible()) {
+                continue
+            }
+
+            console.log(`let statusLabel = await page.locator('.Dfj5fSymG7FC_pQ1ltOn').nth(i).innerText()`)
+            // if (await page.locator(`.Dfj5fSymG7FC_pQ1ltOn`).nth(j).isVisible()) {
+
+            //     let statusLabel = await page.locator(`.Dfj5fSymG7FC_pQ1ltOn`).nth(j).innerText()
+            //     console.log(statusLabel)
+
+            //     if (statusLabel == 'SELLING') {
+            //         console.log(`statusLabel == 'SELLING'`)
+            //     }
+
+            //     if (statusLabel == 'NOT MINT') {
+            //         console.log(`statusLabel == 'NOT MINT'`)
+            //     }
+
+            //     continue
+
+            // }
+            await page.locator('.LoG5KRQGfS_ExpEYUM9r').nth(j).click()
+            await delay(1000)
+
+            //let sellBtnLocator = page.locator(`//span[contains(.,"Sell")]`)
+            let isRentOutBtnVisible = await rentOutBtnLocator.isVisible()
+            if (!isRentOutBtnVisible) {
+                console.log("Khong tim thay sell btn")
+                await page.goBack({ waitUntil: "load" })
+                continue
+            }
+
+            let isRentOutBtnEnable = await rentOutBtnLocator.isEnabled()
+            if (!isRentOutBtnEnable) {
+                console.log("Sell btn disabled")
+                await page.goBack({ waitUntil: "load" })
+                continue
+            }
+            coChonDuocHeroCoTheRentKhong = true
+            break
+        }
+        if (coChonDuocHeroCoTheRentKhong) {
+            console.log("co hero phu hop")
+            break
+        }
+
+        //await expect(page.locator(`//span`, {hasText: "Sell"})).toBeVisible()
+    }
+    if (!coChonDuocHeroCoTheRentKhong) {
+        console.log("------------- KHONG CO HERO PHU HOP -------------")
+        return
+    }
+    await rentOutBtnLocator.click()
+    await delay(2000)
+   
+    const  rentingPrice = Price.GetRandomPrice(50,100)
+    console.log("- Price:", rentingPrice)
+    await page.locator(`input.tyMBbWlgZp5BaqSW29K2`).fill(rentingPrice.toString()) // input renting price
+    await delay(2000)
+    await page.locator(`div._87zo8hJVkYqURYaVtol`).click() // check box
+    await delay(2000)
+    await page.locator(`//span`, {hasText:"Put up for rent"}).click()
+    await delay(2000)
+
+    console.log("- Click metamask")
+    await metamask.__primaryMetamask()
+    await delay(3000)
+    await page.waitForLoadState()
+    console.log("- Click I got it ")
+    await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`, { hasText: "I got it" }).click()  // I got it btn
+    // await delay(2000)
+    await page.waitForLoadState()
+
+    console.log("- After I got it")
+    await delay(5000)
+
+    // check new hero tren cho'
+    await page.goto('https://staging.marketplace.thetanarena.com/rental')
+    await AllPopup.ClosePopup(page);
+    await delay(2000)
+    await page.locator(`div.RzCtmnvJtc4BwmQPIiSK`).click() // click DDL filter latest
+    await delay(2000)
+    await page.locator(`//span[contains(.,"Latest")]`).click()
+    await page.locator(`.pTlq4suyqtK3Lmj4MH27`).first().click()
+    //Check price
+    const priceRentOutHero = await page.locator(`span.f9zZck_3CSpfmtllo7B2`).innerText()
+    const priceRentOutHeroNum = parseFloat(priceRentOutHero.replace(",", ""))
+    await delay(2000)
+    if (rentingPrice == priceRentOutHeroNum) {
+        await delay(2000)
+        console.log('-------GIA CHO THUE LA :', rentingPrice)
+    }
+
+    //Check owner
+    var owner = await page.locator(`//span`, { hasText: "Owner by me" }).isVisible()
+    if (owner) {
+        await delay(1000)
+        console.log("TOI LA OWNER CUA HERO NAY")
+    }
+
+    // Check label
+    var labelRentOut = await page.locator(`//span`,{hasText:"Cancel renting"}).isVisible()
+    if(labelRentOut){
+        await delay(1000)
+        console.log("-------LABEL IS:", labelRentOut)
+
+        }
+    // var isVisible = await page.locator(`//span`, { hasText: "Owner by me"}).isVisible()
+    // if (!isVisible ){
+    //     return false
+    // }
+    return
+    // <span class="f9zZck_3CSpfmtllo7B2">10,000 THC</span>
+    console.log("DONE")
+
+});
+
 
 
 // api simulate Hero, level 
