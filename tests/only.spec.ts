@@ -165,6 +165,8 @@ test('buy common box ', async ({ page, browser }) => {
 
 });
 
+
+
 test('buy hero ', async ({ page, browser }) => {
     await page.goto("https://staging.marketplace.thetanarena.com/")
     await AllPopup.ClosePopup(page);
@@ -237,6 +239,76 @@ test('buy hero ', async ({ page, browser }) => {
     // console.log("số lượng box sau khi mua:", Texter.GetIntFromText(await page.locator('span.cF3D5iGpvsF7xF_0g5fV').innerText()))
     // await delay(10000)
 });
+
+test.only('stop buy hero ', async ({ page, browser }) => {
+    await page.goto("https://staging.marketplace.thetanarena.com/")
+    await AllPopup.ClosePopup(page);
+    await delay(2000)
+    await page.locator("button.YtC7SW5QBXao_Bj5rMO5", { hasText: "Connect Wallet" }).click() // button connect wallet
+    await delay(1000)
+    await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
+
+    const [newPage] = await Promise.all([
+        metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
+        page.locator("button.UbQxYBXfgGDIuLkCeyyJ").click(),
+    ]);
+
+    await newPage.waitForLoadState()
+    await metamask.switchNetwork()
+    await metamask.connectAndSignAccount()
+
+    // chọn menu buy
+    await page.locator(`//span[contains(.,"Buy")]`).click()
+    await delay(2000)
+    var pageTotal = Texter.GetIntFromText(await page.locator(`.EvpVAk_1hz05LPdtaLW7`).innerText())
+    console.log(pageTotal)
+    for (let i = 1; i <= pageTotal; i++) {
+        await page.locator(`.L_M93__9aZoANZFOXRAn`).fill(i.toString())
+        await page.keyboard.press('Enter')
+        await delay(1000)
+        console.log("page", i)
+
+        var heroItem = await page.locator(`.pTlq4suyqtK3Lmj4MH27`).count()
+
+        let daTimHero = false
+        for (let j = 0; j < heroItem; j++) {
+            await page.locator(`.pTlq4suyqtK3Lmj4MH27`).nth(j).click()
+
+            await delay(3000)
+            var isOwnerCheck = await page.locator(`//span`, { hasText: "Owner by me" }).isVisible()
+            if (!isOwnerCheck) {
+                console.log("KHONG PHAI OWNER")
+                await page.goBack({ waitUntil: "load" })
+                continue
+            }
+
+            daTimHero = true
+            break
+        }
+
+        if (daTimHero) {
+            break
+        }
+    }
+
+    await page.locator(`//span`, { hasText: 'Stop selling' }).click();
+    await delay(2000)
+    await page.locator(`.RKJ62RKkTu4ysVb7Q1FQ`).click();
+
+ 
+    await metamask.__primaryMetamask()
+    await delay(2000)
+    await page.waitForLoadState()
+    console.log("- Click understand")
+    await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`, { hasText: "Understand" }).click()  // understand btn
+    // await delay(2000)
+    await page.waitForLoadState()
+
+
+    console.log("DONE")
+  
+});
+
 test('sell hero ', async ({ page, browser }) => {
     await page.goto("https://staging.marketplace.thetanarena.com/")
     await AllPopup.ClosePopup(page);
@@ -251,6 +323,8 @@ test('sell hero ', async ({ page, browser }) => {
     ]);
 
     await newPage.waitForLoadState()
+
+
     await metamask.switchNetwork()
     await metamask.connectAndSignAccount()
 
@@ -323,7 +397,7 @@ test('sell hero ', async ({ page, browser }) => {
 
 });
 // check latest item???
-test.only('sell hero trinh ', async ({ page, browser }) => {
+test('sell hero trinh ', async ({ page, browser }) => {
     await page.goto("https://staging.marketplace.thetanarena.com/")
     await AllPopup.ClosePopup(page);
     await delay(2000)
@@ -360,7 +434,7 @@ test.only('sell hero trinh ', async ({ page, browser }) => {
         let labelSelector = '.Dfj5fSymG7FC_pQ1ltOn'
 
         for (let j = 0; j < heroCount; j++) {
-            // 
+
             if (await heroLocator.nth(j).locator(labelSelector).isVisible()) {
                 continue
             }
@@ -385,7 +459,6 @@ test.only('sell hero trinh ', async ({ page, browser }) => {
             await page.locator('.LoG5KRQGfS_ExpEYUM9r').nth(j).click()
             await delay(1000)
 
-
             //let sellBtnLocator = page.locator(`//span[contains(.,"Sell")]`)
             let isSellBtnVisible = await sellBtnLocator.isVisible()
             if (!isSellBtnVisible) {
@@ -400,11 +473,9 @@ test.only('sell hero trinh ', async ({ page, browser }) => {
                 await page.goBack({ waitUntil: "load" })
                 continue
             }
-            // console.log("00000")
             coChonDuocHeroCoTheSellKhong = true
             break
         }
-        // console.log("000011111")
         if (coChonDuocHeroCoTheSellKhong) {
             console.log("co hero phu hop")
             break
@@ -412,12 +483,10 @@ test.only('sell hero trinh ', async ({ page, browser }) => {
 
         //await expect(page.locator(`//span`, {hasText: "Sell"})).toBeVisible()
     }
-    // console.log("11111")
     if (!coChonDuocHeroCoTheSellKhong) {
         console.log("------------- KHONG CO HERO PHU HOP -------------")
         return
     }
-    // console.log("22222")
     await sellBtnLocator.click()
     await delay(2000)
 
@@ -462,14 +531,21 @@ test.only('sell hero trinh ', async ({ page, browser }) => {
     await delay(2000)
     if (price == priceNum) {
         await delay(2000)
-
         console.log('Gia dung roi:', price)
     }
+
+    //Check owner
+    var owner = await page.locator(`//span`, { hasText: "Owner by me" }).isVisible()
+    if (owner) {
+        await delay(1000)
+        console.log("TOI LA OWNER")
+    }
+    // var isVisible = await page.locator(`//span`, { hasText: "Owner by me"}).isVisible()
+    // if (!isVisible ){
+    //     return false
+    // }
     return
     // <span class="f9zZck_3CSpfmtllo7B2">10,000 THC</span>
-
-
-
     console.log("DONE")
 
 });
