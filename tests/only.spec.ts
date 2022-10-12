@@ -61,7 +61,7 @@ var heroItemInventoryLct = `.LoG5KRQGfS_ExpEYUM9r`
 var heroItemMaketLct = `.pTlq4suyqtK3Lmj4MH27`
 var understandBtn = `button.cOBQpozfZ4Q94cdPJ0MK`
 var dropDownListLct = `div.RzCtmnvJtc4BwmQPIiSK`
-
+var priceHeroLct = `.wlYd9YCSxc4V1_yktp93 > span.y0q8jlGWIeRjuoKU41e9`
 
 
 test('login', async ({ page, browser }) => {
@@ -200,16 +200,6 @@ test.only('----BUY HERO----', async ({ page, browser }) => {
 
     await delay(4000)
 
-    // const PRICE_TEXT = await page.locator(`.wlYd9YCSxc4V1_yktp93 > .y0q8jlGWIeRjuoKU41e9`).nth(1).innerText()
-    // const PRICE = parseFloat(PRICE_TEXT.replace(",", ""))
-    // if (PRICE < 50000) {
-    //     await page.locator(heroItemMaketLct).nth(1).click() // lay item dau tien trong list hero
-
-    // }
-
- 
-
-    // await page.locator(`span.amttH6S21k7IsiPB9GBn`).click() // click buy
 
     var pageTotal = Texter.GetIntFromText(await page.locator(pageTotalLct).innerText())
     for (let i = 1; i < pageTotal; i++) {
@@ -220,18 +210,22 @@ test.only('----BUY HERO----', async ({ page, browser }) => {
 
         var heroItem = await page.locator(heroItemMaketLct).count()
         await delay(2000)
+
         let daTimDuocHero = false
 
-        for (let j = 0; j < heroItem; j++) {
-           // await page.locator(heroItemMaketLct).nth(j).click()
-            var isOwnerCheck = await page.locator(`//span`, { hasText: "Owner by me" }).isVisible()
-            const priceHeroStr = await page.locator(heroItemMaketLct).nth(j).innerText()
+        for (let j = 1; j < heroItem; j++) {
+            // await page.locator(heroItemMaketLct).nth(j).click()
+            await delay(1000)
+
+            const priceHeroStr = await page.locator(priceHeroLct).nth(j).innerText()
             const priceHero = parseFloat(priceHeroStr.replace(",", ""))
 
-
             if (priceHero < 50000) {
-
+                await delay(1000)
                 await page.locator(heroItemMaketLct).nth(j).click()
+                await delay(1000)
+                var isOwnerCheck = await page.locator(`//span`, { hasText: "Owner by me" }).isVisible()
+            
                 if (isOwnerCheck) {
                     console.log('DANG LA OWNER')
                     await page.goBack({ waitUntil: 'load' })
@@ -239,43 +233,24 @@ test.only('----BUY HERO----', async ({ page, browser }) => {
                 }
 
             }
-
+            daTimDuocHero = true
+            break
         }
-        daTimDuocHero = true
-        break
 
+        if (daTimDuocHero) {
+            console.log("CO HERO PHU HOP DE BAN")
+            break
+        }
+      
     }
+    await delay(1000)
     const pageDetail = page.url()
+    const heroId = pageDetail.slice(pageDetail.lastIndexOf("/") + 1)
+    console.log("DETAIL HERO:", pageDetail)
+    console.log("HEROID LA: ", heroId)
+    await delay(1000)
     await page.locator(`span.amttH6S21k7IsiPB9GBn`).click()
-    await delay(3000)
-
-    /*
-        var pageTotal = Texter.GetIntFromText(await page.locator(pageTotalLct).innerText())
-        console.log(pageTotal)
-        for (let i = 1; i <= pageTotal; i++) {
-            await page.locator(pageNumLct).fill(i.toString())
-            await page.keyboard.press('Enter')
-            await delay(1000)
-            console.log("page", i)
-    
-            var heroItem = await page.locator(heroItemMaketLct).count()
-            await delay(3000)
-    
-            let daTimHero = false
-            for (let j = 0; j < heroItem; j++) {
-                await page.locator(heroItemMaketLct).nth(j).click()
-                await delay(3000)
-                var isOwnerCheck = await page.locator(`//span`, { hasText: "Owner by me" }).isVisible()
-                if (!isOwnerCheck) {
-                    console.log("KHONG PHAI OWNER")
-                    await page.goBack({ waitUntil: "load" })
-                    continue
-                }
-    
-                daTimHero = true
-                break
-            } */
-    //span[contains(.,"Owner by me")]
+    await delay(1000)
 
     await Waiter.ActAndWaitNewTab(page.locator(`//button[contains(.,"Checkout")]`).click(), metamask.browserContext)
     await metamask.__primaryMetamask()
@@ -285,10 +260,6 @@ test.only('----BUY HERO----', async ({ page, browser }) => {
     await page.locator(`//span[contains(.,"Close")]`).click()
     await delay(2000)
 
-    // var isOwner = await page.locator(`span[contains(.,"Owner by me")]`).isVisible()
-    // if (!isOwner) {
-    //     test.fail()
-    // }
     await page.goto(pageDetail)
     await delay(3000)
 
@@ -658,23 +629,6 @@ test('---- RENT OUT HERO----- ', async ({ page, browser }) => {
             }
 
 
-            //    console.log(`let statusLabel = await page.locator('.Dfj5fSymG7FC_pQ1ltOn').nth(i).innerText()`)
-            // if (await page.locator(`.Dfj5fSymG7FC_pQ1ltOn`).nth(j).isVisible()) {
-
-            //     let statusLabel = await page.locator(`.Dfj5fSymG7FC_pQ1ltOn`).nth(j).innerText()
-            //     console.log(statusLabel)
-
-            //     if (statusLabel == 'SELLING') {
-            //         console.log(`statusLabel == 'SELLING'`)
-            //     }
-
-            //     if (statusLabel == 'NOT MINT') {
-            //         console.log(`statusLabel == 'NOT MINT'`)
-            //     }
-
-            //     continue
-
-            // }
             await page.locator(heroItemInventoryLct).nth(j).click()
             await delay(1000)
 
@@ -788,7 +742,7 @@ test('---- RENT OUT HERO----- ', async ({ page, browser }) => {
 
 
     }
-    console.log("Hero cho thue la:", heroIdInventory)
+    console.log("Hero cho thue la:", heroId)
 
     console.log("DONE")
 

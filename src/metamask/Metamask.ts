@@ -3,8 +3,11 @@ import crypto from 'crypto'
 import path from 'path'
 import fs from 'fs'
 import Waiter from '../helper/Helper';
-
-const seed = "jaguar choose obey minute lawn calm club follow book seminar mesh question"
+// // acc: 
+// const seed = "jaguar choose obey minute lawn calm club follow book seminar mesh question"
+// const password = "12345678"
+// acc: trinhntl+stg1000@wolffungame.com
+const seed = "prize couple general enlist goat cushion bounce spin worth zone fix divide"
 const password = "12345678"
 
 export default class Metamask {
