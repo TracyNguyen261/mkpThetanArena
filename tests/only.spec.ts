@@ -51,38 +51,42 @@ export const test = base.extend<{
 
 test.setTimeout(100 * 60 * 60);
 
-const BUY_BOX = '//*[@id="app"]/div[1]/div[1]/a[3]/div/span'
-const COMMON_BOX = '//*[@id="app"]/div[3]/div/div/div[2]/div[4]/div[2]/div[1]/span'
-const COSMETIC_BOX = '//*[@id="app"]/div[3]/div/div/div[2]/div[1]/div[2]/div[1]/span'
-const LEGENDARY_BOX = '//*[@id="app"]/div[3]/div/div/div[2]/div[2]/div[2]/div[1]/span'
-const EPIC_BOX = '//*[@id="app"]/div[3]/div/div/div[2]/div[3]/div[2]/div[1]/span'
+var connectWalletBtn = "button.YtC7SW5QBXao_Bj5rMO5"
+var loginMetamaskBtn = ".ZPKehyuOXkcNnT3_AzFi"
+var confirmBtn = "button.UbQxYBXfgGDIuLkCeyyJ"
+var rentMenu = `//span[contains(.,"Rent")]`
+var pageTotalLct = `.EvpVAk_1hz05LPdtaLW7`
+var pageNumLct = `.L_M93__9aZoANZFOXRAn`
+var heroItemInventoryLct = `.LoG5KRQGfS_ExpEYUM9r`
+var heroItemMaketLct = `.pTlq4suyqtK3Lmj4MH27`
+var understandBtn = `button.cOBQpozfZ4Q94cdPJ0MK`
+var dropDownListLct = `div.RzCtmnvJtc4BwmQPIiSK`
 
 
 
-// test.only('login', async ({ page, browser }) => {
-//     page.goto("https://staging.marketplace.thetanarena.com/")
-//     await page.locator("button._trpA_NQ_KOKYFXSV2oa").click()
-//     await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
+test('login', async ({ page, browser }) => {
+    page.goto("https://staging.marketplace.thetanarena.com/")
+    await page.locator("button._trpA_NQ_KOKYFXSV2oa").click()
+    await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
 
-//     const [newPage] = await Promise.all([
-//         metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
-//         page.locator("button.UbQxYBXfgGDIuLkCeyyJ").click(),
-//     ]);
+    const [newPage] = await Promise.all([
+        metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
+        page.locator(confirmBtn).click(),
+    ]);
 
-//     await newPage.waitForLoadState()
-//     await metamask.switchNetwork()
-//     await metamask.connectAndSignAccount()
+    await newPage.waitForLoadState()
+    await metamask.switchNetwork()
+    await metamask.connectAndSignAccount()
 
-//     await page.waitForLoadState()
+    await page.waitForLoadState()
 
-//     await delay(10000)
-// });
+    await delay(10000)
+});
 
 
 test('buy common box ', async ({ page, browser }) => {
     await page.goto("https://staging.marketplace.thetanarena.com/")
     await AllPopup.ClosePopup(page);
-
 
 
     // await page.locator("img.qyN2w96htGOSy3f9Xj90").click() // close daily check
@@ -102,13 +106,13 @@ test('buy common box ', async ({ page, browser }) => {
 
     // await page.locator("img.qyN2w96htGOSy3f9Xj90").click() // close do quest 
     await delay(2000)
-    await page.locator("button.YtC7SW5QBXao_Bj5rMO5", { hasText: "Connect Wallet" }).click() // button connect wallet
+    await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
     await delay(1000)
-    await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
+    await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
 
     const [newPage] = await Promise.all([
         metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
-        page.locator("button.UbQxYBXfgGDIuLkCeyyJ").click(),
+        page.locator(confirmBtn).click(),
     ]);
 
     await newPage.waitForLoadState()
@@ -167,17 +171,17 @@ test('buy common box ', async ({ page, browser }) => {
 
 
 
-test('buy hero ', async ({ page, browser }) => {
+test.only('----BUY HERO----', async ({ page, browser }) => {
     await page.goto("https://staging.marketplace.thetanarena.com/")
     await AllPopup.ClosePopup(page);
     await delay(2000)
-    await page.locator("button.YtC7SW5QBXao_Bj5rMO5", { hasText: "Connect Wallet" }).click() // button connect wallet
+    await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
     await delay(1000)
-    await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
+    await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
 
     const [newPage] = await Promise.all([
         metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
-        page.locator("button.UbQxYBXfgGDIuLkCeyyJ").click(),
+        page.locator(confirmBtn).click(),
     ]);
 
     await newPage.waitForLoadState()
@@ -188,7 +192,7 @@ test('buy hero ', async ({ page, browser }) => {
     await page.locator(`//span[contains(.,"Buy")]`).click()
     await delay(2000)
 
-    await page.locator(`div.RzCtmnvJtc4BwmQPIiSK`).click() // click DDL filter
+    await page.locator(dropDownListLct).click() // click DDL filter
     await delay(2000)
 
     await page.locator(`//span[contains(.,"Cheapest Item")]`).click()
@@ -196,18 +200,81 @@ test('buy hero ', async ({ page, browser }) => {
 
     await delay(4000)
 
+    // const PRICE_TEXT = await page.locator(`.wlYd9YCSxc4V1_yktp93 > .y0q8jlGWIeRjuoKU41e9`).nth(1).innerText()
+    // const PRICE = parseFloat(PRICE_TEXT.replace(",", ""))
+    // if (PRICE < 50000) {
+    //     await page.locator(heroItemMaketLct).nth(1).click() // lay item dau tien trong list hero
 
-    const PRICE_TEXT = await page.locator(`.wlYd9YCSxc4V1_yktp93 > .y0q8jlGWIeRjuoKU41e9`).nth(1).innerText()
-    const PRICE = parseFloat(PRICE_TEXT.replace(",", ""))
-    if (PRICE < 50000) {
-        await page.locator(`.pTlq4suyqtK3Lmj4MH27`).nth(1).click() // lay item dau tien trong list hero
+    // }
+
+ 
+
+    // await page.locator(`span.amttH6S21k7IsiPB9GBn`).click() // click buy
+
+    var pageTotal = Texter.GetIntFromText(await page.locator(pageTotalLct).innerText())
+    for (let i = 1; i < pageTotal; i++) {
+        await page.locator(pageNumLct).fill(i.toString())
+        await page.keyboard.press('Enter')
+        await delay(1000)
+        console.log('page', i)
+
+        var heroItem = await page.locator(heroItemMaketLct).count()
+        await delay(2000)
+        let daTimDuocHero = false
+
+        for (let j = 0; j < heroItem; j++) {
+           // await page.locator(heroItemMaketLct).nth(j).click()
+            var isOwnerCheck = await page.locator(`//span`, { hasText: "Owner by me" }).isVisible()
+            const priceHeroStr = await page.locator(heroItemMaketLct).nth(j).innerText()
+            const priceHero = parseFloat(priceHeroStr.replace(",", ""))
+
+
+            if (priceHero < 50000) {
+
+                await page.locator(heroItemMaketLct).nth(j).click()
+                if (isOwnerCheck) {
+                    console.log('DANG LA OWNER')
+                    await page.goBack({ waitUntil: 'load' })
+                    continue   // quay lai for(j)
+                }
+
+            }
+
+        }
+        daTimDuocHero = true
+        break
+
     }
-
     const pageDetail = page.url()
+    await page.locator(`span.amttH6S21k7IsiPB9GBn`).click()
+    await delay(3000)
 
-    await page.locator(`span.amttH6S21k7IsiPB9GBn`).click() // click buy
-
-
+    /*
+        var pageTotal = Texter.GetIntFromText(await page.locator(pageTotalLct).innerText())
+        console.log(pageTotal)
+        for (let i = 1; i <= pageTotal; i++) {
+            await page.locator(pageNumLct).fill(i.toString())
+            await page.keyboard.press('Enter')
+            await delay(1000)
+            console.log("page", i)
+    
+            var heroItem = await page.locator(heroItemMaketLct).count()
+            await delay(3000)
+    
+            let daTimHero = false
+            for (let j = 0; j < heroItem; j++) {
+                await page.locator(heroItemMaketLct).nth(j).click()
+                await delay(3000)
+                var isOwnerCheck = await page.locator(`//span`, { hasText: "Owner by me" }).isVisible()
+                if (!isOwnerCheck) {
+                    console.log("KHONG PHAI OWNER")
+                    await page.goBack({ waitUntil: "load" })
+                    continue
+                }
+    
+                daTimHero = true
+                break
+            } */
     //span[contains(.,"Owner by me")]
 
     await Waiter.ActAndWaitNewTab(page.locator(`//button[contains(.,"Checkout")]`).click(), metamask.browserContext)
@@ -240,17 +307,17 @@ test('buy hero ', async ({ page, browser }) => {
     // await delay(10000)
 });
 
-test('stop buy hero ', async ({ page, browser }) => {
+test('STOP BUY HERO', async ({ page, browser }) => {
     await page.goto("https://staging.marketplace.thetanarena.com/")
     await AllPopup.ClosePopup(page);
     await delay(2000)
-    await page.locator("button.YtC7SW5QBXao_Bj5rMO5", { hasText: "Connect Wallet" }).click() // button connect wallet
+    await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
     await delay(1000)
-    await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
+    await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
 
     const [newPage] = await Promise.all([
         metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
-        page.locator("button.UbQxYBXfgGDIuLkCeyyJ").click(),
+        page.locator(confirmBtn).click(),
     ]);
 
     await newPage.waitForLoadState()
@@ -260,19 +327,19 @@ test('stop buy hero ', async ({ page, browser }) => {
     // chọn menu buy
     await page.locator(`//span[contains(.,"Buy")]`).click()
     await delay(2000)
-    var pageTotal = Texter.GetIntFromText(await page.locator(`.EvpVAk_1hz05LPdtaLW7`).innerText())
+    var pageTotal = Texter.GetIntFromText(await page.locator(pageTotalLct).innerText())
     console.log(pageTotal)
     for (let i = 1; i <= pageTotal; i++) {
-        await page.locator(`.L_M93__9aZoANZFOXRAn`).fill(i.toString())
+        await page.locator(pageNumLct).fill(i.toString())
         await page.keyboard.press('Enter')
         await delay(1000)
         console.log("page", i)
 
-        var heroItem = await page.locator(`.pTlq4suyqtK3Lmj4MH27`).count()
+        var heroItem = await page.locator(heroItemMaketLct).count()
 
         let daTimHero = false
         for (let j = 0; j < heroItem; j++) {
-            await page.locator(`.pTlq4suyqtK3Lmj4MH27`).nth(j).click()
+            await page.locator(heroItemMaketLct).nth(j).click()
 
             await delay(3000)
             var isOwnerCheck = await page.locator(`//span`, { hasText: "Owner by me" }).isVisible()
@@ -300,25 +367,25 @@ test('stop buy hero ', async ({ page, browser }) => {
     await delay(2000)
     await page.waitForLoadState()
     console.log("- Click understand")
-    await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`, { hasText: "Understand" }).click()  // understand btn
+    await page.locator(understandBtn, { hasText: "Understand" }).click()  // understand btn
     // await delay(2000)
     await page.waitForLoadState()
 
     console.log("DONE")
-  
+
 });
 
 test('sell hero ', async ({ page, browser }) => {
     await page.goto("https://staging.marketplace.thetanarena.com/")
     await AllPopup.ClosePopup(page);
     await delay(2000)
-    await page.locator("button.YtC7SW5QBXao_Bj5rMO5", { hasText: "Connect Wallet" }).click() // button connect wallet
+    await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
     await delay(1000)
-    await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
+    await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
 
     const [newPage] = await Promise.all([
         metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
-        page.locator("button.UbQxYBXfgGDIuLkCeyyJ").click(),
+        page.locator(confirmBtn).click(),
     ]);
 
     await newPage.waitForLoadState()
@@ -332,9 +399,9 @@ test('sell hero ', async ({ page, browser }) => {
 
     await delay(3000)
 
-    var heroCount = await page.locator('.LoG5KRQGfS_ExpEYUM9r').count()
+    var heroCount = await page.locator(heroItemInventoryLct).count()
     for (let i = 0; i < heroCount; i++) {
-        await page.locator('.LoG5KRQGfS_ExpEYUM9r').nth(i).click()
+        await page.locator(heroItemInventoryLct).nth(i).click()
         //console.log("Start vong for")
         await delay(1200)
         let sellBtnLocator = page.locator(`//span`, { hasText: "Sell" })
@@ -377,13 +444,13 @@ test('sell hero ', async ({ page, browser }) => {
     }
 
     await page.locator(`input.AI0g6_78kpjQEk7KU44r`).fill('10000')
-    await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`, { hasText: "Sell now" }).click()
+    await page.locator(understandBtn, { hasText: "Sell now" }).click()
     await delay(20000)
     //await Waiter.ActAndWaitNewTab(page.locator(`//button[contains(.,"Checkout")]`).click(), metamask.browserContext)
     await metamask.__primaryMetamask()
     await delay(2000)
     // await page.locator(`//span[contains(.,"I understand”)]`).click()
-    await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`).click  // understand btn
+    await page.locator(understandBtn).click  // understand btn
     // await page.waitForLoadState()
     // await page.waitForSelector(`//span[contains(.,"Close")]`, {})
     // await delay(2000)
@@ -396,17 +463,17 @@ test('sell hero ', async ({ page, browser }) => {
 
 });
 // check latest item???
-test('sell hero trinh ', async ({ page, browser }) => {
+test('SELL HERO TRINH ', async ({ page, browser }) => {
     await page.goto("https://staging.marketplace.thetanarena.com/")
     await AllPopup.ClosePopup(page);
     await delay(2000)
-    await page.locator("button.YtC7SW5QBXao_Bj5rMO5", { hasText: "Connect Wallet" }).click() // button connect wallet
+    await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
     await delay(1000)
-    await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
+    await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
 
     const [newPage] = await Promise.all([
         metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
-        page.locator("button.UbQxYBXfgGDIuLkCeyyJ").click(),
+        page.locator(confirmBtn).click(),
     ]);
 
     await newPage.waitForLoadState()
@@ -418,7 +485,7 @@ test('sell hero trinh ', async ({ page, browser }) => {
 
     await delay(1200)
 
-    var pageTotal = Texter.GetIntFromText(await page.locator(`.EvpVAk_1hz05LPdtaLW7`).innerText())
+    var pageTotal = Texter.GetIntFromText(await page.locator(pageTotalLct).innerText())
     let sellBtnLocator = page.locator(`//span`, { hasText: "Sell" })
     var coChonDuocHeroCoTheSellKhong = false
     for (let i = 1; i <= pageTotal; i++) {
@@ -427,9 +494,9 @@ test('sell hero trinh ', async ({ page, browser }) => {
         await delay(1000)
         console.log("page", i)
 
-        var heroCount = await page.locator('.LoG5KRQGfS_ExpEYUM9r').count()
+        var heroCount = await page.locator(heroItemInventoryLct).count()
 
-        let heroLocator = page.locator('.LoG5KRQGfS_ExpEYUM9r')
+        let heroLocator = page.locator(heroItemInventoryLct)
         let labelSelector = '.Dfj5fSymG7FC_pQ1ltOn'
 
         for (let j = 0; j < heroCount; j++) {
@@ -455,7 +522,7 @@ test('sell hero trinh ', async ({ page, browser }) => {
             //     continue
 
             // }
-            await page.locator('.LoG5KRQGfS_ExpEYUM9r').nth(j).click()
+            await page.locator(heroItemInventoryLct).nth(j).click()
             await delay(1000)
 
             //let sellBtnLocator = page.locator(`//span[contains(.,"Sell")]`)
@@ -502,7 +569,7 @@ test('sell hero trinh ', async ({ page, browser }) => {
 
 
     console.log("- Click sell")
-    await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`, { hasText: "Sell now" }).click()
+    await page.locator(understandBtn, { hasText: "Sell now" }).click()
     await delay(2000)
     //await Waiter.ActAndWaitNewTab(page.locator(`//button[contains(.,"Checkout")]`).click(), metamask.browserContext)
     console.log("- Click metamask")
@@ -510,7 +577,7 @@ test('sell hero trinh ', async ({ page, browser }) => {
     await delay(2000)
     await page.waitForLoadState()
     console.log("- Click understand")
-    await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`, { hasText: "Understand" }).click()  // understand btn
+    await page.locator(understandBtn, { hasText: "Understand" }).click()  // understand btn
     // await delay(2000)
     await page.waitForLoadState()
 
@@ -520,10 +587,10 @@ test('sell hero trinh ', async ({ page, browser }) => {
     await page.goto('https://staging.marketplace.thetanarena.com/buy')
     await AllPopup.ClosePopup(page);
     await delay(2000)
-    await page.locator(`div.RzCtmnvJtc4BwmQPIiSK`).click() // click DDL filter latest
+    await page.locator(dropDownListLct).click() // click DDL filter latest
     await delay(2000)
     await page.locator(`//span[contains(.,"Latest")]`).click()
-    await page.locator(`.pTlq4suyqtK3Lmj4MH27`).first().click()
+    await page.locator(heroItemLct).first().click()
     //Check price
     const priceHero = await page.locator(`.f9zZck_3CSpfmtllo7B2`).innerText()
     const priceNum = parseFloat(priceHero.replace(",", ""))
@@ -549,17 +616,17 @@ test('sell hero trinh ', async ({ page, browser }) => {
 
 });
 
-test.only('---- RENT OUT HERO----- ', async ({ page, browser }) => {
+test('---- RENT OUT HERO----- ', async ({ page, browser }) => {
     await page.goto("https://staging.marketplace.thetanarena.com/")
     await AllPopup.ClosePopup(page);
     await delay(2000)
-    await page.locator("button.YtC7SW5QBXao_Bj5rMO5", { hasText: "Connect Wallet" }).click() // button connect wallet
+    await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
     await delay(1000)
-    await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
+    await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
 
     const [newPage] = await Promise.all([
         metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
-        page.locator("button.UbQxYBXfgGDIuLkCeyyJ").click(),
+        page.locator(confirmBtn).click(),
     ]);
 
     await newPage.waitForLoadState()
@@ -568,21 +635,20 @@ test.only('---- RENT OUT HERO----- ', async ({ page, browser }) => {
 
     await delay(2000)
     await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory")
-
     await delay(1200)
 
-    var pageTotal = Texter.GetIntFromText(await page.locator(`.EvpVAk_1hz05LPdtaLW7`).innerText())
+    var pageTotal = Texter.GetIntFromText(await page.locator(pageTotalLct).innerText())
     let rentOutBtnLocator = page.locator(`//span`, { hasText: "Rent out" })
     var coChonDuocHeroCoTheRentKhong = false
     for (let i = 1; i <= pageTotal; i++) {
         await page.locator(`input[type="number"]`).fill(i.toString())
         await page.keyboard.press('Enter')
-        await delay(1000)
+        await delay(4000)
         console.log("page", i)
 
-        var heroCount = await page.locator('.LoG5KRQGfS_ExpEYUM9r').count()
+        var heroCount = await page.locator(heroItemInventoryLct).count()
 
-        let heroLocator = page.locator('.LoG5KRQGfS_ExpEYUM9r')
+        let heroLocator = page.locator(heroItemInventoryLct)
         let labelSelector = '.Dfj5fSymG7FC_pQ1ltOn'
 
         for (let j = 0; j < heroCount; j++) {
@@ -591,7 +657,8 @@ test.only('---- RENT OUT HERO----- ', async ({ page, browser }) => {
                 continue
             }
 
-            console.log(`let statusLabel = await page.locator('.Dfj5fSymG7FC_pQ1ltOn').nth(i).innerText()`)
+
+            //    console.log(`let statusLabel = await page.locator('.Dfj5fSymG7FC_pQ1ltOn').nth(i).innerText()`)
             // if (await page.locator(`.Dfj5fSymG7FC_pQ1ltOn`).nth(j).isVisible()) {
 
             //     let statusLabel = await page.locator(`.Dfj5fSymG7FC_pQ1ltOn`).nth(j).innerText()
@@ -608,7 +675,7 @@ test.only('---- RENT OUT HERO----- ', async ({ page, browser }) => {
             //     continue
 
             // }
-            await page.locator('.LoG5KRQGfS_ExpEYUM9r').nth(j).click()
+            await page.locator(heroItemInventoryLct).nth(j).click()
             await delay(1000)
 
             //let sellBtnLocator = page.locator(`//span[contains(.,"Sell")]`)
@@ -639,24 +706,32 @@ test.only('---- RENT OUT HERO----- ', async ({ page, browser }) => {
         console.log("------------- KHONG CO HERO PHU HOP -------------")
         return
     }
+
+    await delay(2000)
+    const heroDetail = page.url()
+    await delay(2000)
+    console.log("-----URL-----: ", heroDetail)
+    const heroId = heroDetail.slice(heroDetail.lastIndexOf("/") + 1) // get Hero Id from the URL
+
     await rentOutBtnLocator.click()
     await delay(2000)
-   
-    const  rentingPrice = Price.GetRandomPrice(50,100)
+
+    const rentingPrice = Price.GetRandomPrice(50, 100)
     console.log("- Price:", rentingPrice)
     await page.locator(`input.tyMBbWlgZp5BaqSW29K2`).fill(rentingPrice.toString()) // input renting price
     await delay(2000)
     await page.locator(`div._87zo8hJVkYqURYaVtol`).click() // check box
     await delay(2000)
-    await page.locator(`//span`, {hasText:"Put up for rent"}).click()
+    await page.locator(`//span`, { hasText: "Put up for rent" }).click()
     await delay(2000)
 
     console.log("- Click metamask")
     await metamask.__primaryMetamask()
-    await delay(3000)
+    await delay(5000)
     await page.waitForLoadState()
+    await delay(5000)
     console.log("- Click I got it ")
-    await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`, { hasText: "I got it" }).click()  // I got it btn
+    await page.locator(understandBtn, { hasText: "I got it" }).click()  // I got it btn
     // await delay(2000)
     await page.waitForLoadState()
 
@@ -667,10 +742,10 @@ test.only('---- RENT OUT HERO----- ', async ({ page, browser }) => {
     await page.goto('https://staging.marketplace.thetanarena.com/rental')
     await AllPopup.ClosePopup(page);
     await delay(2000)
-    await page.locator(`div.RzCtmnvJtc4BwmQPIiSK`).click() // click DDL filter latest
+    await page.locator(dropDownListLct).click() // click DDL filter latest
     await delay(2000)
     await page.locator(`//span[contains(.,"Latest")]`).click()
-    await page.locator(`.pTlq4suyqtK3Lmj4MH27`).first().click()
+    await page.locator(heroItemMaketLct).first().click()
     //Check price
     const priceRentOutHero = await page.locator(`span.f9zZck_3CSpfmtllo7B2`).innerText()
     const priceRentOutHeroNum = parseFloat(priceRentOutHero.replace(",", ""))
@@ -688,145 +763,164 @@ test.only('---- RENT OUT HERO----- ', async ({ page, browser }) => {
     }
 
     // Check label
-    var labelRentOut = await page.locator(`//span`,{hasText:"Cancel renting"}).isVisible()
-    if(labelRentOut){
+    var labelRentOut = await page.locator(`//span`, { hasText: "Cancel renting" }).isVisible()
+    if (labelRentOut) {
         await delay(1000)
-        console.log("-------LABEL IS:", labelRentOut)
+        console.log("-------LABEL IS RENT OUT--------")
 
-        }
+    }
     // var isVisible = await page.locator(`//span`, { hasText: "Owner by me"}).isVisible()
     // if (!isVisible ){
     //     return false
     // }
-    return
-    // <span class="f9zZck_3CSpfmtllo7B2">10,000 THC</span>
+    // Check history
+    await delay(2000)
+    await page.goto('https://staging.marketplace.thetanarena.com/profile?tab=history')
+    await delay(2000)
+    await page.locator(`.StJzsR5pcPKJ15moS3G3`, { hasText: "More" }).click()// more filter
+    await delay(2000)
+    await page.locator(`//span`, { hasText: "Renting History" }).click()
+    await delay(1000)
+    // Check Hero detail in history
+    const heroIdInventory = await page.locator(`span.IpznSo8M9_7uqaFGDreR`).first().innerText()
+    if (heroIdInventory == heroId) {
+        await delay(1000)
+
+
+    }
+    console.log("Hero cho thue la:", heroIdInventory)
+
     console.log("DONE")
 
 });
 
 
 
-// api simulate Hero, level 
-test('Fusion hero trinh ', async ({ page, browser }) => {
+test('CANCEL RENT HERO @rent', async ({ page, browser }) => {
     await page.goto("https://staging.marketplace.thetanarena.com/")
     await AllPopup.ClosePopup(page);
     await delay(2000)
-    await page.locator("button.YtC7SW5QBXao_Bj5rMO5", { hasText: "Connect Wallet" }).click() // button connect wallet
+    await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
     await delay(1000)
-    await page.locator(".ZPKehyuOXkcNnT3_AzFi", { hasText: "Login with Metamask" }).click()
+    await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
 
     const [newPage] = await Promise.all([
         metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
-        page.locator("button.UbQxYBXfgGDIuLkCeyyJ").click(),
+        page.locator(confirmBtn).click(),
     ]);
 
     await newPage.waitForLoadState()
     await metamask.switchNetwork()
     await metamask.connectAndSignAccount()
 
+    // chọn menu rent
+    await page.locator(rentMenu).click()
     await delay(2000)
-    await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory")
-
-    await delay(1200)
-
-    var heroCount = await page.locator('.LoG5KRQGfS_ExpEYUM9r').count()
-    for (let i = 0; i < heroCount; i++) {
+    var pageTotal = Texter.GetIntFromText(await page.locator(pageTotalLct).innerText())
+    console.log(pageTotal)
+    for (let i = 1; i <= pageTotal; i++) {
+        await page.locator(pageNumLct).fill(i.toString())
+        await page.keyboard.press('Enter')
         await delay(1000)
+        console.log("page", i)
 
-        console.log(`let sellingLabel = await page.locator('.Dfj5fSymG7FC_pQ1ltOn').nth(i).innerText()`)
-        let sellingLabel = await page.locator(`.Dfj5fSymG7FC_pQ1ltOn`).nth(i).innerText()
-        if (sellingLabel == 'SELLING') {
-            console.log(`sellingLabel == 'SELLING'`)
-            continue
+        var heroItem = await page.locator(heroItemMaketLct).count()
+        await delay(3000)
 
+        let daTimHero = false
+        for (let j = 0; j < heroItem; j++) {
+            await page.locator(heroItemMaketLct).nth(j).click()
+            await delay(3000)
+            var isOwnerCheck = await page.locator(`//span`, { hasText: "Owner by me" }).isVisible()
+            if (!isOwnerCheck) {
+                console.log("KHONG PHAI OWNER")
+                await page.goBack({ waitUntil: "load" })
+                continue
+            }
+
+            daTimHero = true
+            break
         }
 
-        await page.locator('.LoG5KRQGfS_ExpEYUM9r').nth(i).click()
-        await delay(1000)
-        //console.log("Start vong for")
-
-        let sellBtnLocator = page.locator(`//span`, { hasText: "Sell" })
-
-        //let sellBtnLocator = page.locator(`//span[contains(.,"Sell")]`)
-
-        let isSellBtnVisible = await sellBtnLocator.isVisible()
-        if (!isSellBtnVisible) {
-            console.log("Khong tim thay sell btn")
-            await page.goBack({ waitUntil: "load" })
-            continue
+        if (daTimHero) {
+            break
         }
-
-        let isSellBtnEnable = await sellBtnLocator.isEnabled()
-        if (!isSellBtnEnable) {
-            console.log("Sell btn disabled")
-            await page.goBack({ waitUntil: "load" })
-            continue
-        }
-
-
-        // let SellingBtn = await sellBtnLocator.innerText()
-        // if(SellingBtn == 'Stop selling'){
-        //     console.log('Hero is selling')
-        //     await page.goBack({waitUntil: "load"})
-        //     continue
-        // }
-
-
-
-        // let isSellBtn = 
-        // console.log("End isEnabled")
-        // if (!isSellBtn) {
-        //     await page.goBack()
-        //     continue
-        // }
-
-        await sellBtnLocator.click()
-        await delay(2000)
-        break
-
-        //await expect(page.locator(`//span`, {hasText: "Sell"})).toBeVisible()
     }
 
-    await page.locator(`input.AI0g6_78kpjQEk7KU44r`).fill('10000')
+    await page.locator(`//span`, { hasText: 'Cancel renting' }).click();
     await delay(2000)
-    const priceSellStr = await page.locator(`input.AI0g6_78kpjQEk7KU44r`).innerText() // luu price
-    await delay(2000)
-    const priceSellInt = parseInt(priceSellStr)
-    console.log('priceSellStr = await page.locator(`input.AI0g6_78kpjQEk7KU44r`).innerText()')
-    await delay(2000)
+    await page.locator(`//span`, { hasText: 'Stop renting' }).click();
 
-
-    await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`, { hasText: "Sell now" }).click()
     await delay(2000)
-
-    return
-    //await Waiter.ActAndWaitNewTab(page.locator(`//button[contains(.,"Checkout")]`).click(), metamask.browserContext)
     await metamask.__primaryMetamask()
     await delay(2000)
-    await page.locator(`button.cOBQpozfZ4Q94cdPJ0MK`).click  // understand btn
-
-    /*
-    // check new hero tren cho'
-    await page.goto('https://staging.marketplace.thetanarena.com/buy')
-    AllPopup.ClosePopup(page);
-    await delay(2000)
-    await page.locator(`div.RzCtmnvJtc4BwmQPIiSK`).click() // click DDL filter latest
-    await delay(2000)
-    await page.locator(`//span[contains(.,"Latest")]`).click()
-    await page.locator(`..pTlq4suyqtK3Lmj4MH27`).first().click()
-    //Check price
-    const priceHero =  parseInt(await page.locator(`.f9zZck_3CSpfmtllo7B2`).innerText())
-    await delay(2000)
-    if(priceSellInt == priceHero){
-        await delay(2000)
-
-        console.log('Gia dung roi')
-    }
-    return
-    // <span class="f9zZck_3CSpfmtllo7B2">10,000 THC</span>
-*/
-
+    await page.waitForLoadState()
+    // console.log("- Click understand")
+    // await page.locator(understandBtn, { hasText: "Understand" }).click()  // understand btn
+    // // await delay(2000)
+    // await page.waitForLoadState()
 
     console.log("DONE")
+
+});
+
+
+// api simulate Hero, level 
+test('Check history after Rent ', async ({ page, browser }) => {
+    await page.goto("https://staging.marketplace.thetanarena.com/")
+    await AllPopup.ClosePopup(page);
+    await delay(2000)
+    await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
+    await delay(1000)
+    await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
+
+    const [newPage] = await Promise.all([
+        metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
+        page.locator(confirmBtn).click(),
+    ]);
+
+    await newPage.waitForLoadState()
+    await metamask.switchNetwork()
+    await metamask.connectAndSignAccount()
+
+    // Check history
+    await delay(2000)
+    await page.goto('https://staging.marketplace.thetanarena.com/profile?tab=history')
+    await delay(2000)
+    await page.locator(`.StJzsR5pcPKJ15moS3G3`, { hasText: "More" }).click()// more filter
+    await delay(2000)
+    await page.locator(`//span`, { hasText: "Renting History" }).click()
+    await delay(1000)
+    console.log("DONE")
+
+});
+
+test('--------CHECK HERO DETAIL------', async ({ page, browser }) => {
+    // await page.goto("https://staging.marketplace.thetanarena.com/")
+    // await AllPopup.ClosePopup(page);
+    // await delay(2000)
+    // await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
+    // await delay(1000)
+    // await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
+
+    // const [newPage] = await Promise.all([
+    //     metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
+    //     page.locator(confirmBtn).click(),
+    // ]);
+
+    // await newPage.waitForLoadState()
+    // await metamask.switchNetwork()
+    // await metamask.connectAndSignAccount()
+
+    // Check hero detail
+    await delay(2000)
+    await page.goto('https://staging.marketplace.thetanarena.com/item/6332de7d7af5e5ca7bb966b3')
+    await delay(2000)
+    const heroDetail = page.url()
+    await delay(2000)
+    console.log("-----URL-----: ", heroDetail)
+    const heroId = heroDetail.slice(heroDetail.lastIndexOf("/"))
+    console.log("-----URL-----: ", heroId)
+    await delay(2000)
 
 });
