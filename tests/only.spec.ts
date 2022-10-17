@@ -1,5 +1,7 @@
 import { test, expect, chromium, BrowserContext, request } from '@playwright/test';
-import AllPopup, { SendHeroReq } from '../src/arena-helper/ArenaHelper';
+//import AllPopup, { SendHeroReq } from '../src/arena-helper/ArenaHelper';
+import MaketPlace, { APIResp, SendHeroReq, SetMaterial, SetHeroLevel, SetHeroBattleCap } from '../src/arena-helper/marketPlaceHelper';
+
 
 // export const test = base.extend<{
 //     context: BrowserContext;
@@ -148,49 +150,15 @@ test('-------- test login by email ------', async ({ request }) => {
     console.log("- Access Token:", token.substring(0, 10))
 });
 
-test.only('-------- SEND HERO ------', async ({ request }) => {
-    console.log("Send hero start:")
-    // await delay(2000)
-    // const response = await request.post(`https://data.staging.thetanarena.com/theta/v1/hero/send-hero`, {
-    //     data: {
-    //         "skinId": skinId,
-    //         "address": `${address}`,
-    //         "amount": 3,
-    //         "motLaAm999HaiLa0": 2
-    //     },
-    //     headers: {
-    //         'Authorization': `Bearer ${token}`,
-    //     }
-    // })
-    // const data = await response.json()
-
-    // console.log("-------response code here---: ", data.code);
-    // let hero: Hero = await response.json()
-
-    // console.log("show info Hero", hero.data)
-    // console.log(data)
-    // console.log("Id hero la: ", hero.data[0].skinId)
-
-    let req: SendHeroReq = {
-        address: address,
-        amount: 3,
-        motLaAm999HaiLa0: 2,
-        skinId: skinId
-    }
-
-    let response = await AllPopup.SendHero<HeroInfo>(request, req, token)
-    expect(response.success, { message: "Send hero failed" }).toEqual(true)
-
-    console.log(response)
-});
-
-test('-------- SET MATERIALS ------', async ({ request }) => {
+test('-------- SEND HERO API ------', async ({ request }) => {
     console.log("Send hero start:")
     await delay(2000)
-    const response = await request.post(`https://data.staging.thetanarena.com/theta/v1/fusion/simulate/inps`, {
+    const response = await request.post(`https://data.staging.thetanarena.com/theta/v1/hero/send-hero`, {
         data: {
-            userId: "6229b2a2d8fa1baacf8c6de6",
-            inps: []
+            "skinId": skinId,
+            "address": `${address}`,
+            "amount": 3,
+            "motLaAm999HaiLa0": 2
         },
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -203,14 +171,58 @@ test('-------- SET MATERIALS ------', async ({ request }) => {
 
     console.log("show info Hero", hero.data)
     console.log(data)
-    console.log("Id hero la: ", hero.data[0].ownerAddress, hero.data[1].ownerAddress, hero.data[2].ownerAddress)
+    console.log("Id hero la: ", hero.data[0].skinId)
 
 });
 
+test('-------- SEND HERO ------', async ({ request }) => {
+    console.log("Send hero start:")
+    let req: SendHeroReq = {
+        address: address,
+        amount: 3,
+        motLaAm999HaiLa0: 2,
+        skinId: skinId
+    }
+
+    let response = await MaketPlace.SendHero<HeroInfo>(request, req, token)
+    expect(response.success, { message: "Send hero failed" }).toEqual(true)
+
+    console.log(response)
+});
+
+test('-------- SET MATERIALS ------', async ({ request }) => {
+    console.log("Set input materials:")
+    let bodyInps : SetMaterial = {
+        userId: '62cbdc8ef88e1482debba66b', //// acc: trinhntl+stg1000@wolffungame.com
+        inps: [2000,2500]
+    }
+   let response = await MaketPlace.SimulateInput<SetMaterial>(request,bodyInps, token)  
+   console.log("-----set input-----",response)
+});
+
+
+test('------SET HERO LEVEL-----', async({request})=> {
+    console.log("SET HERO LEVEL:")
+    let body: SetHeroLevel = {
+        heroId: '634d64d2b1e6a95741fe0e1b',
+        level: 3
+    }
+    
+    let response = await MaketPlace.SimulateHeroLevel<SetHeroLevel>(request, body, token)
+    console.log('-------SET HERO LEVEL----', response)
+});
+
+test.only('------SET HERO BATTLE CAP---', async({request})=> {
+    let body: SetHeroBattleCap = {
+        heroId: '634d64d2b1e6a95741fe0e1b',
+        battleCap: 500
+    }
+    let response = await MaketPlace.SimulateHeroBattle<SetHeroBattleCap>(request,body,token)
+    console.log("SET HERO BATTLE CAP:----", response)
+})
 // test('-------- Check mint ------', async ({ request }) => {
 //     // api send hero
 //     for (;;) {
 //         // api get hero 
 //         // check mint chua 
 //     }
-// });
