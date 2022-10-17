@@ -12,7 +12,7 @@ import { devices } from '@playwright/test';
  */
 const config: PlaywrightTestConfig = {
   testDir: './tests',
-  
+
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -43,7 +43,21 @@ const config: PlaywrightTestConfig = {
     trace: 'on',
     browserName: 'chromium',
     headless: false,
-    screenshot: 'on'
+    screenshot: 'on',
+
+
+    // All requests we send go to this API endpoint.
+    baseURL: 'https://auth.staging.thetanarena.com',
+    extraHTTPHeaders: {
+      // We set this header per GitHub guidelines.
+      'Accept': 'application/json',
+      // Add authorization token to all requests.
+      // Assuming personal access token available in the environment.
+      //'Authorization': `token ${process.env.API_TOKEN}`,
+      // 'Authorization':`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJKV1RfQVBJUyIsImNhbl9taW50IjpmYWxzZSwiZXhwIjoxNjY1OTc3ODQ1LCJpc3MiOiJodHRwczovL2FwaS5tYXJrZXRwbGFjZS5hcHAiLCJuYmYiOjE2NjUzNzMwNDUsInJvbGUiOjIsInNpZCI6IjB4ZDIwMWE0ZTU5ZWIxYmY1NGVhMDExZWEzMmE4YWY3ZDdlZGVhMTk0NiIsInN1YiI6InRyaW5obnRsKzIiLCJ1c2VyX2lkIjoiNjIyOWIyYTJkOGZhMWJhYWNmOGM2ZGU2In0.I5YpDSC4T8STwuIu7lx-ydfHXmer3rZ5gV_NQgXaLvs`
+       // 'Authorization': `Bearer ${token}`
+    },
+
   },
 
 
@@ -69,7 +83,7 @@ const config: PlaywrightTestConfig = {
   //       ...devices['Desktop Safari'],
   //     },
   //   },
-   
+
 
 
   //   /* Test against mobile viewports. */
@@ -110,6 +124,9 @@ const config: PlaywrightTestConfig = {
   //   port: 3000,
   // },
 };
+
+//import type { PlaywrightTestConfig } from '@playwright/test';
+
 
 
 export default config;

@@ -5,10 +5,10 @@ import fs from 'fs'
 import Waiter from '../helper/Helper';
 // // acc: 
 // const seed = "jaguar choose obey minute lawn calm club follow book seminar mesh question"
-// const password = "12345678"
+const password = "12345678"
 // acc: trinhntl+stg1000@wolffungame.com
 const seed = "prize couple general enlist goat cushion bounce spin worth zone fix divide"
-const password = "12345678"
+// const password = "12345678"
 
 export default class Metamask {
     pathToExtension: string;
@@ -86,6 +86,8 @@ export default class Metamask {
         await this.metaMaskPage.locator("#confirm-password").fill(password)
         await this.metaMaskPage.locator("#create-new-vault__terms-checkbox").click()
         await this.metaMaskPage.locator("button.btn-primary").click()
+
+
         await this.metaMaskPage.locator("button.btn-primary").click()
     }
 
