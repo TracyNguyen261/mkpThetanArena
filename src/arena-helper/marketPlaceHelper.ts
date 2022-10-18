@@ -32,11 +32,13 @@ export class SetHeroBattleCap {
     battleCap: number
 }
 
+var stgDataUrl = 'https://data.staging.thetanarena.com/theta/v1' 
+
 export default class MaketPlace {
 
 
     static async SendHero<T>(request: APIRequestContext, body: SendHeroReq, token: string): Promise<APIResp<T>> {
-        const response = await request.post(`https://data.staging.thetanarena.com/theta/v1/hero/send-hero`, {
+        const response = await request.post(`${stgDataUrl}/hero/send-hero`, {
             data: body,
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -51,7 +53,7 @@ export default class MaketPlace {
     }
 
     static async SimulateInput<T>(request: APIRequestContext, body: SetMaterial, token: string): Promise<APIResp<T>> {
-        const response = await request.post(`https://data.staging.thetanarena.com/theta/v1/fusion/simulate/inps`, {
+        const response = await request.post(`${stgDataUrl}/fusion/simulate/inps`, {
             data: body,
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -64,7 +66,7 @@ export default class MaketPlace {
     }
 
     static async SimulateHeroLevel<T>(request: APIRequestContext, body: SetHeroLevel, token: string): Promise<APIResp<T>> {
-        const response = await request.post(`https://data.staging.thetanarena.com/theta/v1/fusion/simulate/level`, {
+        const response = await request.post(`${stgDataUrl}/fusion/simulate/level`, {
             data: body,
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -78,7 +80,7 @@ export default class MaketPlace {
     }
 
     static async SimulateHeroBattle<T>(request: APIRequestContext, body: SetHeroBattleCap, token: string):Promise<APIResp<T>>{
-        const response = await request.post(`https://data.staging.thetanarena.com/theta/v1/fusion/simulate/battle-cap`, {
+        const response = await request.post(`${stgDataUrl}/fusion/simulate/battle-cap`, {
             data: body,
             headers: {
                 'Authorization': `Bearer ${token}`

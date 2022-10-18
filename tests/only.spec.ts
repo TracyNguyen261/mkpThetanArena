@@ -70,7 +70,6 @@ class HeroInfo {
 var address = "0x3cc80663077111fcfe1f9ae36ebdaf5a99bfefcf"
 var skinId = 2500
 var token = "" //= 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJKV1RfQVBJUyIsImNhbl9taW50IjpmYWxzZSwiZXhwIjoxNjY1OTc3ODQ1LCJpc3MiOiJodHRwczovL2FwaS5tYXJrZXRwbGFjZS5hcHAiLCJuYmYiOjE2NjUzNzMwNDUsInJvbGUiOjIsInNpZCI6IjB4ZDIwMWE0ZTU5ZWIxYmY1NGVhMDExZWEzMmE4YWY3ZDdlZGVhMTk0NiIsInN1YiI6InRyaW5obnRsKzIiLCJ1c2VyX2lkIjoiNjIyOWIyYTJkOGZhMWJhYWNmOGM2ZGU2In0.I5YpDSC4T8STwuIu7lx-ydfHXmer3rZ5gV_NQgXaLvs'
-let apiContext;
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
@@ -212,13 +211,17 @@ test('------SET HERO LEVEL-----', async({request})=> {
     console.log('-------SET HERO LEVEL----', response)
 });
 
-test.only('------SET HERO BATTLE CAP---', async({request})=> {
+test('------SET HERO BATTLE CAP---', async({request})=> {
     let body: SetHeroBattleCap = {
         heroId: '634d64d2b1e6a95741fe0e1b',
         battleCap: 500
     }
     let response = await MaketPlace.SimulateHeroBattle<SetHeroBattleCap>(request,body,token)
     console.log("SET HERO BATTLE CAP:----", response)
+})
+
+test.only('---full flow---', async({request})=> {
+
 })
 // test('-------- Check mint ------', async ({ request }) => {
 //     // api send hero
