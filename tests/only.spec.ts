@@ -1,6 +1,6 @@
 import { test, expect, chromium, BrowserContext, request } from '@playwright/test';
 //import AllPopup, { SendHeroReq } from '../src/arena-helper/ArenaHelper';
-import MaketPlace, { APIResp, SendHeroReq, SetMaterial, SetHeroLevel, SetHeroBattleCap } from '../src/arena-helper/marketPlaceHelper';
+import MaketPlace, { APIResp, SendHeroReq, SetMaterial, SetHeroLevel, SetHeroBattleCap, Box , BoxInfo} from '../src/arena-helper/marketPlaceHelper';
 
 
 // export const test = base.extend<{
@@ -220,7 +220,22 @@ test('------SET HERO BATTLE CAP---', async({request})=> {
     console.log("SET HERO BATTLE CAP:----", response)
 })
 
-test.only('---full flow---', async({request})=> {
+test('-------SEND BOX------', async({request})=>{
+    let boxInfo: BoxInfo ={
+        boxType: 1,
+        amount: 3
+    }
+    let body: Box = {
+        userAddress: "0x3cc80663077111fcfe1f9ae36ebdaf5a99bfefcf",
+        userEmail: "trinhntl+stg1000@wolffungame.com",
+        boxes:[boxInfo]
+        
+    }
+    let response = await MaketPlace.SendBox<Box>(request,body,token)
+    console.log("Box:-------", response)
+})
+
+test('---full flow---', async({request})=> {
 
 })
 // test('-------- Check mint ------', async ({ request }) => {

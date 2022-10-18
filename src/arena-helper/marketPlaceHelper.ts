@@ -31,6 +31,15 @@ export class SetHeroBattleCap {
     heroId: string
     battleCap: number
 }
+export class Box{
+    userAddress: string
+    userEmail: string
+    boxes: [BoxInfo]
+}
+export class BoxInfo{
+    boxType: number
+    amount:number
+}
 
 var stgDataUrl = 'https://data.staging.thetanarena.com/theta/v1' 
 
@@ -83,6 +92,19 @@ export default class MaketPlace {
         const response = await request.post(`${stgDataUrl}/fusion/simulate/battle-cap`, {
             data: body,
             headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        if(!response.ok()){
+            return new APIResp<T>()
+        }
+        return await response.json()
+    }
+
+    static async SendBox<T>(request:APIRequestContext, body:Box, token:string): Promise<APIResp<T>>{
+        const response = await request.post(`${stgDataUrl}/thetanbox/send`, {
+            data: body,
+            headers:{
                 'Authorization': `Bearer ${token}`
             }
         })
