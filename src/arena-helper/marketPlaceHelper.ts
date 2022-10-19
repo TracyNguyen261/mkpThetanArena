@@ -38,8 +38,11 @@ export class Box{
 }
 export class BoxInfo{
     boxType: number
-    amount:number
+    amount?:number
 }
+// export class OpenBox{
+//     boxType: number
+// }
 
 var stgDataUrl = 'https://data.staging.thetanarena.com/theta/v1' 
 
@@ -107,6 +110,20 @@ export default class MaketPlace {
             headers:{
                 'Authorization': `Bearer ${token}`
             }
+        })
+        if(!response.ok()){
+            return new APIResp<T>()
+        }
+        return await response.json()
+    }
+
+    static async OpenBox<T>(request:APIRequestContext, body: BoxInfo,token:string):Promise<APIResp<T>>{
+        const response = await request.post(`${stgDataUrl}/thetanbox/open-box`,{
+            data: body,
+            headers:{
+                'Authorization': `Bearer ${token}`
+            }
+
         })
         if(!response.ok()){
             return new APIResp<T>()

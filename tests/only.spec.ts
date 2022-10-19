@@ -1,6 +1,6 @@
 import { test, expect, chromium, BrowserContext, request } from '@playwright/test';
 //import AllPopup, { SendHeroReq } from '../src/arena-helper/ArenaHelper';
-import MaketPlace, { APIResp, SendHeroReq, SetMaterial, SetHeroLevel, SetHeroBattleCap, Box , BoxInfo} from '../src/arena-helper/marketPlaceHelper';
+import MaketPlace, { APIResp, SendHeroReq, SetMaterial, SetHeroLevel, SetHeroBattleCap, Box, BoxInfo } from '../src/arena-helper/marketPlaceHelper';
 
 
 // export const test = base.extend<{
@@ -186,56 +186,82 @@ test('-------- SEND HERO ------', async ({ request }) => {
     let response = await MaketPlace.SendHero<HeroInfo>(request, req, token)
     expect(response.success, { message: "Send hero failed" }).toEqual(true)
 
-    console.log(response)
+    console.log("SEND HERO RESPONSE:",response)
 });
 
 test('-------- SET MATERIALS ------', async ({ request }) => {
     console.log("Set input materials:")
-    let bodyInps : SetMaterial = {
+    let bodyInps: SetMaterial = {
         userId: '62cbdc8ef88e1482debba66b', //// acc: trinhntl+stg1000@wolffungame.com
-        inps: [2000,2500]
+        inps: [2000, 2500]
     }
-   let response = await MaketPlace.SimulateInput<SetMaterial>(request,bodyInps, token)  
-   console.log("-----set input-----",response)
+    let response = await MaketPlace.SimulateInput<SetMaterial>(request, bodyInps, token)
+    console.log("-----set input-----", response)
 });
 
 
-test('------SET HERO LEVEL-----', async({request})=> {
+test('------SET HERO LEVEL-----', async ({ request }) => {
     console.log("SET HERO LEVEL:")
     let body: SetHeroLevel = {
         heroId: '634d64d2b1e6a95741fe0e1b',
         level: 3
     }
-    
+
     let response = await MaketPlace.SimulateHeroLevel<SetHeroLevel>(request, body, token)
     console.log('-------SET HERO LEVEL----', response)
 });
 
-test('------SET HERO BATTLE CAP---', async({request})=> {
+test('------SET HERO BATTLE CAP---', async ({ request }) => {
     let body: SetHeroBattleCap = {
         heroId: '634d64d2b1e6a95741fe0e1b',
         battleCap: 500
     }
-    let response = await MaketPlace.SimulateHeroBattle<SetHeroBattleCap>(request,body,token)
+    let response = await MaketPlace.SimulateHeroBattle<SetHeroBattleCap>(request, body, token)
     console.log("SET HERO BATTLE CAP:----", response)
 })
 
-test('-------SEND BOX------', async({request})=>{
-    let boxInfo: BoxInfo ={
-        boxType: 1,
-        amount: 3
+test.only('-------SEND BOX------', async ({ request }) => {
+    let boxInfo: BoxInfo = {
+        boxType: 12,
+        amount: 1
     }
     let body: Box = {
         userAddress: "0x3cc80663077111fcfe1f9ae36ebdaf5a99bfefcf",
         userEmail: "trinhntl+stg1000@wolffungame.com",
-        boxes:[boxInfo]
-        
+        boxes: [boxInfo]
+
     }
-    let response = await MaketPlace.SendBox<Box>(request,body,token)
+    let response = await MaketPlace.SendBox<Box>(request, body, token)
+    expect(response).toBeTruthy()
     console.log("Box:-------", response)
+
+
 })
 
-test('---full flow---', async({request})=> {
+test('----OpenBox---', async ({ request }) => {
+    let body: BoxInfo = {
+        boxType: 1
+    }
+    let response = await MaketPlace.OpenBox<BoxInfo>(request, body, token)
+    console.log("OPEN BOX", response)
+})
+
+test('---full flow send box -> open box -> check ti le ---', async ({ request }) => {
+    let boxInfo: BoxInfo = {
+        boxType: 1,
+        amount: 10
+    }
+    let boby: Box = {
+        userAddress: "0x3cc80663077111fcfe1f9ae36ebdaf5a99bfefcf",
+        userEmail: "trinhntl+stg1000@wolffungame.com",
+        boxes: [boxInfo]
+
+    }
+    let responseSendBox = await MaketPlace.SendBox<Box>(request, boby, token)
+    console.log("SENDBOX", responseSendBox)
+    await delay(2000)
+    let responseOpenBox = await MaketPlace.OpenBox<BoxInfo>(request, boxInfo, token)
+    console.log("OPENBOX", responseOpenBox)
 
 })
 // test('-------- Check mint ------', async ({ request }) => {
