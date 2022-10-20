@@ -279,3 +279,11 @@ test.only('---full flow send box -> open box -> check ti le ---', async ({ reque
 //         // api get hero 
 //         // check mint chua 
 //     }
+/*
+kiem tra inventory / thetanbox api
+send 1k box
+kiem tra lai inventory / thetanbox api
+lap for để mở 1k box trong vòng 1phút - delay = 60/1000
+kiểm tra nếu có lỗi=> in ra lỗi
+pass ==> đếm số lượng skinId, hero rarity, skin rarity 
+*/
