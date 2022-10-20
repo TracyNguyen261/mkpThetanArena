@@ -6,8 +6,10 @@ function delay(ms: number) {
 
 export class APIResp<T>  {
     success: boolean = false
+    httpCode: number = 0
     code: number = 0
-    data: T
+    data?: T
+    body: string
 }
 
 export class SendHeroReq {
@@ -31,23 +33,68 @@ export class SetHeroBattleCap {
     heroId: string
     battleCap: number
 }
-export class Box{
+export class Box {
     userAddress: string
     userEmail: string
-    boxes: [BoxInfo]
+    boxes: BoxInfo[]
 }
-export class BoxInfo{
+export class BoxInfo {
     boxType: number
-    amount?:number
+    amount?: number
 }
 // export class OpenBox{
 //     boxType: number
 // }
 
-var stgDataUrl = 'https://data.staging.thetanarena.com/theta/v1' 
+export class ThetanBoxData {
+    boxDataArr: Map<Number, BoxAmount>
+}
+
+export enum BoxType {
+    Common = 1,
+    Epic,
+    Legendary,
+}
+
+export class BoxAmount {
+    amount: number
+    processing: number
+}
+
+var stgDataUrl = 'https://data.staging.thetanarena.com/theta/v1'
 
 export default class MaketPlace {
+    static async POST<T>(url: string, request: APIRequestContext, body: any, token: string): Promise<APIResp<T>> {
+        const response = await request.post(url, {
+            data: body,
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
 
+        })
+        if (!response.ok()) {
+            return {
+                body: await (await response.body()).toString(),
+                httpCode: response.status(),
+                code: 0,
+                success: false,
+            }
+        }
+        return await response.json()
+    }
+
+    static async GET<T>(url: string, request: APIRequestContext, params: any = {}, token: string = ""): Promise<APIResp<T>> {
+        const response = await request.get(url, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+            params: params
+        })
+        if (!response.ok()) {
+            return new APIResp<T>()
+        }
+        return await response.json()
+    }
 
     static async SendHero<T>(request: APIRequestContext, body: SendHeroReq, token: string): Promise<APIResp<T>> {
         const response = await request.post(`${stgDataUrl}/hero/send-hero`, {
@@ -91,44 +138,25 @@ export default class MaketPlace {
         return await response.json()
     }
 
-    static async SimulateHeroBattle<T>(request: APIRequestContext, body: SetHeroBattleCap, token: string):Promise<APIResp<T>>{
+    static async SimulateHeroBattle<T>(request: APIRequestContext, body: SetHeroBattleCap, token: string): Promise<APIResp<T>> {
         const response = await request.post(`${stgDataUrl}/fusion/simulate/battle-cap`, {
             data: body,
             headers: {
                 'Authorization': `Bearer ${token}`
             }
         })
-        if(!response.ok()){
+        if (!response.ok()) {
             return new APIResp<T>()
         }
         return await response.json()
     }
 
-    static async SendBox<T>(request:APIRequestContext, body:Box, token:string): Promise<APIResp<T>>{
-        const response = await request.post(`${stgDataUrl}/thetanbox/send`, {
-            data: body,
-            headers:{
-                'Authorization': `Bearer ${token}`
-            }
-        })
-        if(!response.ok()){
-            return new APIResp<T>()
-        }
-        return await response.json()
+    static async SendBox<T>(request: APIRequestContext, body: Box, token: string): Promise<APIResp<T>> {
+        return this.POST(`${stgDataUrl}/thetanbox/send`, request, body, token)
     }
 
-    static async OpenBox<T>(request:APIRequestContext, body: BoxInfo,token:string):Promise<APIResp<T>>{
-        const response = await request.post(`${stgDataUrl}/thetanbox/open-box`,{
-            data: body,
-            headers:{
-                'Authorization': `Bearer ${token}`
-            }
-
-        })
-        if(!response.ok()){
-            return new APIResp<T>()
-        }
-        return await response.json()
+    static async OpenBox<T>(request: APIRequestContext, body: BoxInfo, token: string): Promise<APIResp<T>> {
+        return this.POST(`${stgDataUrl}/thetanbox/open-box`, request, body, token)
     }
 
 }
