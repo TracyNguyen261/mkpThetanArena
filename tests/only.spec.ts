@@ -1,6 +1,6 @@
 import { test, expect, chromium, BrowserContext, request } from '@playwright/test';
 //import AllPopup, { SendHeroReq } from '../src/arena-helper/ArenaHelper';
-import MaketPlace, { APIResp, SendHeroReq, SetMaterial, SetHeroLevel, SetHeroBattleCap, Box, BoxInfo, ThetanBoxData, BoxType } from '../src/arena-helper/marketPlaceHelper';
+import MaketPlace, { APIResp, SendHeroReq, SetMaterial, SetHeroLevel, SetHeroBattleCap, Box, BoxInfo, ThetanBoxData, BoxType, OpenBoxData, Skin, HeroInBox } from '../src/arena-helper/marketPlaceHelper';
 
 
 // export const test = base.extend<{
@@ -92,7 +92,7 @@ test.beforeAll(async ({ request }) => {
 
     const responsUser = await request.post(`https://auth.staging.thetanarena.com/auth/v1/loginByEmail`, {
         data: {
-            "email": "trinhntl+stg1000@wolffungame.com"
+            "email": "trinhntl+stgmeta01@wolffungame.com"
         }
     })
     let y: Response = await responsUser.json()
@@ -255,7 +255,7 @@ test('----OpenBox---', async ({ request }) => {
 test.only('---full flow send box -> open box -> check ti le ---', async ({ request }) => {
     let boxInfo: BoxInfo = {
         boxType: 3,
-        amount: 100
+        amount: 1000
     }
     let boby: Box = {
         userAddress: "0x241edee3f1ab2a44e47cf0e94c13fd0c150aa5ef",
@@ -263,14 +263,45 @@ test.only('---full flow send box -> open box -> check ti le ---', async ({ reque
         boxes: [boxInfo]
 
     }
-    let responseSendBox = await MaketPlace.SendBox<Box>(request, boby, tokenAdmin)
-    console.log("SENDBOX", responseSendBox)
-    await delay(2000)
+    // Send box
+    // let responseSendBox = await MaketPlace.SendBox<Box>(request, boby, tokenAdmin)
+    // console.log("SENDBOX", responseSendBox)
+    // await delay(1000)
+    // kiểm tra số lượng box Hattrick = 19 trong inventory 
 
     let a = await MaketPlace.GET<ThetanBoxData>(`https://data.staging.thetanarena.com/theta/v1/thetanbox`, request, {}, tokenUser)
-    console.log("--THETANBOX LIST", a.data?.boxDataArr[BoxType.Legendary])
-    let responseOpenBox = await MaketPlace.OpenBox<BoxInfo>(request, boxInfo, tokenUser)
-    console.log("OPENBOX", responseOpenBox.data)
+    //console.log("--THETANBOX LIST", a.data?.boxDataArr[BoxType.Legendary])
+    console.log("---SO LUONG BOX LEGEND---", a.data?.boxDataArr[3].amount)
+
+    let amountBox = a.data?.boxDataArr[3].amount
+    for (let i = 0; i < (amountBox - 1264); i++) {
+        let responseOpenBox = await MaketPlace.OpenBox<OpenBoxData>(request, boxInfo, tokenUser)
+        //   console.log("OPENBOX", responseOpenBox[i])
+        let heroRarityCount = 0
+        if (responseOpenBox.data?.heroInfo.rarity != null) {
+            heroRarityCount++
+
+        }
+        let skinRarityCount = 0
+        if (responseOpenBox.data?.skinInfo.skinRarity != null) {
+            skinRarityCount++
+        }
+        let skinIdCount = 0
+        if (responseOpenBox.data?.skinInfo.skinId != null) {
+            skinIdCount++
+        }
+
+        console.log("battleCapTHC", responseOpenBox.data?.skinInfo)
+        console.log("OPENBOX NE", responseOpenBox.data)
+        console.log("itemType", responseOpenBox.data?.itemType)
+        console.log("battleCapTHC", responseOpenBox.data?.battleCapTHC)
+
+
+
+    }
+    // let responseOpenBox = await MaketPlace.OpenBox<BoxInfo>(request, boxInfo, tokenUser)
+    // console.log("OPENBOX", responseOpenBox.data)
+
 
 })
 // test('-------- Check mint ------', async ({ request }) => {

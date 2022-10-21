@@ -12,6 +12,28 @@ export class APIResp<T>  {
     body: string
 }
 
+export class OpenBoxData {
+    heroId: string
+    heroTypeId: number
+    usedBattleTHC: number
+    battleCapTHC: number
+    skinInfo: Skin
+    heroInfo: HeroInBox
+    itemType: number
+    
+}
+
+export class Skin{
+    skinId: number
+    heroTypeId: number
+    heroRarity: number
+    skinRarity: number
+}
+
+export class HeroInBox{
+    name: string
+    rarity: number
+}
 export class SendHeroReq {
     skinId: Number
     address: string
@@ -46,15 +68,17 @@ export class BoxInfo {
 //     boxType: number
 // }
 
-export class ThetanBoxData {
-    boxDataArr: Map<Number, BoxAmount>
-}
-
 export enum BoxType {
     Common = 1,
     Epic,
     Legendary,
+    Hattrick = 19
+
 }
+export class ThetanBoxData {
+    boxDataArr: Map<Number, BoxAmount>
+}
+
 
 export class BoxAmount {
     amount: number
