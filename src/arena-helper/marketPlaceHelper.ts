@@ -12,28 +12,62 @@ export class APIResp<T>  {
     body: string
 }
 
-export class OpenBoxData {
-    heroId: string
-    heroTypeId: number
-    usedBattleTHC: number
-    battleCapTHC: number
-    skinInfo: Skin
-    heroInfo: HeroInBox
-    itemType: number
-    
+export class FusionSuccessRepsonse {
+    bio: string
+    name: string
+
+}
+class DataResponse {
+
+    accessToken: string
+    refreshToken: string
+}
+export class Response {
+    code: number
+    success: boolean
+    data: DataResponse
 }
 
-export class Skin{
-    skinId: number
+export class OpenBoxData {
+    data: {
+        heroId: string
+        heroTypeId: number
+        usedBattleTHC: number
+        battleCapTHC: number
+        skinInfo: Skin
+        heroInfo: HeroInfo
+        itemType: number
+        rarity: number // hero, cosmetic
+        cosmeticId: string
+        typeId: number // cosmetic typeId
+        type: number // cosmetic type
+        
+    }
+    
+    itemType: number
+}
+
+export class Skin {
+    id: number
     heroTypeId: number
     heroRarity: number
     skinRarity: number
 }
 
-export class HeroInBox{
+class Hero {
+    data: HeroInfo[]
+}
+
+export class HeroInfo {
+    id: string
+    userId: string
+    ownerAddress: string
+    skinId: string
+
     name: string
     rarity: number
 }
+
 export class SendHeroReq {
     skinId: Number
     address: string
