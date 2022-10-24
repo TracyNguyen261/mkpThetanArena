@@ -4,7 +4,7 @@ import MaketPlace, { APIResp } from "./MarketPlaceHelper"
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
-var stgRivalsUrl = 'https://data-rivals.staging.thetanarena.com/api/v1'
+var thetanRivalsUrl = 'https://data-rivals.staging.thetanarena.com/api/v1'
 export class InventoryData {
 
     inventories: {
@@ -82,7 +82,7 @@ export class AddIns {
 
 export default class Rival{
     // static async adminSendInventory<T>(request: APIRequestContext, body:SendInventoryReq  , token: string): Promise<APIResp<T>>{
-    //     const response = await request.post(`${stgRivalsUrl}/inventory/admin/send`,{
+    //     const response = await request.post(`${thetanRivalsUrl}/inventory/admin/send`,{
     //         data: body, 
     //         headers: {
     //             'Authorization': `Bearer ${token}`
@@ -124,10 +124,10 @@ export default class Rival{
 //         return await response.json()
 //     }
 static async AdminSendInventory<T>(request: APIRequestContext, body:SendInventoryReq, token: string): Promise<APIResp<T>>{
-   return MaketPlace.POST(`${stgRivalsUrl}/inventory/admin/send`, request, body, token)
+   return MaketPlace.POST(`${thetanRivalsUrl}/inventory/admin/send`, request, body, token)
 
 }
 static async PostEvolve<T>(request: APIRequestContext, boby:EvolveSkin, token: string): Promise<APIResp<T>>{
-    return MaketPlace.POST(`${stgRivalsUrl}/minion/evolve`, request, boby, token)
+    return MaketPlace.POST(`${thetanRivalsUrl}/minion/evolve`, request, boby, token)
 }
 }

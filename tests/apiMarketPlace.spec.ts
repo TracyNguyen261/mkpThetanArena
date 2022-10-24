@@ -88,7 +88,7 @@ test('-------- test api ------', async ({ request }) => {
     // console.log("response status = ", response.status())
     expect(await response.text()).toContain('How people build software.')
     console.log()
-    let x: FusionSuccessRepsonse = await response.json()
+    // let x: FusionSuccessRepsonse = await response.json()
     let y = await response.json()
 
     // let a = await response.json()
@@ -141,7 +141,7 @@ test('-------- SEND HERO API ------', async ({ request }) => {
     const response = await request.post(`https://data.staging.thetanarena.com/theta/v1/hero/send-hero`, {
         data: {
             "skinId": 2500,
-            "address": `${address}`,
+            "address": `${userAddress}`,
             "amount": 3,
             "motLaAm999HaiLa0": 2
         },
@@ -152,18 +152,18 @@ test('-------- SEND HERO API ------', async ({ request }) => {
     const data = await response.json()
 
     console.log("-------response code here---: ", data.code);
-    let hero: Hero = await response.json()
+    let hero: HeroInfo = await response.json()
 
-    console.log("show info Hero", hero.data)
+    console.log("show info Hero", hero)
     console.log(data)
-    console.log("Id hero la: ", hero.data[0].skinId)
+    console.log("Id hero la: ", hero.id)
 
 });
 
 test('-------- SEND HERO ------', async ({ request }) => {
     console.log("Send hero start:")
     let req: SendHeroReq = {
-        address: address,
+        address: userAddress,
         amount: 3,
         motLaAm999HaiLa0: 2,
         skinId: 2500
@@ -474,21 +474,25 @@ test('----DRAFF----SEND BOX -> OPEN BOX -> CHECK TI LE ------', async ({ request
 
 
 })
+// ========================= FULL FLOW SEND BOX - OPEN BOX ==============
+
+var thetanUrl = "https://data.staging.thetanarena.com/theta/v1/thetanbox"
+// var thetanUrl = "https://data.uat.thetanarena.com/theta/v1/thetanbox"
 
 function IsGiftBox(boxType: Number): boolean {
     return boxType == 17 || boxType == 12
 }
 
 function BoxDataURL(boxType: Number): string {
-    return "https://data.staging.thetanarena.com/theta/v1/thetanbox" + (IsGiftBox(boxType) ? "/giftbox" : "")
+    return `${thetanUrl}` + (IsGiftBox(boxType) ? "/giftbox" : "")
 }
 
-test.only('--------SEND BOX -> OPEN BOX -> CHECK TI LE ------', async ({ request }) => {
-    // let boxType = 19 // HATTRICK BOX
-    let boxType = 17  // HALLOWEEN BOX
+test('--------SEND BOX -> OPEN BOX -> CHECK TI LE ------', async ({ request }) => {
+    let boxType = 19 // HATTRICK BOX
+    let boxName = 'HATTRICK BOX'
+    // let boxType = 17  // HALLOWEEN BOX
+    // let boxName = 'HALLOWEEN BOX'
     let boxAmount = 2000
-    let boxName = 'HALLOWEEN BOX'
-    // let boxName = 'HATTRICK BOX'
     let openAmount = 2
     let boxInfo: BoxInfo = {
         boxType: boxType,
@@ -503,7 +507,7 @@ test.only('--------SEND BOX -> OPEN BOX -> CHECK TI LE ------', async ({ request
 
     // SEND BOX
     let responseSendBox = await MaketPlace.SendBox<Box>(request, boby, tokenAdmin)
-    console.log("----SENDBOX------", responseSendBox)
+    console.log("----SENDBOX ",`${boxName}`, responseSendBox)
     await delay(1000)
 
     // KIEM TRA SO LUONG BOX TRONG INVENTORY

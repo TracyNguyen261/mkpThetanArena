@@ -133,7 +133,9 @@ export class BoxAmount {
     processing: number
 }
 
-var stgDataUrl = 'https://data.staging.thetanarena.com/theta/v1'
+var dataUrl = 'https://data.staging.thetanarena.com/theta/v1'
+// var dataUrl = 'https://data.uat.thetanarena.com/theta/v1'
+
 
 export default class MaketPlace {
     static async POST<T>(url: string, request: APIRequestContext, body: any, token: string): Promise<APIResp<T>> {
@@ -169,7 +171,7 @@ export default class MaketPlace {
     }
 
     static async SendHero<T>(request: APIRequestContext, body: SendHeroReq, token: string): Promise<APIResp<T>> {
-        const response = await request.post(`${stgDataUrl}/hero/send-hero`, {
+        const response = await request.post(`${dataUrl}/hero/send-hero`, {
             data: body,
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -186,7 +188,7 @@ export default class MaketPlace {
     // =============== # Hero Simulation
 
     static async SimulateInput<T>(request: APIRequestContext, body: SetMaterial, token: string): Promise<APIResp<T>> {
-        const response = await request.post(`${stgDataUrl}/fusion/simulate/inps`, {
+        const response = await request.post(`${dataUrl}/fusion/simulate/inps`, {
             data: body,
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -199,7 +201,7 @@ export default class MaketPlace {
     }
 
     static async SimulateHeroLevel<T>(request: APIRequestContext, body: SetHeroLevel, token: string): Promise<APIResp<T>> {
-        const response = await request.post(`${stgDataUrl}/fusion/simulate/level`, {
+        const response = await request.post(`${dataUrl}/fusion/simulate/level`, {
             data: body,
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -213,7 +215,7 @@ export default class MaketPlace {
     }
 
     static async SimulateHeroBattle<T>(request: APIRequestContext, body: SetHeroBattleCap, token: string): Promise<APIResp<T>> {
-        const response = await request.post(`${stgDataUrl}/fusion/simulate/battle-cap`, {
+        const response = await request.post(`${dataUrl}/fusion/simulate/battle-cap`, {
             data: body,
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -228,11 +230,11 @@ export default class MaketPlace {
     // =============== # Box
 
     static async SendBox<T>(request: APIRequestContext, body: Box, token: string): Promise<APIResp<T>> {
-        return this.POST(`${stgDataUrl}/thetanbox/send`, request, body, token)
+        return this.POST(`${dataUrl}/thetanbox/send`, request, body, token)
     }
 
     static async OpenBox<T>(request: APIRequestContext, body: BoxInfo, token: string): Promise<APIResp<T>> {
-        return this.POST(`${stgDataUrl}/thetanbox/open-box`, request, body, token)
+        return this.POST(`${dataUrl}/thetanbox/open-box`, request, body, token)
     }
 
 }
