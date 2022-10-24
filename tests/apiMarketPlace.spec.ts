@@ -1,6 +1,7 @@
 import { test, expect, chromium, BrowserContext, request } from '@playwright/test';
 //import AllPopup, { SendHeroReq } from '../src/arena-helper/ArenaHelper';
-import MaketPlace, { APIResp, SendHeroReq, SetMaterial, SetHeroLevel, SetHeroBattleCap, Box, BoxInfo, ThetanBoxData, BoxType, OpenBoxData, Skin, HeroInfo } from '../src/arena-helper/MarketPlaceHelper';
+import MaketPlace, { APIResp, SendHeroReq, SetMaterial, SetHeroLevel, SetHeroBattleCap, Box, BoxInfo, ThetanBoxData, BoxType, OpenBoxData, Skin, HeroInfo, Response } from '../src/arena-helper/MarketPlaceHelper';
+
 
 
 // export const test = base.extend<{
@@ -40,22 +41,22 @@ import MaketPlace, { APIResp, SendHeroReq, SetMaterial, SetHeroLevel, SetHeroBat
 //     },
 // });
 
-
-
-
-var address = "0x3cc80663077111fcfe1f9ae36ebdaf5a99bfefcf"
-var skinId = 2500
-var tokenAdmin = "" //= 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJKV1RfQVBJUyIsImNhbl9taW50IjpmYWxzZSwiZXhwIjoxNjY1OTc3ODQ1LCJpc3MiOiJodHRwczovL2FwaS5tYXJrZXRwbGFjZS5hcHAiLCJuYmYiOjE2NjUzNzMwNDUsInJvbGUiOjIsInNpZCI6IjB4ZDIwMWE0ZTU5ZWIxYmY1NGVhMDExZWEzMmE4YWY3ZDdlZGVhMTk0NiIsInN1YiI6InRyaW5obnRsKzIiLCJ1c2VyX2lkIjoiNjIyOWIyYTJkOGZhMWJhYWNmOGM2ZGU2In0.I5YpDSC4T8STwuIu7lx-ydfHXmer3rZ5gV_NQgXaLvs'
-var tokenUser = ""
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
+
+var adminEmail = "trinhntl@wolffungame.com"
+var userAddress = "0x241edee3f1ab2a44e47cf0e94c13fd0c150aa5ef"
+var userEmail = "trinhntl+stgmeta01@wolffungame.com"
+var tokenAdmin = ""
+var tokenUser = ""
+
 
 test.beforeAll(async ({ request }) => {
     // ---------- goi api lay access token Admin
     const responseAdmin = await request.post(`https://auth.staging.thetanarena.com/auth/v1/loginByEmail`, {
         data: {
-            "email": "trinhntl@wolffungame.com"
+            "email": `${adminEmail}`
         }
     })
     const data = await responseAdmin.json()
@@ -64,14 +65,15 @@ test.beforeAll(async ({ request }) => {
     let x: Response = await responseAdmin.json()
     tokenAdmin = await x.data.accessToken
     console.log(tokenAdmin)
+
     console.log("----ACCESS TOKEN ADMIN----", tokenAdmin.substring(tokenAdmin.length - 10, tokenAdmin.length))
 
-    const responsUser = await request.post(`https://auth.staging.thetanarena.com/auth/v1/loginByEmail`, {
+    const responseUser = await request.post(`https://auth.staging.thetanarena.com/auth/v1/loginByEmail`, {
         data: {
-            "email": "trinhntl+stgmeta01@wolffungame.com"
+            "email": `${userEmail}`
         }
     })
-    let y: Response = await responsUser.json()
+    let y: Response = await responseUser.json()
     tokenUser = await y.data.accessToken
     console.log(tokenUser)
     console.log("-----ACCESS TOKEN USER----", tokenUser.substring(tokenUser.length - 10, tokenUser.length))
@@ -138,7 +140,7 @@ test('-------- SEND HERO API ------', async ({ request }) => {
     await delay(2000)
     const response = await request.post(`https://data.staging.thetanarena.com/theta/v1/hero/send-hero`, {
         data: {
-            "skinId": skinId,
+            "skinId": 2500,
             "address": `${address}`,
             "amount": 3,
             "motLaAm999HaiLa0": 2
@@ -164,7 +166,7 @@ test('-------- SEND HERO ------', async ({ request }) => {
         address: address,
         amount: 3,
         motLaAm999HaiLa0: 2,
-        skinId: skinId
+        skinId: 2500
     }
 
     let response = await MaketPlace.SendHero<HeroInfo>(request, req, tokenAdmin)
@@ -291,36 +293,52 @@ test('---full flow send box -> open box -> check ti le ---', async ({ request })
 
 })
 
-test.only('--------HALLOWEEN BOX------', async ({ request }) => {
+test('----DRAFF----SEND BOX -> OPEN BOX -> CHECK TI LE ------', async ({ request }) => {
+    let boxType = 19 // HATTRICK BOX
+    // let boxType: 17  // HALLOWEEN BOX
     let boxAmount = 1000
-    let openAmount = 400
+    let openAmount = 10
     let boxInfo: BoxInfo = {
-        boxType: 17,
+        boxType: boxType,
         amount: boxAmount
     }
     let boby: Box = {
-        userAddress: "0x241edee3f1ab2a44e47cf0e94c13fd0c150aa5ef",
-        userEmail: "trinhntl+stgmeta01@wolffungame.com",
+        userAddress: `${userAddress}`,//"0x241edee3f1ab2a44e47cf0e94c13fd0c150aa5ef",
+        userEmail: `${userEmail}`,  //"trinhntl+stgmeta01@wolffungame.com",
         boxes: [boxInfo]
 
     }
-    // Send box
-    // let responseSendBox = await MaketPlace.SendBox<Box>(request, boby, tokenAdmin)
-    // console.log("SENDBOX", responseSendBox)
+    // SEND BOX
+    let responseSendBox = await MaketPlace.SendBox<Box>(request, boby, tokenAdmin)
+    console.log("SENDBOX", responseSendBox)
     await delay(1000)
-    // kiểm tra số lượng box Halloween = 17 trong inventory 
+
+    // KIEM TRA SO LUONG BOX TRONG INVENTORY
 
     let a = await MaketPlace.GET<ThetanBoxData>(`https://data.staging.thetanarena.com/theta/v1/thetanbox`, request, {}, tokenUser)
     //console.log("--THETANBOX LIST", a.data?.boxDataArr[BoxType.Legendary])
-    console.log("---SO LUONG BOX LEGEND---", a.data?.boxDataArr[3].amount)
+    // console.log("--- SO LUONG BOX HALLOWEEN---", a.data?.boxDataArr[17].amount)
+    console.log("--- SO LUONG BOX---", a.data?.boxDataArr[boxInfo.boxType].amount)
 
-    let itemTypeCounter = new Map<Number, Number>()
-    let heroRarityCounter = new Map<Number, Number>()
+    // OPEN BOX
+
+    // TẠO MAP CHỨA THÔNG TIN CẦN TRẢ VỀ THEO TỪNG LOẠI BOX TYPE: HERO, COSMETIC, CURRENCY
+
+    // let itemTypeCounter = new Map<Number, Number>()  
+    let heroCounter = new Map<Number, Number>()
     let cosmeticTypeCounter = new Map<Number, Number>()
-    // skinIDCounter.get(123)
+    let currencyTypeCounter = new Map<Number, Number>()
+    let skinIdCounter = new Map<Number, number>()
+    let skinRarityIdCounter = new Map<Number, Number>()
+    let heroRarityIdCounter = new Map<Number, Number>()
+    let cosmeticTypeIdCounter = new Map<Number, Number>()
+    let currencyNameCounter = new Map<Number, Number>()
 
+    // skinIDCounter.get(123)
     // let amountBox = a.data?.boxDataArr[3].amount
-    for (let i = 0; i < 100; i++) {
+
+    // MỞ TỪNG BOX VÀ LƯU VÀO MAP
+    for (let i = 0; i < openAmount; i++) {
         let response = await MaketPlace.OpenBox<OpenBoxData>(request, boxInfo, tokenUser)
         if (!response.success) {
             console.log(response.body)
@@ -358,12 +376,65 @@ test.only('--------HALLOWEEN BOX------', async ({ request }) => {
 
         // let currencyTypeCount = 0
 
-        let itemType: Number = Number(response.data?.itemType)
-        let count = isNaN(Number(itemTypeCounter.get(itemType))) ? 1 : Number(itemTypeCounter.get(itemType)) + 1
-        itemTypeCounter.set(itemType, count)
-        // if  itemType =1 => add map heroRarityCounter
-        // if  itemType =3 => add map cosmeticTypeCounter
+        // THÔNG TIN BOX HERO
+        let skinId: Number = Number(response.data?.data?.skinInfo?.id)
+        let skinRarity: Number = Number(response.data?.data?.skinInfo?.skinRarity)
+        let heroRarity: Number = Number(response.data?.data?.heroInfo?.rarity)
 
+        // THÔNG TIN BOX COSMETIC   
+        let cosmeticTypeId: Number = Number(response.data?.data?.typeId)
+
+        //THÔNG TIN BOX CURRENCY
+        let currencyName: Number = Number(response.data?.data?.name)
+
+        let itemType: Number = Number(response.data?.itemType)
+
+        // let count = isNaN(Number(itemTypeCounter.get(itemType))) ? 1 : Number(itemTypeCounter.get(itemType)) + 1
+        // itemTypeCounter.set(itemType, count)
+
+        // CHECK TI LE BOX HERO 
+        // if  itemType =1 => add map heroRarityCounter
+
+        if (itemType == 0) {
+
+            let count = isNaN(Number(heroCounter.get(itemType))) ? 1 : Number(heroCounter.get(itemType)) + 1
+            heroCounter.set(itemType, count) // MAP HERO COUNTER 
+
+            let countSkinId = isNaN(Number(skinIdCounter.get(skinId))) ? 1 : Number(skinIdCounter.get(skinId)) + 1
+            skinIdCounter.set(skinId, countSkinId) // MAP SKINID COUNTER
+
+            let countHeroRarity = isNaN(Number(heroRarityIdCounter.get(heroRarity))) ? 1 : Number(heroRarityIdCounter.get(heroRarity)) + 1
+            heroRarityIdCounter.set(heroRarity, countHeroRarity)  // MAP HERORARITY COUNTER
+
+            let countSkinRarity = isNaN(Number(skinRarityIdCounter.get(skinRarity))) ? 1 : Number(skinRarityIdCounter.get(skinRarity)) + 1
+            skinRarityIdCounter.set(skinRarity, countSkinRarity)  // MAP SKINRARITY COUNTER
+
+
+
+        }
+        // CHECK TI LE BOX COSMETIC
+        // if  itemType =2 => add map cosmeticTypeCounter
+        if (itemType == 2) {
+            let count = isNaN(Number(cosmeticTypeCounter.get(itemType))) ? 1 : Number(cosmeticTypeCounter.get(itemType)) + 1
+            cosmeticTypeCounter.set(itemType, count) // MAP COSMETIC TYPE COUNTER
+
+            let countCosmeticTypeId = isNaN(Number(cosmeticTypeIdCounter.get(cosmeticTypeId))) ? 1 : Number(cosmeticTypeIdCounter.get(cosmeticTypeId)) + 1
+            cosmeticTypeIdCounter.set(cosmeticTypeId, countCosmeticTypeId)  // MAP COSMETIC TYPEID COUNTER
+
+        }
+
+        // CHECK TI LE BOX CURRENCY
+        if (itemType == 3) {
+            let count = isNaN(Number(currencyTypeCounter.get(itemType))) ? 1 : Number(currencyTypeCounter.get(itemType)) + 1
+            currencyTypeCounter.set(itemType, count) // MAP CURRENCY TYPE COUNTER
+
+            let countCurrencyName = isNaN(Number(currencyNameCounter.get(currencyName))) ? 1 : Number(currencyNameCounter.get(currencyName)) + 1
+            currencyNameCounter.set(currencyName, countCurrencyName) // MAP CURRENCY NAME COUNTER
+
+
+
+
+        }
 
         // if (response.data?.itemType == 3) {
         //     currencyTypeCount++
@@ -384,26 +455,166 @@ test.only('--------HALLOWEEN BOX------', async ({ request }) => {
         // console.log("itemType", response.data?.itemType)
         // console.log("battleCapTHC", response.data?.data?.battleCapTHC)
         // console.log("RESPONSE BODY", response.data)
+
         console.log(i)
     }
 
-    console.log("---", itemTypeCounter)
+    // console.log("---", itemTypeCounter)
+    console.log("1. Số lượng box Bero------------", heroCounter)
+    console.log("1.1. Hero info- HeroRarity------", heroRarityIdCounter)
+    console.log("1.2. Hero info- SkinId----------", skinIdCounter)
+    console.log("1.3. Hero info- SkinRarity------", skinRarityIdCounter)
+
+    console.log("2. Box cosmeticc-------", cosmeticTypeCounter)
+    console.log("2.1. Cosmetic TypeID", cosmeticTypeIdCounter)
+    console.log("3. Box currency-------", currencyTypeCounter)
+    console.log("3.1 Currency Name", currencyNameCounter)
     // let responseOpenBox = await MaketPlace.OpenBox<BoxInfo>(request, boxInfo, tokenUser)
     // console.log("OPENBOX", responseOpenBox.data)
 
 
 })
-// test('-------- Check mint ------', async ({ request }) => {
-//     // api send hero
-//     for (;;) {
-//         // api get hero 
-//         // check mint chua 
-//     }
-/*
-kiem tra inventory / thetanbox api
-send 1k box
-kiem tra lai inventory / thetanbox api
-lap for để mở 1k box trong vòng 1phút - delay = 60/1000
-kiểm tra nếu có lỗi=> in ra lỗi
-pass ==> đếm số lượng skinId, hero rarity, skin rarity 
-*/
+
+function IsGiftBox(boxType: Number): boolean {
+    return boxType == 17 || boxType == 12
+}
+
+function BoxDataURL(boxType: Number): string {
+    return "https://data.staging.thetanarena.com/theta/v1/thetanbox" + (IsGiftBox(boxType) ? "/giftbox" : "")
+}
+
+test.only('--------SEND BOX -> OPEN BOX -> CHECK TI LE ------', async ({ request }) => {
+    // let boxType = 19 // HATTRICK BOX
+    let boxType = 17  // HALLOWEEN BOX
+    let boxAmount = 2000
+    let boxName = 'HALLOWEEN BOX'
+    // let boxName = 'HATTRICK BOX'
+    let openAmount = 2
+    let boxInfo: BoxInfo = {
+        boxType: boxType,
+        amount: boxAmount,
+        name: boxName
+    }
+    let boby: Box = {
+        userAddress: `${userAddress}`,//"0x241edee3f1ab2a44e47cf0e94c13fd0c150aa5ef",
+        userEmail: `${userEmail}`,  //"trinhntl+stgmeta01@wolffungame.com",
+        boxes: [boxInfo]
+    }
+
+    // SEND BOX
+    let responseSendBox = await MaketPlace.SendBox<Box>(request, boby, tokenAdmin)
+    console.log("----SENDBOX------", responseSendBox)
+    await delay(1000)
+
+    // KIEM TRA SO LUONG BOX TRONG INVENTORY
+
+    let a = await MaketPlace.GET<ThetanBoxData>(BoxDataURL(boxType), request, {}, tokenUser)
+    console.log("--THETANBOX LIST", a.data)
+    // console.log("--- SO LUONG BOX HALLOWEEN---", a.data?.boxDataArr[19].amount)
+    console.log("--- SO LUONG BOX", `${boxName}`, a.data?.boxDataArr[boxInfo.boxType]?.amount)
+
+    // OPEN BOX
+
+    // TẠO MAP CHỨA THÔNG TIN CẦN TRẢ VỀ THEO TỪNG LOẠI BOX TYPE: HERO, COSMETIC, CURRENCY
+
+    // let itemTypeCounter = new Map<Number, Number>()  
+    let heroCounter = new Map<Number, Number>()
+    let cosmeticTypeCounter = new Map<Number, Number>()
+    let currencyTypeCounter = new Map<Number, Number>()
+    let skinIdCounter = new Map<Number, number>()
+    let skinRarityIdCounter = new Map<Number, Number>()
+    let heroRarityIdCounter = new Map<Number, Number>()
+    let cosmeticTypeIdCounter = new Map<Number, Number>()
+    let currencyNameCounter = new Map<Number, Number>()
+
+    // skinIDCounter.get(123)
+    // let amountBox = a.data?.boxDataArr[3].amount
+
+    // MỞ TỪNG BOX VÀ LƯU VÀO MAP
+    for (let i = 0; i < openAmount; i++) {
+        let response = await MaketPlace.OpenBox<OpenBoxData>(request, boxInfo, tokenUser)
+        if (!response.success) {
+            console.log(response.body)
+            continue
+        }
+
+
+        // THÔNG TIN BOX HERO
+        let skinId: Number = Number(response.data?.data?.skinInfo?.id)
+        let skinRarity: Number = Number(response.data?.data?.skinInfo?.skinRarity)
+        let heroRarity: Number = Number(response.data?.data?.heroInfo?.rarity)
+
+        // THÔNG TIN BOX COSMETIC   
+        let cosmeticTypeId: Number = Number(response.data?.data?.typeId)
+
+        //THÔNG TIN BOX CURRENCY
+        let currencyName: Number = Number(response.data?.data?.name)
+
+        let itemType: Number = Number(response.data?.itemType)
+
+        // let count = isNaN(Number(itemTypeCounter.get(itemType))) ? 1 : Number(itemTypeCounter.get(itemType)) + 1
+        // itemTypeCounter.set(itemType, count)
+
+        // CHECK TI LE BOX HERO 
+        // if  itemType =1 => add map heroRarityCounter
+
+        if (itemType == 0) {
+
+            let count = isNaN(Number(heroCounter.get(itemType))) ? 1 : Number(heroCounter.get(itemType)) + 1
+            heroCounter.set(itemType, count) // MAP HERO COUNTER 
+
+            let countSkinId = isNaN(Number(skinIdCounter.get(skinId))) ? 1 : Number(skinIdCounter.get(skinId)) + 1
+            skinIdCounter.set(skinId, countSkinId) // MAP SKINID COUNTER
+
+            let countHeroRarity = isNaN(Number(heroRarityIdCounter.get(heroRarity))) ? 1 : Number(heroRarityIdCounter.get(heroRarity)) + 1
+            heroRarityIdCounter.set(heroRarity, countHeroRarity)  // MAP HERORARITY COUNTER
+
+            let countSkinRarity = isNaN(Number(skinRarityIdCounter.get(skinRarity))) ? 1 : Number(skinRarityIdCounter.get(skinRarity)) + 1
+            skinRarityIdCounter.set(skinRarity, countSkinRarity)  // MAP SKINRARITY COUNTER
+
+
+
+        }
+        // CHECK TI LE BOX COSMETIC
+        // if  itemType =2 => add map cosmeticTypeCounter
+        if (itemType == 2) {
+            let count = isNaN(Number(cosmeticTypeCounter.get(itemType))) ? 1 : Number(cosmeticTypeCounter.get(itemType)) + 1
+            cosmeticTypeCounter.set(itemType, count) // MAP COSMETIC TYPE COUNTER
+
+            let countCosmeticTypeId = isNaN(Number(cosmeticTypeIdCounter.get(cosmeticTypeId))) ? 1 : Number(cosmeticTypeIdCounter.get(cosmeticTypeId)) + 1
+            cosmeticTypeIdCounter.set(cosmeticTypeId, countCosmeticTypeId)  // MAP COSMETIC TYPEID COUNTER
+
+        }
+
+        // CHECK TI LE BOX CURRENCY
+        if (itemType == 3) {
+            let count = isNaN(Number(currencyTypeCounter.get(itemType))) ? 1 : Number(currencyTypeCounter.get(itemType)) + 1
+            currencyTypeCounter.set(itemType, count) // MAP CURRENCY TYPE COUNTER
+
+            let countCurrencyName = isNaN(Number(currencyNameCounter.get(currencyName))) ? 1 : Number(currencyNameCounter.get(currencyName)) + 1
+            currencyNameCounter.set(currencyName, countCurrencyName) // MAP CURRENCY NAME COUNTER
+
+
+
+
+        }
+
+        console.log(i)
+    }
+
+    // console.log("---", itemTypeCounter)
+    console.log("1. Số lượng box Bero------------", heroCounter)
+    console.log("1.1. Hero info- HeroRarity------", heroRarityIdCounter)
+    console.log("1.2. Hero info- SkinId----------", skinIdCounter)
+    console.log("1.3. Hero info- SkinRarity------", skinRarityIdCounter)
+
+    console.log("2. Box cosmeticc-------", cosmeticTypeCounter)
+    console.log("2.1. Cosmetic TypeID", cosmeticTypeIdCounter)
+    console.log("3. Box currency-------", currencyTypeCounter)
+    console.log("3.1 Currency Name", currencyNameCounter)
+    // let responseOpenBox = await MaketPlace.OpenBox<BoxInfo>(request, boxInfo, tokenUser)
+    // console.log("OPENBOX", responseOpenBox.data)
+
+
+})
+

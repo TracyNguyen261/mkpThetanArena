@@ -1,4 +1,5 @@
 import { APIRequestContext, Page } from "@playwright/test"
+import { InventoryData, Minion } from "./RivalHelper"
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
@@ -17,16 +18,26 @@ export class FusionSuccessRepsonse {
     name: string
 
 }
-class DataResponse {
+
+export class DataResponse {
 
     accessToken: string
     refreshToken: string
+
 }
+
+
+
 export class Response {
     code: number
     success: boolean
+    id: string // Rival  userId
+    inventories: InventoryData // Rival 
+    minions: Minion[]  // Rival
     data: DataResponse
 }
+
+
 
 export class OpenBoxData {
     data: {
@@ -41,9 +52,10 @@ export class OpenBoxData {
         cosmeticId: string
         typeId: number // cosmetic typeId
         type: number // cosmetic type
-        
+        name: string // currrency name
+
     }
-    
+
     itemType: number
 }
 
@@ -95,8 +107,9 @@ export class Box {
     boxes: BoxInfo[]
 }
 export class BoxInfo {
-    boxType: number
+    boxType: BoxType
     amount?: number
+    name?: string
 }
 // export class OpenBox{
 //     boxType: number
@@ -104,8 +117,9 @@ export class BoxInfo {
 
 export enum BoxType {
     Common = 1,
-    Epic,
-    Legendary,
+    Epic = 2,
+    Legendary = 3,
+    Halloween = 17,
     Hattrick = 19
 
 }
@@ -169,6 +183,8 @@ export default class MaketPlace {
         return await response.json()
     }
 
+    // =============== # Hero Simulation
+
     static async SimulateInput<T>(request: APIRequestContext, body: SetMaterial, token: string): Promise<APIResp<T>> {
         const response = await request.post(`${stgDataUrl}/fusion/simulate/inps`, {
             data: body,
@@ -208,6 +224,8 @@ export default class MaketPlace {
         }
         return await response.json()
     }
+
+    // =============== # Box
 
     static async SendBox<T>(request: APIRequestContext, body: Box, token: string): Promise<APIResp<T>> {
         return this.POST(`${stgDataUrl}/thetanbox/send`, request, body, token)
