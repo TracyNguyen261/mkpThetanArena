@@ -119,44 +119,60 @@ test('---USER POST EVOLVE----', async ({ request }) => {
 //=============FULL FLOW EVOLVE SKIN =======
 var rivalUrl = 'https://data-rivals.staging.thetanarena.com/api/v1'
 
+function evolveMinionToLevel(userId: string, minion: Minion, level: Number) {
+    // for i := minion.level; i < level; i++ ------ 
+    // get item type evolve minion len level <i>
+    // send item type do cho userId
+    // evolve <minionId> bang itemType mới gửi cho user
+    // minion = get minion kiểm tra lại level
+    // -----------
+}
+
 test.only('--EVOLVE SKIN---', async ({ request }) => {
-    // get random 1 user co 1 minion level 1 tu DB
-    // 1. get Inventory for new user
-    let inventoryResponse = await MaketPlace.GET<Response>(`${rivalUrl}/inventory`, request, {}, tokenUser)
-    console.log("---inventoryResponse----", inventoryResponse.data?.inventories)
+    // level 1 thì x = 2 (x là level muốn minion lên)
+    // 1. đếm số lượng itemType có thể evolve minion lên level x: 160001, 160002, 160003 là 3 
+    // 2. lấy minion của user A và có level bằng x
+    // 3. nếu số lượng minion không đủ (< itemType), thì send minions level 1 cho user 
+    // 4. evolve minion đó lên level x 
+    // 5. for các item type để evolve từng minion
+    //      - evolve minion
+    //      - get minion để xem đã evolve chưa (level tăng, cosmetic đã vào slot evolve)
+    //      - get inventory để check enhancer + đã mất item evolved chưa 
 
+    // 2. get inventory of user
+    // let inventoryResponse = await MaketPlace.GET<Response>(`${rivalUrl}/inventory`, request, {}, tokenUser)
+    // console.log("---inventoryResponse----", inventoryResponse.data?.inventories)
 
-    // 2. get Minion
-    let MinionResponse = await MaketPlace.GET<Response>(`${rivalUrl}/minion`, request, {}, tokenUser)
-    console.log("----MinionResponse----", MinionResponse.data?.minions)
+    // // 2. get minion
+    // let MinionResponse = await MaketPlace.GET<Response>(`${rivalUrl}/minion`, request, {}, tokenUser)
+    // console.log("----MinionResponse----", MinionResponse.data?.minions)
 
-    // 3. admin send cosmetic
-    let bodySendCosmetic: SendInventoryReq = {
+    // // 3. admin send cosmetic
+    // let bodySendCosmetic: SendInventoryReq = {
+    //     userId: `${userId}`,
+    //     inventories: [    // hỏi Phương
+    //         {
+    //             kind: 4,
+    //             type: 15000001,
+    //             amount: 123
+    //         },
+    //         {
+    //             kind: 1,
+    //             type: 25,
+    //             amount: 234000
+    //         }
+    //     ]
 
-        userId: `${userId}`,
-        inventories: [    // hỏi Phương
-            {
-                kind: 4,
-                type: 15000001,
-                amount: 123
-            },
-            {
-                kind: 1,
-                type: 25,
-                amount: 234000
-            }
-        ]
+    // }
+    // let cosmeticResponse = await Rival.AdminSendInventory<Response>(request, bodySendCosmetic, tokenAdmin)
+    // console.log("----cosmeticResponse----", cosmeticResponse.data)
 
-    }
-    let cosmeticResponse = await Rival.AdminSendInventory<Response>(request, bodySendCosmetic, tokenAdmin)
-    console.log("----cosmeticResponse----", cosmeticResponse.data)
+    // // 4. post evolve   // hỏi Phương
+    // let bodyPostedEvolve: EvolveSkin = {
 
-    // 4. post evolve   // hỏi Phương
-    let bodyPostedEvolve: EvolveSkin = {
-
-        minionId: '6329758077c0012bc1a2d5de',
-        cosmeticId: 16000001
-    }
-    let postedEvolveResponse = await Rival.PostEvolve<Response>(request, bodyPostedEvolve, tokenUser)
-    console.log("----postedEvolveResponse-----", postedEvolveResponse.data)
+    //     minionId: '6329758077c0012bc1a2d5de',
+    //     cosmeticId: 16000001
+    // }
+    // let postedEvolveResponse = await Rival.PostEvolve<Response>(request, bodyPostedEvolve, tokenUser)
+    // console.log("----postedEvolveResponse-----", postedEvolveResponse.data)
 })
