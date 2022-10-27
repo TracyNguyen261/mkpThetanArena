@@ -1,5 +1,5 @@
 import { APIRequestContext, Page } from "@playwright/test"
-import { InventoryData, Minion } from "./RivalHelper"
+import { InventoryData, Minion, MinonArray } from "./RivalHelper"
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
@@ -32,8 +32,8 @@ export class Response {
     code: number
     success: boolean
     id: string // Rival  userId
-    inventories: InventoryData // Rival 
-    minions: Minion[]  // Rival
+    inventories: InventoryData[]// Rival 
+    minions: MinonArray  // Rival
     data: DataResponse
 }
 
