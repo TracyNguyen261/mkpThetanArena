@@ -1,5 +1,5 @@
 import { APIRequestContext, Page } from "@playwright/test"
-import { InventoryData, Minion, MinonArray } from "./RivalHelper"
+import { Minion } from "./RivalHelper"
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
@@ -20,24 +20,16 @@ export class FusionSuccessRepsonse {
 }
 
 export class DataResponse {
-
     accessToken: string
     refreshToken: string
-
 }
-
-
 
 export class Response {
     code: number
     success: boolean
     id: string // Rival  userId
-    inventories: InventoryData[]// Rival 
-    minions: MinonArray  // Rival
     data: DataResponse
 }
-
-
 
 export class OpenBoxData {
     data: {

@@ -1,25 +1,40 @@
 import { APIRequestContext, Page, request } from "@playwright/test"
-import MaketPlace, { APIResp } from "./MarketPlaceHelper"
+import MyHttp, { Response } from "../helper/HttpUtil"
+import MaketPlace from "./MarketPlaceHelper"
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
 var thetanRivalsUrl = 'https://data-rivals.staging.thetanarena.com/api/v1'
-export class InventoryData {
 
-    inventories: {
-        "1_25": {
-            "kind": string,
-            "type": string,
-            "amount": number,
-            "decimals": number
-        },
+export class APIResp<T>  {
+    success: boolean = false
+    httpCode: number = 0
+    code: number = 0
+    data?: T
+    body: string
+}
 
-    }
+export class AdminSendInventoryReq {
+    userId: string
+    inventories: InventoryItem[]
 }
-export class MinonArray {
-    minions: Minion[]
+
+export class InventoryResponse extends APIResp<InventoryItem[]> {
 }
+
+export class InventoryItem {
+    kind: number
+    type: number
+    amount: number
+    decimals?: number
+}
+
+export class Inventory {
+    id: string
+    inventories: Map<string, InventoryItem>
+}
+
 export class Minion {
 
     id: string
@@ -30,7 +45,7 @@ export class Minion {
     status: number
     level: number
     addInds: AddIns
-   
+
 }
 export class AddIns {
     backBling: number
@@ -57,26 +72,14 @@ export class AddIns {
 //     success: boolean
 //     data: InventoryData
 // }
-export class SendInventoryReq {
 
-    userId: string
-    inventories: [
-        {
-            "kind": number,
-            "type": number,
-            "amount": number
-        }
-    ]
-
-
-}
 export class EvolveSkin {
     minionId: string
     cosmeticId: number
 }
 export class SendMinionReq {
 
-    useId: string
+    userId: string
     addSeasonPoints: Number
     addExp: number
     addRivalBucks: number
@@ -127,15 +130,15 @@ export default class Rival {
     //         }
     //         return await response.json()
     //     }
-    static async AdminSendInventory<T>(request: APIRequestContext, body: SendInventoryReq, token: string): Promise<APIResp<T>> {
-        return MaketPlace.POST(`${thetanRivalsUrl}/inventory/admin/send`, request, body, token)
+    static async AdminSendInventory<T>(request: APIRequestContext, body: AdminSendInventoryReq, token: string): Promise<Response<APIResp<T>> {
+        return MyHttp.POST<APIResp<T>>(`${thetanRivalsUrl}/inventory/admin/send`, request, body, token)
 
     }
     static async PostEvolve<T>(request: APIRequestContext, boby: EvolveSkin, token: string): Promise<APIResp<T>> {
         return MaketPlace.POST(`${thetanRivalsUrl}/minion/evolve`, request, boby, token)
     }
 
-    static async AdminSendMinion<T>(request: APIRequestContext, boby:SendMinionReq, token: string): Promise<APIResp<T>>{
-        return MaketPlace.POST(`https://thetan-rivals-service-preview-pr-232.staging.thetanarena.com/api/v1/season-pass/admin/simulate`, request, boby, token)
+    static async AdminSendMinion<T>(request: APIRequestContext, boby: SendMinionReq, token: string): Promise<Response<APIResp<T>>> {
+        return MyHttp.POST<APIResp<T>>(`https://thetan-rivals-service-preview-pr-232.staging.thetanarena.com/api/v1/season-pass/admin/simulate`, request, boby, token)
     }
 }
