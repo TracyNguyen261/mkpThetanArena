@@ -60,11 +60,11 @@ test('--------  GET INVENTORY API ------', async ({ request }) => {
 });
 
 test('--------EVOLVE SKIN - GET INVENTORY-----', async ({ request }) => {
-    let response = await MaketPlace.GET<InventoryItem[]>(`https://data.staging.thetanarena.com/theta/v1/inventory`, request, {}, tokenUser)
+    let response = await MyHttp.GET<InventoryItem[]>(`https://data.staging.thetanarena.com/theta/v1/inventory`, request, {}, tokenUser)
 
-    console.log("response Body full-----", response.data)
+    console.log("response Body full-----", response.bodyJson)
 
-    console.log("---User ID -------", response.data?.id)
+    console.log("---User ID -------", response.body)
     console.log("----inventories-------", response.data?.inventories)
     console.log("check enhancer ammount---", response.data?.inventories["1_25"])
     // console.log("ID ------", response.data?.invetories)
@@ -171,7 +171,7 @@ test.only('---thử thôi nha, ko biết được ko---', async ({ request }) =>
         expect(responseSendMinion.error, responseSendMinion.error).not.toBeNull()
 
         let inventories = responseInventory.bodyJson?.data
-        if (inventories == null) {
+        if (inventories == null) {  
             expect(inventories, "inventories bi null").not.toBeNull()
             return
         }

@@ -1,6 +1,5 @@
 import { APIRequestContext, Page, request } from "@playwright/test"
 import MyHttp, { Response } from "../helper/HttpUtil"
-import MaketPlace from "./MarketPlaceHelper"
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
@@ -130,12 +129,13 @@ export default class Rival {
     //         }
     //         return await response.json()
     //     }
-    static async AdminSendInventory<T>(request: APIRequestContext, body: AdminSendInventoryReq, token: string): Promise<Response<APIResp<T>> {
+    static async AdminSendInventory<T>(request: APIRequestContext, body: AdminSendInventoryReq, token: string): Promise<Response<APIResp<T>>> {
         return MyHttp.POST<APIResp<T>>(`${thetanRivalsUrl}/inventory/admin/send`, request, body, token)
 
     }
-    static async PostEvolve<T>(request: APIRequestContext, boby: EvolveSkin, token: string): Promise<APIResp<T>> {
-        return MaketPlace.POST(`${thetanRivalsUrl}/minion/evolve`, request, boby, token)
+   
+    static async Evolve<T>(request: APIRequestContext, body:EvolveSkin, token: string):Promise<Response<APIResp<T>>>{
+        return MyHttp.POST(`${thetanRivalsUrl}/minion/evolve`, request, body, token)
     }
 
     static async AdminSendMinion<T>(request: APIRequestContext, boby: SendMinionReq, token: string): Promise<Response<APIResp<T>>> {
