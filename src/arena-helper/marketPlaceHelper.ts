@@ -1,5 +1,4 @@
 import { APIRequestContext, Page } from "@playwright/test"
-import { Minion } from "./RivalHelper"
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))

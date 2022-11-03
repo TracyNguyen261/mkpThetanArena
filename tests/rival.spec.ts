@@ -1,7 +1,7 @@
 import { test, expect, chromium, BrowserContext, request } from '@playwright/test';
 
 import MaketPlace, { DataResponse, Response } from '../src/arena-helper/MarketPlaceHelper';
-import Rival, { APIResp, InventoryResponse, EvolveSkin, AdminSendInventoryReq, Minion, SendMinionReq, InventoryItem, Inventory, ResponseAdminSendMinion, UserMinion } from '../src/arena-helper/RivalHelper';
+import Rival, { APIResp, InventoryResponse, EvolveSkin, AdminSendInventoryReq, SendMinionReq, InventoryItem, Inventory, UserMinion ,MinionResponse} from '../src/arena-helper/RivalHelper';
 import MyHttp from '../src/helper/HttpUtil';
 
 function delay(ms: number) {
@@ -73,12 +73,13 @@ test('--------EVOLVE SKIN - GET INVENTORY-----', async ({ request }) => {
     return
 
 });
-test('--- GET MY MINION---', async ({ request }) => {
-    let response = await MaketPlace.GET<Response>(`https://data.staging.thetanarena.com/theta/v1/minion`, request, {}, tokenUser)
-    console.log('MY MINIONS LIST', response.data)
-    console.log('LEVEL----', response.data?.minions[0].level)
-    // response.data?.minions[0]
-    console.log('Minion 0 ', response.data?.minions[0])
+test.only('--- GET MY MINION---', async ({ request }) => {
+    let response = await MyHttp.GET<MinionResponse>(`https://data-rivals.staging.thetanarena.com/api/v1/minion`, request, {}, tokenUser)
+    console.log('MY MINIONS LIST', response.bodyJson?.data)
+    // console.log('LEVEL----', response.bodyJson?.minions[0].level)
+    // console.log("lelvel---", response.bodyJson?.level)
+    // // response.data?.minions[0]
+    // console.log('Minion 0 ', response.data?.minions[0])
     // response.data?.minions[0].addInds.backBling
     // console.log('AddInds---', response.data?.minions[0]?.addInds[0].backBling)
 
@@ -130,7 +131,7 @@ function evolveMinionToLevel(userId: string, minion: Minion, level: Number) {
 // send minion level1- u1
 // get inventory lấy ra để check enhancer + minionId có level 1
 // evolve minion to level2
-test.only('---thử thôi nha, ko biết được ko---', async ({ request }) => {
+test('---thử thôi nha, ko biết được ko---', async ({ request }) => {
     let level2Name = "backBling"
     let level2 = [16000001, 16000002, 16000003, 16000004, 16000005, 16000006, 16000014, 16000015, 16000021, 16000022, 16000023, 16000007, 16000008, 16000009, 16000010, 16000016, 16000017, 16000024, 16000025, 16000026, 16000027, 16000028, 16000012, 16000013, 16000018, 16000019, 16000020, 16000029, 16000030, 16000001, 16000002, 16000003, 16000004, 16000005, 16000006, 16000014]
     let level3 = [15000001, 15000002, 15000003, 15000004, 15000005, 15000006, 15000007, 15000008, 15000020, 15000021, 15000022, 15000023, 15000024, 15000025, 15000028, 15000031, 15000032, 15000009, 15000010, 15000011, 15000012, 15000013, 15000026, 15000027, 15000029, 15000033, 15000034, 15000035, 15000014, 15000015, 15000016, 15000017, 15000018, 15000019, 15000030, 15000036]
@@ -229,15 +230,39 @@ test.only('---thử thôi nha, ko biết được ko---', async ({ request }) =>
         }
         console.log(responseEvolveSkin.bodyJson?.data?.level)
 
+        // get minion
+
         //      5. kiểm tra đã đặt đúng level2[i] vào trong minion
 
         // Dinh nghia  a = string[] { "backBling", "dance", "..." }
         // For toan bo string 
         // ok = false, Kiem tra AddIns[a[i]] == level2[i], ok = true
         // Expect ok == true 
+        
+        let responseMyMinion = await MyHttp.GET<UserMinion>(`https://data-rivals.staging.thetanarena.com/api/v1/minion`, request, {}, tokenUser)
+        if (responseMyMinion.bodyJson?.addIns == null) {
+            expect(responseMyMinion.bodyJson?.addIns).not.toBeNull()
+            return
+        }
+        
+        let mapAddIns = await responseMyMinion.bodyJson?.addIns
+        console.log("responseMyMinion----", responseMyMinion.bodyJson?.addIns)
 
+        let addInsArray = ["backBling", "dance", "flyCraft", "footprint", "glow", "spray", "voice"]
+        let checkLevel = false
+        mapAddIns?.forEach((value, key) => {
+            if (value == level2[i]) {
+                checkLevel = true
+                console.log('da dat level vao minion', mapAddIns?.set(key, value))
+                expect(checkLevel==true).toBeTruthy()
+
+            }
+        }
+
+        )
+
+     
         // get inventory 
-
         //  6. kiểm tra số lượng cosmetic level[i] = B - 1
 
         responseGetInventory = await MyHttp.GET<Inventory>(`https://data-rivals.staging.thetanarena.com/api/v1/inventory`, request, {}, tokenUser)

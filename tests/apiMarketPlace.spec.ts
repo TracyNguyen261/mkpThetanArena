@@ -479,10 +479,11 @@ test('----DRAFF----SEND BOX -> OPEN BOX -> CHECK TI LE ------', async ({ request
 var thetanUrl = "https://data.staging.thetanarena.com/theta/v1/thetanbox"
 // var thetanUrl = "https://data.uat.thetanarena.com/theta/v1/thetanbox"
 
+// ham kiem tra Free Box 
 function IsGiftBox(boxType: Number): boolean {
     return boxType == 17 || boxType == 12
 }
-
+// hàm navigate đến giftbox inventory
 function BoxDataURL(boxType: Number): string {
     return `${thetanUrl}` + (IsGiftBox(boxType) ? "/giftbox" : "")
 }
@@ -493,7 +494,7 @@ test('--------SEND BOX -> OPEN BOX -> CHECK TI LE ------', async ({ request }) =
     // let boxType = 17  // HALLOWEEN BOX
     // let boxName = 'HALLOWEEN BOX'
     let boxAmount = 2000
-    let openAmount = 2
+    let openAmount = 20
     let boxInfo: BoxInfo = {
         boxType: boxType,
         amount: boxAmount,

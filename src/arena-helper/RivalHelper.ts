@@ -14,6 +14,9 @@ export class APIResp<T>  {
     body: string
 }
 
+export class Minion {
+    minions: UserMinion[]
+}
 export class UserMinion {
     id: string
     userId: string
