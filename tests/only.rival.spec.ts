@@ -1,7 +1,7 @@
 import { test, expect, chromium, BrowserContext, request } from '@playwright/test';
 
 import MaketPlace, { DataResponse, Response } from '../src/arena-helper/MarketPlaceHelper';
-import Rival, { APIResp, InventoryResponse, EvolveSkin, AdminSendInventoryReq, Minion, SendMinionReq, InventoryItem, Inventory } from '../src/arena-helper/RivalHelper';
+import Rival, { APIResp, InventoryResponse, EvolveSkin, AdminSendInventoryReq, Minion, SendMinionReq, InventoryItem, Inventory, ResponseAdminSendMinion, UserMinion } from '../src/arena-helper/RivalHelper';
 import MyHttp from '../src/helper/HttpUtil';
 
 function delay(ms: number) {
@@ -151,8 +151,11 @@ test.only('---thử thôi nha, ko biết được ko---', async ({ request }) =>
             addRivalBucks: 0,
             addMinion: 0
         }
-        let responseSendMinion = await Rival.AdminSendMinion<any>(request, body, tokenAdmin)
+        let responseSendMinion = await Rival.AdminSendMinion<UserMinion>(request, body, tokenAdmin)
         expect(responseSendMinion.error, responseSendMinion.error).not.toBeNull()
+        let minionId = await responseSendMinion.bodyJson?.data?.id
+        console.log("MinionId----", minionId)
+
 
         //console.log("--Response sau khi send minion----", responseSendMinion.success, responseSendMinion.code)
 
@@ -171,7 +174,7 @@ test.only('---thử thôi nha, ko biết được ko---', async ({ request }) =>
         expect(responseSendMinion.error, responseSendMinion.error).not.toBeNull()
 
         let inventories = responseInventory.bodyJson?.data
-        if (inventories == null) {  
+        if (inventories == null) {
             expect(inventories, "inventories bi null").not.toBeNull()
             return
         }
@@ -201,7 +204,7 @@ test.only('---thử thôi nha, ko biết được ko---', async ({ request }) =>
         console.log("Response Inventory", responseGetInventory.bodyJson?.inventories)
         let mapInventory = responseGetInventory.bodyJson?.inventories
         let preEnhancer = 0
-        let cosmeticLevel2
+        let preCosmeticLevel2 = 0
         mapInventory.forEach((value, key) => {
             if (value.type == 25 && value.kind == 1) {
                 preEnhancer = value.amount
@@ -209,17 +212,62 @@ test.only('---thử thôi nha, ko biết được ko---', async ({ request }) =>
 
             }
             if (value.type == level2[i] && value.kind == 4) {
-                cosmeticLevel2 = value.amount
-                console.log("----So luong cosmetic level 2: ", cosmeticLevel2)
+                preCosmeticLevel2 = value.amount
+                console.log("----So luong cosmetic level 2: ", preCosmeticLevel2)
             }
         });
 
         // 4. evolve minion
-
+        let bodyEvolve: EvolveSkin = {
+            minionId: `${minionId}`,
+            cosmeticId: level2[i]
+        }
+        let responseEvolveSkin = await Rival.Evolve<UserMinion>(request, bodyEvolve, tokenUser)
+        if (responseEvolveSkin.bodyJson?.data == null) {
+            expect(responseEvolveSkin.bodyJson?.data).not.toBeNull()
+            return
+        }
+        console.log(responseEvolveSkin.bodyJson?.data?.level)
 
         //      5. kiểm tra đã đặt đúng level2[i] vào trong minion
-        //      6. kiểm tra số lượng cosmetic level[i] = A - 1
-        //      7. kiểm tra số lượng enhancer < B
+
+        // Dinh nghia  a = string[] { "backBling", "dance", "..." }
+        // For toan bo string 
+        // ok = false, Kiem tra AddIns[a[i]] == level2[i], ok = true
+        // Expect ok == true 
+
+        // get inventory 
+
+        //  6. kiểm tra số lượng cosmetic level[i] = B - 1
+
+        responseGetInventory = await MyHttp.GET<Inventory>(`https://data-rivals.staging.thetanarena.com/api/v1/inventory`, request, {}, tokenUser)
+        if (responseGetInventory.bodyJson?.inventories == null) {
+            expect(responseGetInventory.bodyJson?.inventories).not.toBeNull()
+            return
+        }
+
+        console.log("Response Inventory", responseGetInventory.bodyJson?.inventories)
+        mapInventory = responseGetInventory.bodyJson?.inventories
+        let postEnhancer = 0
+        let postCosmeticLevel2 = 0
+        mapInventory.forEach((value, key) => {
+            if (value.type == 25 && value.kind == 1) {
+                postEnhancer = value.amount
+                console.log("---Amount Enhancer sau khi evolve---", postEnhancer)
+
+            }
+            if (value.type == level2[i] && value.kind == 4) {
+                postCosmeticLevel2 = value.amount
+                console.log("----So luong cosmetic level 2 sau khi evolve: ", postCosmeticLevel2)
+            }
+        });
+        //      6. kiểm tra số lượng cosmetic level[i] = B - 1
+        expect(preCosmeticLevel2 == postCosmeticLevel2 + 1).toBeTruthy()
+
+        // 7. kiểm tra số lượng enhancer < A
+        expect(postEnhancer > preEnhancer).toBeTruthy()
+
+
     }
 
 

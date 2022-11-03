@@ -14,6 +14,17 @@ export class APIResp<T>  {
     body: string
 }
 
+export class UserMinion {
+    id: string
+    userId: string
+    type: number
+    skin: number
+    nft: boolean
+    status: number
+    level: number
+    addIns: Map<string, number>
+}
+
 export class AdminSendInventoryReq {
     userId: string
     inventories: InventoryItem[]
@@ -34,28 +45,28 @@ export class Inventory {
     inventories: Map<string, InventoryItem>
 }
 
-export class Minion {
+// export class Minion {
 
-    id: string
-    userId: string
-    type: number
-    skin: number
-    nft: boolean
-    status: number
-    level: number
-    addInds: AddIns
+//     id: string
+//     userId: string
+//     type: number
+//     skin: number
+//     nft: boolean
+//     status: number
+//     level: number
+//     addInds: AddIns
 
-}
-export class AddIns {
-    backBling: number
-    dance: number
-    flyCraft: number
-    footprint: number
-    glow: number
-    spray: number
-    voice: number
+// }
+// export class AddIns {
+//     backBling: number
+//     dance: number
+//     flyCraft: number
+//     footprint: number
+//     glow: number
+//     spray: number
+//     voice: number
 
-}
+// }
 // export enum addIns{
 //     backBling = 1,
 //     dance =  2,
@@ -133,8 +144,8 @@ export default class Rival {
         return MyHttp.POST<APIResp<T>>(`${thetanRivalsUrl}/inventory/admin/send`, request, body, token)
 
     }
-   
-    static async Evolve<T>(request: APIRequestContext, body:EvolveSkin, token: string):Promise<Response<APIResp<T>>>{
+
+    static async Evolve<T>(request: APIRequestContext, body: EvolveSkin, token: string): Promise<Response<APIResp<T>>> {
         return MyHttp.POST(`${thetanRivalsUrl}/minion/evolve`, request, body, token)
     }
 
