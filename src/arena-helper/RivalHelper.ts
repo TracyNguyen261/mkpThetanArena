@@ -4,19 +4,25 @@ import MyHttp, { Response } from "../helper/HttpUtil"
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
-var thetanRivalsUrl = 'https://data-rivals.staging.thetanarena.com/api/v1'
+var thetanRivalsUrl = 'https://thetan-rivals-service-preview-pr-232.staging.thetanarena.com/api/v1'
 
 export class APIResp<T>  {
     success: boolean = false
-    httpCode: number = 0
     code: number = 0
     data?: T
-    body: string
 }
 
-export class Minion {
-    minions: UserMinion[]
+export class RivalResp<T> extends Response<APIResp<T>> {
 }
+
+export class MinionPagingResp extends Response<APIResp<UserMinionsPaging>>{
+}
+
+export class UserMinionsPaging {
+    minions: UserMinion[]
+    total: number
+}
+
 export class UserMinion {
     id: string
     userId: string
@@ -143,16 +149,16 @@ export default class Rival {
     //         }
     //         return await response.json()
     //     }
-    static async AdminSendInventory<T>(request: APIRequestContext, body: AdminSendInventoryReq, token: string): Promise<Response<APIResp<T>>> {
-        return MyHttp.POST<APIResp<T>>(`${thetanRivalsUrl}/inventory/admin/send`, request, body, token)
+    static async AdminSendInventory(request: APIRequestContext, body: AdminSendInventoryReq, token: string): Promise<RivalResp<InventoryItem[]>> {
+        return MyHttp.POST<APIResp<InventoryItem[]>>(`${thetanRivalsUrl}/inventory/admin/send`, request, body, token)
 
     }
 
-    static async Evolve<T>(request: APIRequestContext, body: EvolveSkin, token: string): Promise<Response<APIResp<T>>> {
-        return MyHttp.POST(`${thetanRivalsUrl}/minion/evolve`, request, body, token)
+    static async Evolve(request: APIRequestContext, body: EvolveSkin, token: string): Promise<Response<APIResp<UserMinion>>> {
+        return MyHttp.POST<APIResp<UserMinion>>(`${thetanRivalsUrl}/minion/evolve`, request, body, token)
     }
 
-    static async AdminSendMinion<T>(request: APIRequestContext, boby: SendMinionReq, token: string): Promise<Response<APIResp<T>>> {
-        return MyHttp.POST<APIResp<T>>(`https://thetan-rivals-service-preview-pr-232.staging.thetanarena.com/api/v1/season-pass/admin/simulate`, request, boby, token)
+    static async AdminSendMinion(request: APIRequestContext, boby: SendMinionReq, token: string): Promise<Response<APIResp<UserMinion>>> {
+        return MyHttp.POST<APIResp<UserMinion>>(`https://thetan-rivals-service-preview-pr-232.staging.thetanarena.com/api/v1/season-pass/admin/simulate`, request, boby, token)
     }
 }

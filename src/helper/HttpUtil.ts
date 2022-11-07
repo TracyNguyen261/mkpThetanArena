@@ -7,6 +7,9 @@ export class Response<T>  {
     bodyJson?: T
 }
 
+// Http: 
+//  - trả về response chung bao gồm: http code, body text, error?
+//  - parse giùm model body text thành bodyJson, và coder cần phải cung cấp model đó để parse
 export default class MyHttp {
     static async POST<T>(url: string, request: APIRequestContext, body: any, token: string): Promise<Response<T>> {
 

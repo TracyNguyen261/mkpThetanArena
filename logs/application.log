@@ -1,0 +1,1320 @@
+[2022-11-07T14:02:09.976] [INFO] default - ---------- 1. MINION_ID: -------- 6368ad713c37a7b98e8f11e6
+[2022-11-07T14:02:09.978] [INFO] default - ----- TEST LEVEL 2: -------- 16000001
+[2022-11-07T14:02:10.181] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000001
+[2022-11-07T14:02:10.181] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:02:10.370] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 300000003000000000
+[2022-11-07T14:02:10.370] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:10.900] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 300000000000000000
+[2022-11-07T14:02:10.901] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:02:10.901] [INFO] default - ---------ADD LEVEL 3: -------- 15000001
+[2022-11-07T14:02:11.120] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000001
+[2022-11-07T14:02:11.120] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:02:11.294] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 300000000000000000
+[2022-11-07T14:02:11.294] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:02:11.806] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999995000000000
+[2022-11-07T14:02:11.806] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:02:11.807] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000001
+[2022-11-07T14:02:11.995] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000001
+[2022-11-07T14:02:11.996] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:02:12.156] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999995000000000
+[2022-11-07T14:02:12.156] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:02:12.708] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999988000000000
+[2022-11-07T14:02:12.708] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:02:12.711] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000001
+[2022-11-07T14:02:12.891] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000001
+[2022-11-07T14:02:12.891] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:02:13.054] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999988000000000
+[2022-11-07T14:02:13.054] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:02:13.619] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999979000000000
+[2022-11-07T14:02:13.619] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:02:13.622] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000001
+[2022-11-07T14:02:13.816] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000001
+[2022-11-07T14:02:13.816] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:02:13.976] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999979000000000
+[2022-11-07T14:02:13.976] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:14.523] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999968000000000
+[2022-11-07T14:02:14.523] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:02:14.691] [INFO] default - ---------- 1. MINION_ID: -------- 6368ad763c37a7b98e8f11f6
+[2022-11-07T14:02:14.691] [INFO] default - ----- TEST LEVEL 2: -------- 16000002
+[2022-11-07T14:02:14.890] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000002
+[2022-11-07T14:02:14.890] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:02:15.069] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999968000000000
+[2022-11-07T14:02:15.069] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 200000000
+[2022-11-07T14:02:15.589] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999965000000000
+[2022-11-07T14:02:15.589] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 100000000
+[2022-11-07T14:02:15.590] [INFO] default - ---------ADD LEVEL 3: -------- 15000002
+[2022-11-07T14:02:15.764] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000002
+[2022-11-07T14:02:15.764] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:02:15.920] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999965000000000
+[2022-11-07T14:02:15.920] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:02:16.466] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999960000000000
+[2022-11-07T14:02:16.466] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:02:16.469] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000002
+[2022-11-07T14:02:16.672] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000002
+[2022-11-07T14:02:16.673] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:02:16.849] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999960000000000
+[2022-11-07T14:02:16.850] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:02:17.379] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999953000000000
+[2022-11-07T14:02:17.379] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:02:17.382] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000002
+[2022-11-07T14:02:17.564] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000002
+[2022-11-07T14:02:17.564] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:02:17.730] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999953000000000
+[2022-11-07T14:02:17.730] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:02:18.287] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999944000000000
+[2022-11-07T14:02:18.287] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:02:18.288] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000002
+[2022-11-07T14:02:18.488] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000002
+[2022-11-07T14:02:18.489] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:02:18.657] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999944000000000
+[2022-11-07T14:02:18.657] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:19.202] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999933000000000
+[2022-11-07T14:02:19.202] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:02:19.375] [INFO] default - ---------- 1. MINION_ID: -------- 6368ad7b3c37a7b98e8f1206
+[2022-11-07T14:02:19.375] [INFO] default - ----- TEST LEVEL 2: -------- 16000003
+[2022-11-07T14:02:19.548] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000003
+[2022-11-07T14:02:19.548] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:02:19.717] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999933000000000
+[2022-11-07T14:02:19.717] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:20.311] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999930000000000
+[2022-11-07T14:02:20.311] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:02:20.313] [INFO] default - ---------ADD LEVEL 3: -------- 15000003
+[2022-11-07T14:02:20.501] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000003
+[2022-11-07T14:02:20.501] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:02:20.677] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999930000000000
+[2022-11-07T14:02:20.678] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:02:21.228] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999925000000000
+[2022-11-07T14:02:21.228] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:02:21.230] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000003
+[2022-11-07T14:02:21.415] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000003
+[2022-11-07T14:02:21.415] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:02:21.575] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999925000000000
+[2022-11-07T14:02:21.575] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:02:22.081] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999918000000000
+[2022-11-07T14:02:22.081] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:02:22.083] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000003
+[2022-11-07T14:02:22.269] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000003
+[2022-11-07T14:02:22.269] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:02:22.464] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999918000000000
+[2022-11-07T14:02:22.464] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:02:22.973] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999909000000000
+[2022-11-07T14:02:22.973] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:02:22.974] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000004
+[2022-11-07T14:02:23.152] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000004
+[2022-11-07T14:02:23.153] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:02:23.324] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999909000000000
+[2022-11-07T14:02:23.324] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 200000000
+[2022-11-07T14:02:23.861] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999898000000000
+[2022-11-07T14:02:23.861] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 100000000
+[2022-11-07T14:02:24.032] [INFO] default - ---------- 1. MINION_ID: -------- 6368ad803c37a7b98e8f1216
+[2022-11-07T14:02:24.032] [INFO] default - ----- TEST LEVEL 2: -------- 16000004
+[2022-11-07T14:02:24.230] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000004
+[2022-11-07T14:02:24.230] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:02:24.410] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999898000000000
+[2022-11-07T14:02:24.410] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:24.928] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999895000000000
+[2022-11-07T14:02:24.928] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:02:24.929] [INFO] default - ---------ADD LEVEL 3: -------- 15000004
+[2022-11-07T14:02:25.103] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000004
+[2022-11-07T14:02:25.103] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:02:25.255] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999895000000000
+[2022-11-07T14:02:25.255] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:02:25.774] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999890000000000
+[2022-11-07T14:02:25.774] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:02:25.777] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000005
+[2022-11-07T14:02:25.968] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000005
+[2022-11-07T14:02:25.968] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:02:26.141] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999890000000000
+[2022-11-07T14:02:26.142] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:02:26.659] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999883000000000
+[2022-11-07T14:02:26.659] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:02:26.661] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000004
+[2022-11-07T14:02:26.860] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000004
+[2022-11-07T14:02:26.861] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:02:27.026] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999883000000000
+[2022-11-07T14:02:27.026] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:02:27.569] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999874000000000
+[2022-11-07T14:02:27.569] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:02:27.571] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000005
+[2022-11-07T14:02:27.790] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000005
+[2022-11-07T14:02:27.791] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:02:27.976] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999874000000000
+[2022-11-07T14:02:27.976] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:28.575] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999863000000000
+[2022-11-07T14:02:28.575] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:02:28.764] [INFO] default - ---------- 1. MINION_ID: -------- 6368ad843c37a7b98e8f1226
+[2022-11-07T14:02:28.764] [INFO] default - ----- TEST LEVEL 2: -------- 16000005
+[2022-11-07T14:02:28.951] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000005
+[2022-11-07T14:02:28.951] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:02:29.112] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999863000000000
+[2022-11-07T14:02:29.113] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:29.749] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999860000000000
+[2022-11-07T14:02:29.749] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:02:29.751] [INFO] default - ---------ADD LEVEL 3: -------- 15000005
+[2022-11-07T14:02:29.935] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000005
+[2022-11-07T14:02:29.935] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:02:30.112] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999860000000000
+[2022-11-07T14:02:30.112] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:02:30.658] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999855000000000
+[2022-11-07T14:02:30.658] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:02:30.660] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000006
+[2022-11-07T14:02:30.842] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000006
+[2022-11-07T14:02:30.842] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:02:31.019] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999855000000000
+[2022-11-07T14:02:31.019] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:02:31.620] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999848000000000
+[2022-11-07T14:02:31.620] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:02:31.623] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000008
+[2022-11-07T14:02:31.815] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000008
+[2022-11-07T14:02:31.816] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:02:31.973] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999848000000000
+[2022-11-07T14:02:31.974] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:02:32.560] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999839000000000
+[2022-11-07T14:02:32.561] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:02:32.562] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000008
+[2022-11-07T14:02:32.738] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000008
+[2022-11-07T14:02:32.738] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:02:32.906] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999839000000000
+[2022-11-07T14:02:32.906] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:33.410] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999828000000000
+[2022-11-07T14:02:33.410] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:02:33.576] [INFO] default - ---------- 1. MINION_ID: -------- 6368ad893c37a7b98e8f1236
+[2022-11-07T14:02:33.576] [INFO] default - ----- TEST LEVEL 2: -------- 16000006
+[2022-11-07T14:02:33.764] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000006
+[2022-11-07T14:02:33.765] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:02:33.929] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999828000000000
+[2022-11-07T14:02:33.929] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:34.496] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999825000000000
+[2022-11-07T14:02:34.496] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:02:34.497] [INFO] default - ---------ADD LEVEL 3: -------- 15000006
+[2022-11-07T14:02:34.676] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000006
+[2022-11-07T14:02:34.676] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:02:34.852] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999825000000000
+[2022-11-07T14:02:34.852] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:02:35.450] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999820000000000
+[2022-11-07T14:02:35.450] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:02:35.451] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000008
+[2022-11-07T14:02:35.630] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000008
+[2022-11-07T14:02:35.630] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:02:35.799] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999820000000000
+[2022-11-07T14:02:35.799] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:02:36.384] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999813000000000
+[2022-11-07T14:02:36.385] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:02:36.387] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000009
+[2022-11-07T14:02:36.552] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000009
+[2022-11-07T14:02:36.552] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:02:36.712] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999813000000000
+[2022-11-07T14:02:36.713] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:02:37.251] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999804000000000
+[2022-11-07T14:02:37.252] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:02:37.253] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000009
+[2022-11-07T14:02:37.429] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000009
+[2022-11-07T14:02:37.429] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:02:37.601] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999804000000000
+[2022-11-07T14:02:37.601] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:38.164] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999793000000000
+[2022-11-07T14:02:38.164] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:02:38.333] [INFO] default - ---------- 1. MINION_ID: -------- 6368ad8e3c37a7b98e8f1246
+[2022-11-07T14:02:38.333] [INFO] default - ----- TEST LEVEL 2: -------- 16000014
+[2022-11-07T14:02:38.528] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000014
+[2022-11-07T14:02:38.528] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:02:38.692] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999793000000000
+[2022-11-07T14:02:38.692] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:39.269] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999790000000000
+[2022-11-07T14:02:39.269] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:02:39.271] [INFO] default - ---------ADD LEVEL 3: -------- 15000007
+[2022-11-07T14:02:39.459] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000007
+[2022-11-07T14:02:39.459] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:02:39.631] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999790000000000
+[2022-11-07T14:02:39.631] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:02:40.165] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999785000000000
+[2022-11-07T14:02:40.165] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:02:40.168] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000009
+[2022-11-07T14:02:40.347] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000009
+[2022-11-07T14:02:40.347] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:02:40.508] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999785000000000
+[2022-11-07T14:02:40.508] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:02:41.054] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999778000000000
+[2022-11-07T14:02:41.054] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:02:41.057] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000015
+[2022-11-07T14:02:41.246] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000015
+[2022-11-07T14:02:41.246] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:02:41.433] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999778000000000
+[2022-11-07T14:02:41.433] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:02:42.026] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999769000000000
+[2022-11-07T14:02:42.026] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:02:42.028] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000015
+[2022-11-07T14:02:42.215] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000015
+[2022-11-07T14:02:42.215] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:02:42.375] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999769000000000
+[2022-11-07T14:02:42.375] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:42.932] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999758000000000
+[2022-11-07T14:02:42.932] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:02:43.103] [INFO] default - ---------- 1. MINION_ID: -------- 6368ad933c37a7b98e8f1256
+[2022-11-07T14:02:43.103] [INFO] default - ----- TEST LEVEL 2: -------- 16000015
+[2022-11-07T14:02:43.288] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000015
+[2022-11-07T14:02:43.288] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:02:43.474] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999758000000000
+[2022-11-07T14:02:43.475] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:44.015] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999755000000000
+[2022-11-07T14:02:44.016] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:02:44.017] [INFO] default - ---------ADD LEVEL 3: -------- 15000008
+[2022-11-07T14:02:44.196] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000008
+[2022-11-07T14:02:44.197] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:02:44.386] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999755000000000
+[2022-11-07T14:02:44.386] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:02:44.911] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999750000000000
+[2022-11-07T14:02:44.911] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:02:44.913] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000010
+[2022-11-07T14:02:45.086] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000010
+[2022-11-07T14:02:45.086] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:02:45.256] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999750000000000
+[2022-11-07T14:02:45.257] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:02:45.838] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999743000000000
+[2022-11-07T14:02:45.838] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:02:45.840] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000016
+[2022-11-07T14:02:46.018] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000016
+[2022-11-07T14:02:46.018] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:02:46.207] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999743000000000
+[2022-11-07T14:02:46.207] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:02:46.730] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999734000000000
+[2022-11-07T14:02:46.730] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:02:46.731] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000018
+[2022-11-07T14:02:46.914] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000018
+[2022-11-07T14:02:46.914] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:02:47.090] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999734000000000
+[2022-11-07T14:02:47.091] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:47.649] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999723000000000
+[2022-11-07T14:02:47.649] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:02:47.825] [INFO] default - ---------- 1. MINION_ID: -------- 6368ad973c37a7b98e8f1266
+[2022-11-07T14:02:47.825] [INFO] default - ----- TEST LEVEL 2: -------- 16000021
+[2022-11-07T14:02:48.010] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000021
+[2022-11-07T14:02:48.010] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:02:48.171] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999723000000000
+[2022-11-07T14:02:48.171] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:48.776] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999720000000000
+[2022-11-07T14:02:48.776] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:02:48.778] [INFO] default - ---------ADD LEVEL 3: -------- 15000020
+[2022-11-07T14:02:48.950] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000020
+[2022-11-07T14:02:48.951] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:02:49.144] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999720000000000
+[2022-11-07T14:02:49.145] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:02:49.741] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999715000000000
+[2022-11-07T14:02:49.741] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:02:49.743] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000011
+[2022-11-07T14:02:49.917] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000011
+[2022-11-07T14:02:49.917] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:02:50.092] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999715000000000
+[2022-11-07T14:02:50.093] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:02:50.641] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999708000000000
+[2022-11-07T14:02:50.641] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:02:50.643] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000017
+[2022-11-07T14:02:50.827] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000017
+[2022-11-07T14:02:50.827] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:02:50.995] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999708000000000
+[2022-11-07T14:02:50.995] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:02:51.560] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999699000000000
+[2022-11-07T14:02:51.560] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:02:51.562] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000019
+[2022-11-07T14:02:51.750] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000019
+[2022-11-07T14:02:51.750] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:02:51.920] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999699000000000
+[2022-11-07T14:02:51.920] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:52.452] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999688000000000
+[2022-11-07T14:02:52.452] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:02:52.625] [INFO] default - ---------- 1. MINION_ID: -------- 6368ad9c3c37a7b98e8f1276
+[2022-11-07T14:02:52.625] [INFO] default - ----- TEST LEVEL 2: -------- 16000022
+[2022-11-07T14:02:52.800] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000022
+[2022-11-07T14:02:52.800] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:02:52.967] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999688000000000
+[2022-11-07T14:02:52.967] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:53.679] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999685000000000
+[2022-11-07T14:02:53.680] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:02:53.681] [INFO] default - ---------ADD LEVEL 3: -------- 15000021
+[2022-11-07T14:02:53.869] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000021
+[2022-11-07T14:02:53.870] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:02:54.038] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999685000000000
+[2022-11-07T14:02:54.039] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:02:54.548] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999680000000000
+[2022-11-07T14:02:54.548] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:02:54.551] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000004
+[2022-11-07T14:02:54.729] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000004
+[2022-11-07T14:02:54.729] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:02:54.889] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999680000000000
+[2022-11-07T14:02:54.890] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:02:55.482] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999668000000000
+[2022-11-07T14:02:55.482] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:02:55.483] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000005
+[2022-11-07T14:02:55.651] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000005
+[2022-11-07T14:02:55.652] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:02:55.809] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999668000000000
+[2022-11-07T14:02:55.809] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:02:56.358] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999653000000000
+[2022-11-07T14:02:56.358] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:02:56.360] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000024
+[2022-11-07T14:02:56.549] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000024
+[2022-11-07T14:02:56.549] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:02:56.724] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999653000000000
+[2022-11-07T14:02:56.724] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:57.288] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999642000000000
+[2022-11-07T14:02:57.289] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:02:57.451] [INFO] default - ---------- 1. MINION_ID: -------- 6368ada13c37a7b98e8f1286
+[2022-11-07T14:02:57.451] [INFO] default - ----- TEST LEVEL 2: -------- 16000023
+[2022-11-07T14:02:57.648] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000023
+[2022-11-07T14:02:57.648] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:02:57.819] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999642000000000
+[2022-11-07T14:02:57.820] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:02:58.461] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999639000000000
+[2022-11-07T14:02:58.461] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:02:58.462] [INFO] default - ---------ADD LEVEL 3: -------- 15000022
+[2022-11-07T14:02:58.670] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000022
+[2022-11-07T14:02:58.670] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:02:58.840] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999639000000000
+[2022-11-07T14:02:58.841] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:02:59.404] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999634000000000
+[2022-11-07T14:02:59.404] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:02:59.406] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000007
+[2022-11-07T14:02:59.594] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000007
+[2022-11-07T14:02:59.594] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:02:59.762] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999634000000000
+[2022-11-07T14:02:59.762] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:03:00.371] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999622000000000
+[2022-11-07T14:03:00.371] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:03:00.372] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000006
+[2022-11-07T14:03:00.580] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000006
+[2022-11-07T14:03:00.580] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:03:00.764] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999622000000000
+[2022-11-07T14:03:00.764] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:03:01.309] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999607000000000
+[2022-11-07T14:03:01.310] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:03:01.311] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000025
+[2022-11-07T14:03:01.484] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000025
+[2022-11-07T14:03:01.484] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:03:01.654] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999607000000000
+[2022-11-07T14:03:01.654] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:02.191] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999596000000000
+[2022-11-07T14:03:02.192] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:03:02.365] [INFO] default - ---------- 1. MINION_ID: -------- 6368ada63c37a7b98e8f1296
+[2022-11-07T14:03:02.366] [INFO] default - ----- TEST LEVEL 2: -------- 16000007
+[2022-11-07T14:03:02.544] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000007
+[2022-11-07T14:03:02.545] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:03:02.722] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999596000000000
+[2022-11-07T14:03:02.722] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:03.235] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999590000000000
+[2022-11-07T14:03:03.235] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:03:03.237] [INFO] default - ---------ADD LEVEL 3: -------- 15000023
+[2022-11-07T14:03:03.414] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000023
+[2022-11-07T14:03:03.414] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:03:03.584] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999590000000000
+[2022-11-07T14:03:03.584] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:03:04.125] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999585000000000
+[2022-11-07T14:03:04.125] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:03:04.128] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000012
+[2022-11-07T14:03:04.309] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000012
+[2022-11-07T14:03:04.309] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:03:04.473] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999585000000000
+[2022-11-07T14:03:04.473] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:03:05.031] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999573000000000
+[2022-11-07T14:03:05.031] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:03:05.033] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000010
+[2022-11-07T14:03:05.211] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000010
+[2022-11-07T14:03:05.211] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:03:05.363] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999573000000000
+[2022-11-07T14:03:05.363] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:03:05.858] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999558000000000
+[2022-11-07T14:03:05.858] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:03:05.859] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000026
+[2022-11-07T14:03:06.057] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000026
+[2022-11-07T14:03:06.058] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:03:06.218] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999558000000000
+[2022-11-07T14:03:06.218] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:06.766] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999547000000000
+[2022-11-07T14:03:06.766] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:03:06.950] [INFO] default - ---------- 1. MINION_ID: -------- 6368adaa3c37a7b98e8f12a6
+[2022-11-07T14:03:06.950] [INFO] default - ----- TEST LEVEL 2: -------- 16000008
+[2022-11-07T14:03:07.135] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000008
+[2022-11-07T14:03:07.136] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:03:07.315] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999547000000000
+[2022-11-07T14:03:07.315] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:07.866] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999541000000000
+[2022-11-07T14:03:07.866] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:03:07.867] [INFO] default - ---------ADD LEVEL 3: -------- 15000024
+[2022-11-07T14:03:08.054] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000024
+[2022-11-07T14:03:08.055] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:03:08.216] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999541000000000
+[2022-11-07T14:03:08.216] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:03:08.869] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999536000000000
+[2022-11-07T14:03:08.869] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:03:08.871] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000013
+[2022-11-07T14:03:09.050] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000013
+[2022-11-07T14:03:09.051] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:03:09.215] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999536000000000
+[2022-11-07T14:03:09.216] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:03:09.906] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999524000000000
+[2022-11-07T14:03:09.906] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:03:09.908] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000011
+[2022-11-07T14:03:10.093] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000011
+[2022-11-07T14:03:10.093] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:03:10.246] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999524000000000
+[2022-11-07T14:03:10.246] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:03:10.826] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999509000000000
+[2022-11-07T14:03:10.826] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:03:10.828] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000003
+[2022-11-07T14:03:11.027] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000003
+[2022-11-07T14:03:11.027] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:03:11.198] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999509000000000
+[2022-11-07T14:03:11.199] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:11.819] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999491000000000
+[2022-11-07T14:03:11.820] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:03:12.019] [INFO] default - ---------- 1. MINION_ID: -------- 6368adaf3c37a7b98e8f12b6
+[2022-11-07T14:03:12.019] [INFO] default - ----- TEST LEVEL 2: -------- 16000009
+[2022-11-07T14:03:12.186] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000009
+[2022-11-07T14:03:12.186] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:03:12.380] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999491000000000
+[2022-11-07T14:03:12.380] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:12.939] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999485000000000
+[2022-11-07T14:03:12.940] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:03:12.943] [INFO] default - ---------ADD LEVEL 3: -------- 15000025
+[2022-11-07T14:03:13.124] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000025
+[2022-11-07T14:03:13.124] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:03:13.312] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999485000000000
+[2022-11-07T14:03:13.312] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:03:13.862] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999480000000000
+[2022-11-07T14:03:13.862] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:03:13.865] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000014
+[2022-11-07T14:03:14.387] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000014
+[2022-11-07T14:03:14.387] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:03:14.558] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999480000000000
+[2022-11-07T14:03:14.558] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:03:15.082] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999458000000000
+[2022-11-07T14:03:15.082] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:03:15.084] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000018
+[2022-11-07T14:03:15.259] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000018
+[2022-11-07T14:03:15.259] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:03:15.435] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999458000000000
+[2022-11-07T14:03:15.435] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:03:15.961] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999443000000000
+[2022-11-07T14:03:15.961] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:03:15.963] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000006
+[2022-11-07T14:03:16.137] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000006
+[2022-11-07T14:03:16.138] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:03:16.308] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999443000000000
+[2022-11-07T14:03:16.308] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:16.849] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999425000000000
+[2022-11-07T14:03:16.849] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:03:17.035] [INFO] default - ---------- 1. MINION_ID: -------- 6368adb53c37a7b98e8f12c6
+[2022-11-07T14:03:17.035] [INFO] default - ----- TEST LEVEL 2: -------- 16000010
+[2022-11-07T14:03:17.232] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000010
+[2022-11-07T14:03:17.232] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:03:17.400] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999425000000000
+[2022-11-07T14:03:17.400] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:18.018] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999419000000000
+[2022-11-07T14:03:18.019] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:03:18.020] [INFO] default - ---------ADD LEVEL 3: -------- 15000028
+[2022-11-07T14:03:18.216] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000028
+[2022-11-07T14:03:18.216] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:03:18.376] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999419000000000
+[2022-11-07T14:03:18.377] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:03:18.913] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999414000000000
+[2022-11-07T14:03:18.914] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:03:18.916] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000015
+[2022-11-07T14:03:19.107] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000015
+[2022-11-07T14:03:19.108] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:03:19.275] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999414000000000
+[2022-11-07T14:03:19.275] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:03:19.851] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999392000000000
+[2022-11-07T14:03:19.851] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:03:19.853] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000019
+[2022-11-07T14:03:20.049] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000019
+[2022-11-07T14:03:20.049] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:03:20.221] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999392000000000
+[2022-11-07T14:03:20.221] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:03:20.795] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999377000000000
+[2022-11-07T14:03:20.795] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:03:20.798] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000010
+[2022-11-07T14:03:20.977] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000010
+[2022-11-07T14:03:20.977] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:03:21.130] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999377000000000
+[2022-11-07T14:03:21.130] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:21.761] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999359000000000
+[2022-11-07T14:03:21.762] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:03:21.932] [INFO] default - ---------- 1. MINION_ID: -------- 6368adb93c37a7b98e8f12d6
+[2022-11-07T14:03:21.932] [INFO] default - ----- TEST LEVEL 2: -------- 16000016
+[2022-11-07T14:03:22.119] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000016
+[2022-11-07T14:03:22.119] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:03:22.294] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999359000000000
+[2022-11-07T14:03:22.295] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:22.803] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999353000000000
+[2022-11-07T14:03:22.803] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:03:22.805] [INFO] default - ---------ADD LEVEL 3: -------- 15000031
+[2022-11-07T14:03:22.982] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000031
+[2022-11-07T14:03:22.982] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:03:23.165] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999353000000000
+[2022-11-07T14:03:23.165] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:03:23.737] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999348000000000
+[2022-11-07T14:03:23.737] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:03:23.740] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000001
+[2022-11-07T14:03:23.929] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000001
+[2022-11-07T14:03:23.929] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:03:24.094] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999348000000000
+[2022-11-07T14:03:24.095] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:03:24.642] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999341000000000
+[2022-11-07T14:03:24.642] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:03:24.645] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000020
+[2022-11-07T14:03:24.834] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000020
+[2022-11-07T14:03:24.835] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:03:25.020] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999341000000000
+[2022-11-07T14:03:25.020] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:03:25.597] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999326000000000
+[2022-11-07T14:03:25.597] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:03:25.599] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000011
+[2022-11-07T14:03:25.796] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000011
+[2022-11-07T14:03:25.796] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:03:26.007] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999326000000000
+[2022-11-07T14:03:26.008] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:26.529] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999308000000000
+[2022-11-07T14:03:26.529] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:03:26.706] [INFO] default - ---------- 1. MINION_ID: -------- 6368adbe3c37a7b98e8f12e6
+[2022-11-07T14:03:26.706] [INFO] default - ----- TEST LEVEL 2: -------- 16000017
+[2022-11-07T14:03:26.880] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000017
+[2022-11-07T14:03:26.881] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:03:27.060] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999308000000000
+[2022-11-07T14:03:27.060] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:27.631] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999302000000000
+[2022-11-07T14:03:27.632] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:03:27.633] [INFO] default - ---------ADD LEVEL 3: -------- 15000032
+[2022-11-07T14:03:27.815] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000032
+[2022-11-07T14:03:27.815] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:03:27.981] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999302000000000
+[2022-11-07T14:03:27.982] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:03:28.642] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999297000000000
+[2022-11-07T14:03:28.642] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:03:28.645] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000002
+[2022-11-07T14:03:28.898] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000002
+[2022-11-07T14:03:28.898] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:03:29.065] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999297000000000
+[2022-11-07T14:03:29.065] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:03:29.712] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999290000000000
+[2022-11-07T14:03:29.712] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:03:29.716] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000007
+[2022-11-07T14:03:29.910] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000007
+[2022-11-07T14:03:29.910] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:03:30.110] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999290000000000
+[2022-11-07T14:03:30.111] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:03:30.786] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999263000000000
+[2022-11-07T14:03:30.786] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:03:30.789] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000016
+[2022-11-07T14:03:30.991] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000016
+[2022-11-07T14:03:30.992] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:03:31.178] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999263000000000
+[2022-11-07T14:03:31.179] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:31.817] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999245000000000
+[2022-11-07T14:03:31.818] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:03:31.996] [INFO] default - ---------- 1. MINION_ID: -------- 6368adc33c37a7b98e8f12f6
+[2022-11-07T14:03:31.996] [INFO] default - ----- TEST LEVEL 2: -------- 16000024
+[2022-11-07T14:03:32.232] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000024
+[2022-11-07T14:03:32.232] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:03:32.389] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999245000000000
+[2022-11-07T14:03:32.390] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:32.992] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999239000000000
+[2022-11-07T14:03:32.992] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:03:32.994] [INFO] default - ---------ADD LEVEL 3: -------- 15000009
+[2022-11-07T14:03:33.187] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000009
+[2022-11-07T14:03:33.187] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:03:33.350] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999239000000000
+[2022-11-07T14:03:33.350] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:03:33.943] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999230000000000
+[2022-11-07T14:03:33.944] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:03:33.947] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000003
+[2022-11-07T14:03:34.142] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000003
+[2022-11-07T14:03:34.142] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:03:34.388] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999230000000000
+[2022-11-07T14:03:34.388] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:03:34.928] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999223000000000
+[2022-11-07T14:03:34.928] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:03:34.931] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000012
+[2022-11-07T14:03:35.105] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000012
+[2022-11-07T14:03:35.105] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:03:35.266] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999223000000000
+[2022-11-07T14:03:35.266] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:03:35.814] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999196000000000
+[2022-11-07T14:03:35.814] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:03:35.817] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000020
+[2022-11-07T14:03:36.025] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000020
+[2022-11-07T14:03:36.025] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:03:36.192] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999196000000000
+[2022-11-07T14:03:36.192] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:36.701] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999178000000000
+[2022-11-07T14:03:36.702] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:03:36.877] [INFO] default - ---------- 1. MINION_ID: -------- 6368adc83c37a7b98e8f1306
+[2022-11-07T14:03:36.877] [INFO] default - ----- TEST LEVEL 2: -------- 16000025
+[2022-11-07T14:03:37.051] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000025
+[2022-11-07T14:03:37.051] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:03:37.221] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999178000000000
+[2022-11-07T14:03:37.221] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:37.745] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999172000000000
+[2022-11-07T14:03:37.745] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:03:37.747] [INFO] default - ---------ADD LEVEL 3: -------- 15000010
+[2022-11-07T14:03:37.917] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000010
+[2022-11-07T14:03:37.917] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:03:38.099] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999172000000000
+[2022-11-07T14:03:38.099] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:03:38.735] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999163000000000
+[2022-11-07T14:03:38.735] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:03:38.737] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000005
+[2022-11-07T14:03:38.920] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000005
+[2022-11-07T14:03:38.920] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:03:39.117] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999163000000000
+[2022-11-07T14:03:39.117] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:03:39.757] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999156000000000
+[2022-11-07T14:03:39.757] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:03:39.761] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000013
+[2022-11-07T14:03:39.939] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000013
+[2022-11-07T14:03:39.939] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:03:40.139] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999156000000000
+[2022-11-07T14:03:40.139] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:03:40.715] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999129000000000
+[2022-11-07T14:03:40.715] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:03:40.717] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000021
+[2022-11-07T14:03:40.934] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000021
+[2022-11-07T14:03:40.934] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:03:41.098] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999129000000000
+[2022-11-07T14:03:41.098] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:41.605] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999111000000000
+[2022-11-07T14:03:41.605] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:03:41.774] [INFO] default - ---------- 1. MINION_ID: -------- 6368adcd3c37a7b98e8f1316
+[2022-11-07T14:03:41.774] [INFO] default - ----- TEST LEVEL 2: -------- 16000026
+[2022-11-07T14:03:41.963] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000026
+[2022-11-07T14:03:41.963] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:03:42.136] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999111000000000
+[2022-11-07T14:03:42.136] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:42.675] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999105000000000
+[2022-11-07T14:03:42.675] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:03:42.677] [INFO] default - ---------ADD LEVEL 3: -------- 15000011
+[2022-11-07T14:03:42.852] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000011
+[2022-11-07T14:03:42.852] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:03:43.011] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999105000000000
+[2022-11-07T14:03:43.011] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:03:43.561] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999096000000000
+[2022-11-07T14:03:43.561] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:03:43.563] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000006
+[2022-11-07T14:03:43.757] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000006
+[2022-11-07T14:03:43.757] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:03:43.925] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999096000000000
+[2022-11-07T14:03:43.925] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:03:44.511] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999089000000000
+[2022-11-07T14:03:44.511] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:03:44.514] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000014
+[2022-11-07T14:03:44.679] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000014
+[2022-11-07T14:03:44.679] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:03:44.844] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999089000000000
+[2022-11-07T14:03:44.844] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:03:45.366] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299999062000000000
+[2022-11-07T14:03:45.366] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:03:45.368] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000022
+[2022-11-07T14:03:45.573] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000022
+[2022-11-07T14:03:45.573] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:03:45.739] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299999062000000000
+[2022-11-07T14:03:45.739] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:46.272] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299999044000000000
+[2022-11-07T14:03:46.272] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:03:46.453] [INFO] default - ---------- 1. MINION_ID: -------- 6368add23c37a7b98e8f1326
+[2022-11-07T14:03:46.453] [INFO] default - ----- TEST LEVEL 2: -------- 16000027
+[2022-11-07T14:03:46.659] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000027
+[2022-11-07T14:03:46.659] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:03:46.836] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299999044000000000
+[2022-11-07T14:03:46.836] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:47.392] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299999038000000000
+[2022-11-07T14:03:47.393] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:03:47.395] [INFO] default - ---------ADD LEVEL 3: -------- 15000012
+[2022-11-07T14:03:47.602] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000012
+[2022-11-07T14:03:47.602] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:03:47.774] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299999038000000000
+[2022-11-07T14:03:47.774] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:03:48.544] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299999029000000000
+[2022-11-07T14:03:48.544] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:03:48.546] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000008
+[2022-11-07T14:03:48.735] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000008
+[2022-11-07T14:03:48.735] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:03:48.908] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299999029000000000
+[2022-11-07T14:03:48.908] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:03:49.513] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299999022000000000
+[2022-11-07T14:03:49.513] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:03:49.516] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000021
+[2022-11-07T14:03:49.699] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000021
+[2022-11-07T14:03:49.699] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:03:49.880] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299999022000000000
+[2022-11-07T14:03:49.880] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:03:50.485] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998995000000000
+[2022-11-07T14:03:50.485] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:03:50.487] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000027
+[2022-11-07T14:03:50.707] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000027
+[2022-11-07T14:03:50.707] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:03:50.884] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998995000000000
+[2022-11-07T14:03:50.884] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:51.658] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998977000000000
+[2022-11-07T14:03:51.658] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:03:51.871] [INFO] default - ---------- 1. MINION_ID: -------- 6368add73c37a7b98e8f1336
+[2022-11-07T14:03:51.871] [INFO] default - ----- TEST LEVEL 2: -------- 16000028
+[2022-11-07T14:03:52.074] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000028
+[2022-11-07T14:03:52.074] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:03:52.295] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998977000000000
+[2022-11-07T14:03:52.295] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:52.826] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998971000000000
+[2022-11-07T14:03:52.826] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:03:52.827] [INFO] default - ---------ADD LEVEL 3: -------- 15000013
+[2022-11-07T14:03:53.017] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000013
+[2022-11-07T14:03:53.018] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:03:53.175] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998971000000000
+[2022-11-07T14:03:53.175] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:03:53.728] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998962000000000
+[2022-11-07T14:03:53.728] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:03:53.730] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000009
+[2022-11-07T14:03:53.909] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000009
+[2022-11-07T14:03:53.910] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:03:54.099] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998962000000000
+[2022-11-07T14:03:54.099] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:03:54.619] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998955000000000
+[2022-11-07T14:03:54.619] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:03:54.621] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000001
+[2022-11-07T14:03:54.808] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000001
+[2022-11-07T14:03:54.809] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:03:54.973] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998955000000000
+[2022-11-07T14:03:54.973] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:03:55.488] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998946000000000
+[2022-11-07T14:03:55.488] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:03:55.489] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000028
+[2022-11-07T14:03:55.671] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000028
+[2022-11-07T14:03:55.671] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:03:55.857] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998946000000000
+[2022-11-07T14:03:55.858] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:56.451] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998928000000000
+[2022-11-07T14:03:56.451] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:03:56.616] [INFO] default - ---------- 1. MINION_ID: -------- 6368addc3c37a7b98e8f1346
+[2022-11-07T14:03:56.616] [INFO] default - ----- TEST LEVEL 2: -------- 16000012
+[2022-11-07T14:03:56.803] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000012
+[2022-11-07T14:03:56.803] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:03:56.958] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998928000000000
+[2022-11-07T14:03:56.958] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:03:57.532] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998916000000000
+[2022-11-07T14:03:57.532] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:03:57.533] [INFO] default - ---------ADD LEVEL 3: -------- 15000026
+[2022-11-07T14:03:57.720] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000026
+[2022-11-07T14:03:57.720] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:03:57.913] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998916000000000
+[2022-11-07T14:03:57.913] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:03:58.494] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998907000000000
+[2022-11-07T14:03:58.494] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:03:58.496] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000010
+[2022-11-07T14:03:58.681] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000010
+[2022-11-07T14:03:58.681] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:03:58.846] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998907000000000
+[2022-11-07T14:03:58.846] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:03:59.526] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998900000000000
+[2022-11-07T14:03:59.527] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:03:59.529] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000002
+[2022-11-07T14:03:59.722] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000002
+[2022-11-07T14:03:59.723] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:03:59.939] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998900000000000
+[2022-11-07T14:03:59.939] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:04:00.557] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998891000000000
+[2022-11-07T14:04:00.557] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:04:00.559] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000029
+[2022-11-07T14:04:00.740] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000029
+[2022-11-07T14:04:00.740] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:04:00.899] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998891000000000
+[2022-11-07T14:04:00.899] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:01.547] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998873000000000
+[2022-11-07T14:04:01.548] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:04:01.753] [INFO] default - ---------- 1. MINION_ID: -------- 6368ade13c37a7b98e8f1356
+[2022-11-07T14:04:01.753] [INFO] default - ----- TEST LEVEL 2: -------- 16000013
+[2022-11-07T14:04:01.958] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000013
+[2022-11-07T14:04:01.958] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:04:02.132] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998873000000000
+[2022-11-07T14:04:02.132] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:02.684] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998861000000000
+[2022-11-07T14:04:02.684] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:04:02.685] [INFO] default - ---------ADD LEVEL 3: -------- 15000027
+[2022-11-07T14:04:02.888] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000027
+[2022-11-07T14:04:02.889] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:04:03.054] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998861000000000
+[2022-11-07T14:04:03.054] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:04:03.617] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998852000000000
+[2022-11-07T14:04:03.617] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:04:03.620] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000011
+[2022-11-07T14:04:03.791] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000011
+[2022-11-07T14:04:03.791] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:04:03.959] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998852000000000
+[2022-11-07T14:04:03.959] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:04:04.500] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998845000000000
+[2022-11-07T14:04:04.500] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:04:04.502] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000003
+[2022-11-07T14:04:04.715] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000003
+[2022-11-07T14:04:04.715] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:04:04.908] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998845000000000
+[2022-11-07T14:04:04.908] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:04:05.432] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998836000000000
+[2022-11-07T14:04:05.432] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:04:05.433] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000007
+[2022-11-07T14:04:05.611] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000007
+[2022-11-07T14:04:05.611] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:04:05.778] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998836000000000
+[2022-11-07T14:04:05.778] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:06.357] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998804000000000
+[2022-11-07T14:04:06.357] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:04:06.545] [INFO] default - ---------- 1. MINION_ID: -------- 6368ade63c37a7b98e8f1366
+[2022-11-07T14:04:06.545] [INFO] default - ----- TEST LEVEL 2: -------- 16000018
+[2022-11-07T14:04:06.738] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000018
+[2022-11-07T14:04:06.738] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:04:06.911] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998804000000000
+[2022-11-07T14:04:06.911] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:07.462] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998792000000000
+[2022-11-07T14:04:07.463] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:04:07.464] [INFO] default - ---------ADD LEVEL 3: -------- 15000029
+[2022-11-07T14:04:07.643] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000029
+[2022-11-07T14:04:07.643] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:04:07.829] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998792000000000
+[2022-11-07T14:04:07.829] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:04:08.548] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998783000000000
+[2022-11-07T14:04:08.548] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:04:08.550] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000004
+[2022-11-07T14:04:08.750] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000004
+[2022-11-07T14:04:08.750] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:04:08.914] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998783000000000
+[2022-11-07T14:04:08.914] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:04:09.665] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998771000000000
+[2022-11-07T14:04:09.666] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:04:09.668] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000004
+[2022-11-07T14:04:09.864] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000004
+[2022-11-07T14:04:09.864] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:04:10.035] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998771000000000
+[2022-11-07T14:04:10.035] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:04:10.621] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998762000000000
+[2022-11-07T14:04:10.621] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:04:10.622] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000012
+[2022-11-07T14:04:10.843] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000012
+[2022-11-07T14:04:10.843] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:04:10.998] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998762000000000
+[2022-11-07T14:04:10.999] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:11.562] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998730000000000
+[2022-11-07T14:04:11.562] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:04:11.732] [INFO] default - ---------- 1. MINION_ID: -------- 6368adeb3c37a7b98e8f1376
+[2022-11-07T14:04:11.732] [INFO] default - ----- TEST LEVEL 2: -------- 16000019
+[2022-11-07T14:04:11.995] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000019
+[2022-11-07T14:04:11.995] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:04:12.162] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998730000000000
+[2022-11-07T14:04:12.162] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:12.710] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998718000000000
+[2022-11-07T14:04:12.710] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:04:12.712] [INFO] default - ---------ADD LEVEL 3: -------- 15000033
+[2022-11-07T14:04:12.893] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000033
+[2022-11-07T14:04:12.893] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:04:13.048] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998718000000000
+[2022-11-07T14:04:13.048] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:04:13.593] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998709000000000
+[2022-11-07T14:04:13.593] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:04:13.596] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000007
+[2022-11-07T14:04:13.787] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000007
+[2022-11-07T14:04:13.787] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:04:13.968] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998709000000000
+[2022-11-07T14:04:13.968] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:04:14.494] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998697000000000
+[2022-11-07T14:04:14.494] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:04:14.496] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000008
+[2022-11-07T14:04:14.669] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000008
+[2022-11-07T14:04:14.669] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:04:14.829] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998697000000000
+[2022-11-07T14:04:14.829] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:04:15.386] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998688000000000
+[2022-11-07T14:04:15.386] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:04:15.387] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000013
+[2022-11-07T14:04:15.565] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000013
+[2022-11-07T14:04:15.565] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:04:15.733] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998688000000000
+[2022-11-07T14:04:15.734] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:16.333] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998656000000000
+[2022-11-07T14:04:16.333] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:04:16.519] [INFO] default - ---------- 1. MINION_ID: -------- 6368adf03c37a7b98e8f1386
+[2022-11-07T14:04:16.519] [INFO] default - ----- TEST LEVEL 2: -------- 16000020
+[2022-11-07T14:04:16.700] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000020
+[2022-11-07T14:04:16.700] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:04:16.928] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998656000000000
+[2022-11-07T14:04:16.929] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:17.471] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998644000000000
+[2022-11-07T14:04:17.471] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:04:17.473] [INFO] default - ---------ADD LEVEL 3: -------- 15000034
+[2022-11-07T14:04:17.656] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000034
+[2022-11-07T14:04:17.656] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:04:17.812] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998644000000000
+[2022-11-07T14:04:17.812] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:04:18.387] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998635000000000
+[2022-11-07T14:04:18.387] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:04:18.389] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000012
+[2022-11-07T14:04:18.574] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000012
+[2022-11-07T14:04:18.574] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:04:18.752] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998635000000000
+[2022-11-07T14:04:18.752] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:04:19.299] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998623000000000
+[2022-11-07T14:04:19.300] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:04:19.302] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000009
+[2022-11-07T14:04:19.495] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000009
+[2022-11-07T14:04:19.495] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:04:19.654] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998623000000000
+[2022-11-07T14:04:19.654] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:04:20.183] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998614000000000
+[2022-11-07T14:04:20.184] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:04:20.185] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000014
+[2022-11-07T14:04:20.374] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000014
+[2022-11-07T14:04:20.374] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:04:20.550] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998614000000000
+[2022-11-07T14:04:20.550] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:21.167] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998582000000000
+[2022-11-07T14:04:21.168] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:04:21.350] [INFO] default - ---------- 1. MINION_ID: -------- 6368adf53c37a7b98e8f1396
+[2022-11-07T14:04:21.350] [INFO] default - ----- TEST LEVEL 2: -------- 16000029
+[2022-11-07T14:04:21.544] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000029
+[2022-11-07T14:04:21.544] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:04:21.729] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998582000000000
+[2022-11-07T14:04:21.729] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:22.263] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998570000000000
+[2022-11-07T14:04:22.263] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:04:22.264] [INFO] default - ---------ADD LEVEL 3: -------- 15000035
+[2022-11-07T14:04:22.442] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000035
+[2022-11-07T14:04:22.442] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:04:22.599] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998570000000000
+[2022-11-07T14:04:22.599] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:04:23.135] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998561000000000
+[2022-11-07T14:04:23.135] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:04:23.136] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000013
+[2022-11-07T14:04:23.304] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000013
+[2022-11-07T14:04:23.305] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:04:23.478] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998561000000000
+[2022-11-07T14:04:23.478] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:04:24.050] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998549000000000
+[2022-11-07T14:04:24.050] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:04:24.052] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000015
+[2022-11-07T14:04:24.233] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000015
+[2022-11-07T14:04:24.233] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:04:24.401] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998549000000000
+[2022-11-07T14:04:24.401] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:04:24.933] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998540000000000
+[2022-11-07T14:04:24.933] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:04:24.933] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000017
+[2022-11-07T14:04:25.132] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000017
+[2022-11-07T14:04:25.132] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:04:25.327] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998540000000000
+[2022-11-07T14:04:25.327] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:25.851] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998508000000000
+[2022-11-07T14:04:25.851] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:04:26.062] [INFO] default - ---------- 1. MINION_ID: -------- 6368adfa3c37a7b98e8f13a6
+[2022-11-07T14:04:26.062] [INFO] default - ----- TEST LEVEL 2: -------- 16000030
+[2022-11-07T14:04:26.260] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000030
+[2022-11-07T14:04:26.260] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:04:26.506] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998508000000000
+[2022-11-07T14:04:26.506] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:27.089] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998496000000000
+[2022-11-07T14:04:27.089] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:04:27.090] [INFO] default - ---------ADD LEVEL 3: -------- 15000014
+[2022-11-07T14:04:27.281] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000014
+[2022-11-07T14:04:27.281] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:04:27.438] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998496000000000
+[2022-11-07T14:04:27.438] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:04:28.097] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998479000000000
+[2022-11-07T14:04:28.097] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:04:28.098] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000014
+[2022-11-07T14:04:28.273] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000014
+[2022-11-07T14:04:28.273] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:04:28.433] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998479000000000
+[2022-11-07T14:04:28.433] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:04:29.069] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998457000000000
+[2022-11-07T14:04:29.069] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:04:29.070] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000016
+[2022-11-07T14:04:29.267] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000016
+[2022-11-07T14:04:29.267] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:04:29.421] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998457000000000
+[2022-11-07T14:04:29.421] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:04:29.968] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998448000000000
+[2022-11-07T14:04:29.968] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:04:29.970] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000023
+[2022-11-07T14:04:30.157] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000023
+[2022-11-07T14:04:30.157] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:04:30.328] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998448000000000
+[2022-11-07T14:04:30.328] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:30.832] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998416000000000
+[2022-11-07T14:04:30.832] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:04:31.026] [INFO] default - ---------- 1. MINION_ID: -------- 6368adfe3c37a7b98e8f13b6
+[2022-11-07T14:04:31.026] [INFO] default - ----- TEST LEVEL 2: -------- 16000001
+[2022-11-07T14:04:31.213] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000001
+[2022-11-07T14:04:31.213] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:04:31.374] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998416000000000
+[2022-11-07T14:04:31.374] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:31.933] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998413000000000
+[2022-11-07T14:04:31.933] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:04:31.934] [INFO] default - ---------ADD LEVEL 3: -------- 15000015
+[2022-11-07T14:04:32.147] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000015
+[2022-11-07T14:04:32.147] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:04:32.321] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998413000000000
+[2022-11-07T14:04:32.321] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:04:32.823] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998396000000000
+[2022-11-07T14:04:32.823] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:04:32.823] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000015
+[2022-11-07T14:04:33.013] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000015
+[2022-11-07T14:04:33.013] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:04:33.165] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998396000000000
+[2022-11-07T14:04:33.165] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:04:33.774] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998374000000000
+[2022-11-07T14:04:33.774] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:04:33.776] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000017
+[2022-11-07T14:04:33.967] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000017
+[2022-11-07T14:04:33.967] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:04:34.144] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998374000000000
+[2022-11-07T14:04:34.144] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:04:34.680] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998365000000000
+[2022-11-07T14:04:34.680] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:04:34.681] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000030
+[2022-11-07T14:04:34.848] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000030
+[2022-11-07T14:04:34.848] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:04:35.010] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998365000000000
+[2022-11-07T14:04:35.010] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:35.530] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998333000000000
+[2022-11-07T14:04:35.530] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:04:35.711] [INFO] default - ---------- 1. MINION_ID: -------- 6368ae033c37a7b98e8f13c6
+[2022-11-07T14:04:35.711] [INFO] default - ----- TEST LEVEL 2: -------- 16000002
+[2022-11-07T14:04:35.898] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000002
+[2022-11-07T14:04:35.898] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:04:36.097] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998333000000000
+[2022-11-07T14:04:36.097] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 200000000
+[2022-11-07T14:04:36.673] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998330000000000
+[2022-11-07T14:04:36.673] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 100000000
+[2022-11-07T14:04:36.675] [INFO] default - ---------ADD LEVEL 3: -------- 15000016
+[2022-11-07T14:04:36.852] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000016
+[2022-11-07T14:04:36.852] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:04:37.037] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998330000000000
+[2022-11-07T14:04:37.037] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:04:37.560] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998313000000000
+[2022-11-07T14:04:37.560] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:04:37.562] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000001
+[2022-11-07T14:04:37.752] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000001
+[2022-11-07T14:04:37.752] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:04:37.942] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998313000000000
+[2022-11-07T14:04:37.942] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:04:38.490] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998306000000000
+[2022-11-07T14:04:38.490] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:04:38.494] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000005
+[2022-11-07T14:04:38.678] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000005
+[2022-11-07T14:04:38.678] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:04:38.863] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998306000000000
+[2022-11-07T14:04:38.864] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:04:39.453] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998291000000000
+[2022-11-07T14:04:39.453] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:04:39.455] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000001
+[2022-11-07T14:04:39.632] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000001
+[2022-11-07T14:04:39.632] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:04:39.832] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998291000000000
+[2022-11-07T14:04:39.832] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:40.423] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998280000000000
+[2022-11-07T14:04:40.424] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:04:40.595] [INFO] default - ---------- 1. MINION_ID: -------- 6368ae083c37a7b98e8f13d6
+[2022-11-07T14:04:40.595] [INFO] default - ----- TEST LEVEL 2: -------- 16000003
+[2022-11-07T14:04:40.783] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000003
+[2022-11-07T14:04:40.783] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:04:40.977] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998280000000000
+[2022-11-07T14:04:40.977] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:41.551] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998277000000000
+[2022-11-07T14:04:41.551] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:04:41.552] [INFO] default - ---------ADD LEVEL 3: -------- 15000017
+[2022-11-07T14:04:41.765] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000017
+[2022-11-07T14:04:41.765] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:04:41.964] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998277000000000
+[2022-11-07T14:04:41.964] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:04:42.546] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998260000000000
+[2022-11-07T14:04:42.546] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:04:42.548] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000002
+[2022-11-07T14:04:42.728] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000002
+[2022-11-07T14:04:42.728] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:04:42.895] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998260000000000
+[2022-11-07T14:04:42.895] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:04:43.425] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998253000000000
+[2022-11-07T14:04:43.425] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:04:43.428] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000006
+[2022-11-07T14:04:43.610] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000006
+[2022-11-07T14:04:43.610] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:04:43.769] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998253000000000
+[2022-11-07T14:04:43.769] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:04:44.303] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998238000000000
+[2022-11-07T14:04:44.303] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:04:44.304] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000002
+[2022-11-07T14:04:44.533] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000002
+[2022-11-07T14:04:44.534] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:04:44.698] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998238000000000
+[2022-11-07T14:04:44.698] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:45.330] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998227000000000
+[2022-11-07T14:04:45.330] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:04:45.509] [INFO] default - ---------- 1. MINION_ID: -------- 6368ae0d3c37a7b98e8f13e6
+[2022-11-07T14:04:45.509] [INFO] default - ----- TEST LEVEL 2: -------- 16000004
+[2022-11-07T14:04:45.676] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000004
+[2022-11-07T14:04:45.676] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:04:45.937] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998227000000000
+[2022-11-07T14:04:45.937] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:46.470] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998224000000000
+[2022-11-07T14:04:46.470] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:04:46.472] [INFO] default - ---------ADD LEVEL 3: -------- 15000018
+[2022-11-07T14:04:46.663] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000018
+[2022-11-07T14:04:46.663] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:04:46.842] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998224000000000
+[2022-11-07T14:04:46.842] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:04:47.380] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998207000000000
+[2022-11-07T14:04:47.380] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:04:47.381] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000003
+[2022-11-07T14:04:47.555] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000003
+[2022-11-07T14:04:47.555] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:04:47.787] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998207000000000
+[2022-11-07T14:04:47.787] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:04:48.411] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998200000000000
+[2022-11-07T14:04:48.411] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:04:48.413] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000010
+[2022-11-07T14:04:48.615] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000010
+[2022-11-07T14:04:48.615] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:04:48.784] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998200000000000
+[2022-11-07T14:04:48.784] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:04:49.388] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998185000000000
+[2022-11-07T14:04:49.388] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:04:49.390] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000004
+[2022-11-07T14:04:49.615] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000004
+[2022-11-07T14:04:49.615] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:04:49.802] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998185000000000
+[2022-11-07T14:04:49.802] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 200000000
+[2022-11-07T14:04:50.370] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998174000000000
+[2022-11-07T14:04:50.370] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 100000000
+[2022-11-07T14:04:50.558] [INFO] default - ---------- 1. MINION_ID: -------- 6368ae123c37a7b98e8f13f6
+[2022-11-07T14:04:50.558] [INFO] default - ----- TEST LEVEL 2: -------- 16000005
+[2022-11-07T14:04:50.764] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000005
+[2022-11-07T14:04:50.764] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:04:51.004] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998174000000000
+[2022-11-07T14:04:51.005] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:51.537] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998171000000000
+[2022-11-07T14:04:51.537] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:04:51.538] [INFO] default - ---------ADD LEVEL 3: -------- 15000019
+[2022-11-07T14:04:51.737] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000019
+[2022-11-07T14:04:51.737] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:04:51.923] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998171000000000
+[2022-11-07T14:04:51.923] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:04:52.499] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998154000000000
+[2022-11-07T14:04:52.499] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:04:52.502] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000005
+[2022-11-07T14:04:52.696] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000005
+[2022-11-07T14:04:52.696] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:04:52.895] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998154000000000
+[2022-11-07T14:04:52.895] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:04:53.500] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998147000000000
+[2022-11-07T14:04:53.500] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:04:53.503] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000011
+[2022-11-07T14:04:53.719] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000011
+[2022-11-07T14:04:53.719] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:04:53.901] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998147000000000
+[2022-11-07T14:04:53.901] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:04:54.463] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998132000000000
+[2022-11-07T14:04:54.463] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:04:54.465] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000005
+[2022-11-07T14:04:54.655] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000005
+[2022-11-07T14:04:54.655] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:04:54.864] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998132000000000
+[2022-11-07T14:04:54.865] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:55.443] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998121000000000
+[2022-11-07T14:04:55.443] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:04:55.634] [INFO] default - ---------- 1. MINION_ID: -------- 6368ae173c37a7b98e8f1406
+[2022-11-07T14:04:55.634] [INFO] default - ----- TEST LEVEL 2: -------- 16000006
+[2022-11-07T14:04:55.811] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000006
+[2022-11-07T14:04:55.811] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:04:55.988] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998121000000000
+[2022-11-07T14:04:55.988] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:04:56.573] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998118000000000
+[2022-11-07T14:04:56.573] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:04:56.576] [INFO] default - ---------ADD LEVEL 3: -------- 15000030
+[2022-11-07T14:04:56.749] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000030
+[2022-11-07T14:04:56.749] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:04:56.942] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998118000000000
+[2022-11-07T14:04:56.942] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:04:57.521] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998101000000000
+[2022-11-07T14:04:57.521] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:04:57.525] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000006
+[2022-11-07T14:04:57.707] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000006
+[2022-11-07T14:04:57.707] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:04:57.926] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998101000000000
+[2022-11-07T14:04:57.926] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:04:58.491] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998094000000000
+[2022-11-07T14:04:58.491] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:04:58.496] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000018
+[2022-11-07T14:04:58.692] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000018
+[2022-11-07T14:04:58.693] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:04:58.872] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998094000000000
+[2022-11-07T14:04:58.872] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:04:59.468] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998079000000000
+[2022-11-07T14:04:59.468] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:04:59.471] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000008
+[2022-11-07T14:04:59.674] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000008
+[2022-11-07T14:04:59.674] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:04:59.837] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998079000000000
+[2022-11-07T14:04:59.837] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:05:00.451] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998068000000000
+[2022-11-07T14:05:00.451] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:05:00.642] [INFO] default - ---------- 1. MINION_ID: -------- 6368ae1c3c37a7b98e8f1416
+[2022-11-07T14:05:00.642] [INFO] default - ----- TEST LEVEL 2: -------- 16000014
+[2022-11-07T14:05:00.826] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000014
+[2022-11-07T14:05:00.826] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:05:01.143] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998068000000000
+[2022-11-07T14:05:01.143] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:05:01.722] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998065000000000
+[2022-11-07T14:05:01.722] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:05:01.726] [INFO] default - ---------ADD LEVEL 3: -------- 15000036
+[2022-11-07T14:05:01.918] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000036
+[2022-11-07T14:05:01.918] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:05:02.092] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998065000000000
+[2022-11-07T14:05:02.093] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:05:02.654] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998048000000000
+[2022-11-07T14:05:02.654] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:05:02.655] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000008
+[2022-11-07T14:05:02.838] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000008
+[2022-11-07T14:05:02.838] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000
+[2022-11-07T14:05:03.029] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 4: -------- 299998048000000000
+[2022-11-07T14:05:03.030] [INFO] default - -------------------1.5 So luong Cosmetic Level 4 truoc khi evolve skin level 4: -------- 100000000
+[2022-11-07T14:05:03.557] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve: -------- 299998041000000000
+[2022-11-07T14:05:03.557] [INFO] default - --------------1.7 So luong Cosmetic level 4 sau khi Evolve: -------- 0
+[2022-11-07T14:05:03.559] [INFO] default - -------TEST ADD LEVEL 5: -------- 12000019
+[2022-11-07T14:05:03.746] [INFO] default - ---------- 1.2. CosmeticId level 5: -------- 12000019
+[2022-11-07T14:05:03.746] [INFO] default - ---------- 1.3. So luong CosmeticId - level 5: -------- 100000000
+[2022-11-07T14:05:03.907] [INFO] default - ------------------1.4 Amount Enhance truoc khi evolve skin level 5: -------- 299998041000000000
+[2022-11-07T14:05:03.907] [INFO] default - -------------------1.5 So luong Cosmetic Level 5 truoc khi evolve skin: -------- 100000000
+[2022-11-07T14:05:04.491] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 5: -------- 299998026000000000
+[2022-11-07T14:05:04.491] [INFO] default - -------------- 1.7  So luong Cosmetic level 5 sau khi Evolve: -------- 0
+[2022-11-07T14:05:04.493] [INFO] default - -------TEST ADD LEVEL 6: -------- 10000009
+[2022-11-07T14:05:04.669] [INFO] default - ---------- 1.2. CosmeticId level 6: -------- 10000009
+[2022-11-07T14:05:04.670] [INFO] default - ---------- 1.3. So luong CosmeticId - level 6: -------- 100000000
+[2022-11-07T14:05:04.852] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to next level 6: -------- 299998026000000000
+[2022-11-07T14:05:04.852] [INFO] default - ---------- 1.5. So luong cosmetic level 6 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:05:05.397] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve skin level 6: -------- 299998015000000000
+[2022-11-07T14:05:05.397] [INFO] default - -------------- 1.7  So luong Cosmetic level 6 sau khi Evolve: -------- 0
+[2022-11-07T14:34:51.668] [INFO] default - ---------- 1. MINION_ID: -------- 6368b51b3c37a7b98e8f1426
+[2022-11-07T14:34:51.670] [INFO] default - ----- TEST LEVEL 2: -------- 16000001
+[2022-11-07T14:34:51.876] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000001
+[2022-11-07T14:34:51.876] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:34:52.064] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998015000000000
+[2022-11-07T14:34:52.064] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:35:02.805] [INFO] default - ---------- 1. MINION_ID: -------- 6368b5263c37a7b98e8f142a
+[2022-11-07T14:35:02.807] [INFO] default - ----- TEST LEVEL 2: -------- 16000001
+[2022-11-07T14:35:02.986] [INFO] default - ---------- 1.2. CosmeticId level 2: -------- 16000001
+[2022-11-07T14:35:02.986] [INFO] default - ---------- 1.3. So luong CosmeticId - level 2: -------- 100000000
+[2022-11-07T14:35:03.208] [INFO] default - ---------- 1.4. Amount Enhancer truoc khi Evolve to level 2: -------- 299998012000000000
+[2022-11-07T14:35:03.209] [INFO] default - ---------- 1.5. So luong cosmetic level 2 truoc khi Evolve Skin: -------- 100000000
+[2022-11-07T14:35:03.915] [INFO] default - ---------- 1.6. Amount Enhancer sau khi evolve skin level 2: -------- 299998009000000000
+[2022-11-07T14:35:03.916] [INFO] default - ---------- 1.7. So luong cosmetic level 2 sau khi evolve: -------- 0
+[2022-11-07T14:35:03.918] [INFO] default - ---------ADD LEVEL 3: -------- 15000001
+[2022-11-07T14:35:04.100] [INFO] default - ---------- 1.2 CosmeticId level 3: -------- 15000001
+[2022-11-07T14:35:04.100] [INFO] default - ---------- 1.3  So luong CosmeticId - level 3: -------- 100000000
+[2022-11-07T14:35:04.310] [INFO] default - ------------------ 1.4 Amount Enhance truoc khi evolve skin level 3: -------- 299998009000000000
+[2022-11-07T14:35:04.310] [INFO] default - -------------------1.5 So luong Cosmetic Level 3 truoc khi evolve skin level 3: -------- 100000000
+[2022-11-07T14:35:04.971] [INFO] default - --------------1.6 Amount Enhancer sau khi Evolve level 3: -------- 299998004000000000
+[2022-11-07T14:35:04.971] [INFO] default - -------------- 1.7  So luong Cosmetic level 3 sau khi Evolve: -------- 0
+[2022-11-07T14:35:04.975] [INFO] default - ---------TEST ADD LEVEL 4: -------- 13000001
+[2022-11-07T14:35:05.154] [INFO] default - ---------- 1.2 CosmeticId level 4: -------- 13000001
+[2022-11-07T14:35:05.154] [INFO] default - ---------- 1.3  So luong CosmeticId - level 4: -------- 100000000

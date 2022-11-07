@@ -40,3 +40,6 @@ export class Price {
         //let a = getRandomPrice(50,100)
 
 }
+export class Evolve{
+    static EvolveMinion(minionId: string, level: number){}
+}
