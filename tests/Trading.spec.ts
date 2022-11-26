@@ -53,7 +53,10 @@ test.setTimeout(100 * 60 * 60);
 
 var connectWalletBtn = "button.YtC7SW5QBXao_Bj5rMO5"
 var loginMetamaskBtn = ".ZPKehyuOXkcNnT3_AzFi"
-var confirmBtn = "button.UbQxYBXfgGDIuLkCeyyJ"
+// var confirmBtn = "button.UbQxYBXfgGDIuLkCeyyJ"
+const confirmBtn = "button.btn-primary"
+
+var nextBtn = "button.btn-primary"
 var rentMenu = `//span[contains(.,"Rent")]`
 var pageTotalLct = `.EvpVAk_1hz05LPdtaLW7`
 var pageNumLct = `.L_M93__9aZoANZFOXRAn`
@@ -62,20 +65,22 @@ var heroItemMaketLct = `.pTlq4suyqtK3Lmj4MH27`
 var understandBtn = `button.cOBQpozfZ4Q94cdPJ0MK`
 var dropDownListLct = `div.RzCtmnvJtc4BwmQPIiSK`
 var priceHeroLct = `.wlYd9YCSxc4V1_yktp93 > span.y0q8jlGWIeRjuoKU41e9`
-
+var url = 'https://staging.marketplace.thetanarena.com'
 
 test('login', async ({ page, browser }) => {
-    page.goto("https://staging.marketplace.thetanarena.com/")
+    page.goto(`${url}`)
     await page.locator("button._trpA_NQ_KOKYFXSV2oa").click()
     await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
 
+    // console.log("------------- START")
     const [newPage] = await Promise.all([
         metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
         page.locator(confirmBtn).click(),
     ]);
+    // console.log("------------- end")
 
     await newPage.waitForLoadState()
-    await metamask.switchNetwork()
+    // await metamask.switchNetwork()
     await metamask.connectAndSignAccount()
 
     await page.waitForLoadState()
@@ -84,8 +89,8 @@ test('login', async ({ page, browser }) => {
 });
 
 
-test('buy common box ', async ({ page, browser }) => {
-    await page.goto("https://staging.marketplace.thetanarena.com/")
+test.only('--------- BUY COMMON BOX @buy --------- ', async ({ page, browser }) => {
+    await page.goto("https://marketplace.uat.thetanarena.com/")
     await AllPopup.ClosePopup(page);
 
 
@@ -110,23 +115,30 @@ test('buy common box ', async ({ page, browser }) => {
     await delay(1000)
     await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
 
+    console.log("-------------- start")
     const [newPage] = await Promise.all([
         metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
-        page.locator(confirmBtn).click(),
+        // page.locator(confirmBtn).click()
     ]);
+    console.log("-------------- stop")
+
+    await delay(2000)
+
+    // const [newPage] = await Promise.all([
+    //     metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
+    page.locator(confirmBtn).click(),
+        console.log("-------------- stop 22222 ----")
+    // ]);
 
     await newPage.waitForLoadState()
+    await delay(3000)
+    // await newPage.locator(confirmBtn).click()
+    // await delay(3000)
+    // await newPage.locator(confirmBtn).click()
+    // await delay(3000)
     await metamask.switchNetwork()
     await metamask.connectAndSignAccount()
-
-    // await page.waitForLoadState()
-    // await page.locator("img.DENGJCh2IDjHHDCkdKbG").click()
-
-    // kiểm tra số lượng box trong inventory 
-    /* await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory&category=thetabox")
-    // console.log("số lượng box:", Texter.GetIntFromText(await page.locator('span.cF3D5iGpvsF7xF_0g5fV').innerText()))
-     await delay(3000)
-    */
+    await page.waitForLoadState()
 
     // chọn menu thetanbox
     await page.locator(`//span[contains(.,"ThetanBox")]`).click()
@@ -139,7 +151,7 @@ test('buy common box ', async ({ page, browser }) => {
     // const thetanbox = await page.waitForSelector(BUY_BOX,  { state: 'visible' })
     // await delay(1000)
     // await thetanbox.click()
-    // await expect(page).toHaveURL('https://staging.marketplace.thetanarena.com/thetanbox')
+    // await expect(page).toHaveURL('`${url}`/thetanbox')
     //  const thetanbox = await page.waitForSelector(LEGENDARY_BOX, {state: 'visible'})
     //  await delay(2000)
     //  await thetanbox.click()
@@ -161,7 +173,7 @@ test('buy common box ', async ({ page, browser }) => {
     await delay(2000)
 
     // kiểm tra số lượng box trong inventory 
-    await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory&category=thetabox")
+    await page.goto("`${url}`/profile?tab=inventory&category=thetabox")
     console.log("số lượng box sau khi mua:", Texter.GetIntFromText(await page.locator('span.cF3D5iGpvsF7xF_0g5fV').innerText()))
     await delay(10000)
 
@@ -169,10 +181,8 @@ test('buy common box ', async ({ page, browser }) => {
 
 });
 
-
-
-test('----BUY HERO----', async ({ page, browser }) => {
-    await page.goto("https://staging.marketplace.thetanarena.com/")
+test('-------------BUY HERO CO GIA < 50000 @buy ------------', async ({ page, browser }) => {
+    await page.goto(`${url}`)
     await AllPopup.ClosePopup(page);
     await delay(2000)
     await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
@@ -195,6 +205,7 @@ test('----BUY HERO----', async ({ page, browser }) => {
     await page.locator(dropDownListLct).click() // click DDL filter
     await delay(2000)
 
+    // filter cheapest 
     await page.locator(`//span[contains(.,"Cheapest Item")]`).click()
     // await page.locator(`.AKO9NaM23tnI_yIaFSsb`, {hasText:"Cheapest Item"}).click()
 
@@ -225,7 +236,7 @@ test('----BUY HERO----', async ({ page, browser }) => {
                 await page.locator(heroItemMaketLct).nth(j).click()
                 await delay(1000)
                 var isOwnerCheck = await page.locator(`//span`, { hasText: "Owner by me" }).isVisible()
-            
+
                 if (isOwnerCheck) {
                     console.log('DANG LA OWNER')
                     await page.goBack({ waitUntil: 'load' })
@@ -241,14 +252,18 @@ test('----BUY HERO----', async ({ page, browser }) => {
             console.log("CO HERO PHU HOP DE BAN")
             break
         }
-      
+
     }
     await delay(1000)
+
+    // HERO DETAIL PAGE
     const pageDetail = page.url()
     const heroId = pageDetail.slice(pageDetail.lastIndexOf("/") + 1)
     console.log("DETAIL HERO:", pageDetail)
     console.log("HEROID LA: ", heroId)
     await delay(1000)
+
+    // CLICK BUY 
     await page.locator(`span.amttH6S21k7IsiPB9GBn`).click()
     await delay(1000)
 
@@ -260,6 +275,7 @@ test('----BUY HERO----', async ({ page, browser }) => {
     await page.locator(`//span[contains(.,"Close")]`).click()
     await delay(2000)
 
+    // CHECK OWNER SAU KHI ĐĂNG BÁN THÀNH CÔNG
     await page.goto(pageDetail)
     await delay(3000)
 
@@ -271,15 +287,11 @@ test('----BUY HERO----', async ({ page, browser }) => {
     // }
 
     console.log("DONE")
-    // kiểm tra hero trong inventory 
-    // await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory")
 
-    // console.log("số lượng box sau khi mua:", Texter.GetIntFromText(await page.locator('span.cF3D5iGpvsF7xF_0g5fV').innerText()))
-    // await delay(10000)
 });
 
-test('STOP BUY HERO', async ({ page, browser }) => {
-    await page.goto("https://staging.marketplace.thetanarena.com/")
+test('---------- STOP BUY HERO @buy -------------', async ({ page, browser }) => {
+    await page.goto(`${url}`)
     await AllPopup.ClosePopup(page);
     await delay(2000)
     await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
@@ -329,6 +341,7 @@ test('STOP BUY HERO', async ({ page, browser }) => {
         }
     }
 
+    // CHỌN HERO OWNER ĐỂ STOP SELLING
     await page.locator(`//span`, { hasText: 'Stop selling' }).click();
     await delay(2000)
     await page.locator(`.RKJ62RKkTu4ysVb7Q1FQ`).click();
@@ -346,8 +359,8 @@ test('STOP BUY HERO', async ({ page, browser }) => {
 
 });
 
-test('sell hero ', async ({ page, browser }) => {
-    await page.goto("https://staging.marketplace.thetanarena.com/")
+test('-------------- SELL HERO @sell --------------', async ({ page, browser }) => {
+    await page.goto(`${url}`)
     await AllPopup.ClosePopup(page);
     await delay(2000)
     await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
@@ -366,7 +379,7 @@ test('sell hero ', async ({ page, browser }) => {
     await metamask.connectAndSignAccount()
 
     await delay(2000)
-    await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory")
+    await page.goto("`${url}`/profile?tab=inventory")
 
     await delay(3000)
 
@@ -434,8 +447,9 @@ test('sell hero ', async ({ page, browser }) => {
 
 });
 // check latest item???
-test('SELL HERO TRINH ', async ({ page, browser }) => {
-    await page.goto("https://staging.marketplace.thetanarena.com/")
+
+test('------------ SELL HERO TRINH @sell ------------', async ({ page, browser }) => {
+    await page.goto(`${url}`)
     await AllPopup.ClosePopup(page);
     await delay(2000)
     await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
@@ -452,7 +466,7 @@ test('SELL HERO TRINH ', async ({ page, browser }) => {
     await metamask.connectAndSignAccount()
 
     await delay(2000)
-    await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory")
+    await page.goto("`${url}`/profile?tab=inventory")
 
     await delay(1200)
 
@@ -467,13 +481,17 @@ test('SELL HERO TRINH ', async ({ page, browser }) => {
 
         var heroCount = await page.locator(heroItemInventoryLct).count()
 
+
         let heroLocator = page.locator(heroItemInventoryLct)
+
+        // LABEL HERO: NOT MINT, SELLING ...
         let labelSelector = '.Dfj5fSymG7FC_pQ1ltOn'
 
         for (let j = 0; j < heroCount; j++) {
 
             if (await heroLocator.nth(j).locator(labelSelector).isVisible()) {
-                continue
+                continue // nếu có label thì quay lại for (j)
+
             }
 
             console.log(`let statusLabel = await page.locator('.Dfj5fSymG7FC_pQ1ltOn').nth(i).innerText()`)
@@ -497,25 +515,28 @@ test('SELL HERO TRINH ', async ({ page, browser }) => {
             await delay(1000)
 
             //let sellBtnLocator = page.locator(`//span[contains(.,"Sell")]`)
+
+            // kiểm tra có button sell hay ko?
             let isSellBtnVisible = await sellBtnLocator.isVisible()
             if (!isSellBtnVisible) {
                 console.log("Khong tim thay sell btn")
                 await page.goBack({ waitUntil: "load" })
-                continue
+                continue // quay lại for (j)
             }
 
+            // kiểm tra button sell có enable ko?
             let isSellBtnEnable = await sellBtnLocator.isEnabled()
             if (!isSellBtnEnable) {
                 console.log("Sell btn disabled")
                 await page.goBack({ waitUntil: "load" })
-                continue
+                continue // quay lại for (j)
             }
             coChonDuocHeroCoTheSellKhong = true
-            break
+            break // end for (j)
         }
         if (coChonDuocHeroCoTheSellKhong) {
             console.log("co hero phu hop")
-            break
+            break // end for (i)
         }
 
         //await expect(page.locator(`//span`, {hasText: "Sell"})).toBeVisible()
@@ -524,9 +545,12 @@ test('SELL HERO TRINH ', async ({ page, browser }) => {
         console.log("------------- KHONG CO HERO PHU HOP -------------")
         return
     }
+
+    // CLICK SELL BUTTON 
     await sellBtnLocator.click()
     await delay(2000)
 
+    // RANDOM GIÁ TỪ 50 - 100             
     const price = Math.round(Math.random() * 10000 + 10000)
     console.log("- Price:", price)
     await page.locator(`input.AI0g6_78kpjQEk7KU44r`).fill(price.toString())
@@ -554,14 +578,14 @@ test('SELL HERO TRINH ', async ({ page, browser }) => {
 
     console.log("- After understand")
 
-    // check new hero tren cho'
-    await page.goto('https://staging.marketplace.thetanarena.com/buy')
+    // check new hero tren chợ
+    await page.goto('`${url}`/buy')
     await AllPopup.ClosePopup(page);
     await delay(2000)
     await page.locator(dropDownListLct).click() // click DDL filter latest
     await delay(2000)
     await page.locator(`//span[contains(.,"Latest")]`).click()
-    await page.locator(heroItemLct).first().click()
+    await page.locator(heroItemMaketLct).first().click()
     //Check price
     const priceHero = await page.locator(`.f9zZck_3CSpfmtllo7B2`).innerText()
     const priceNum = parseFloat(priceHero.replace(",", ""))
@@ -577,18 +601,14 @@ test('SELL HERO TRINH ', async ({ page, browser }) => {
         await delay(1000)
         console.log("TOI LA OWNER")
     }
-    // var isVisible = await page.locator(`//span`, { hasText: "Owner by me"}).isVisible()
-    // if (!isVisible ){
-    //     return false
-    // }
-    return
-    // <span class="f9zZck_3CSpfmtllo7B2">10,000 THC</span>
+
+    // return
     console.log("DONE")
 
 });
 
-test('---- RENT OUT HERO----- ', async ({ page, browser }) => {
-    await page.goto("https://staging.marketplace.thetanarena.com/")
+test('----------- RENT OUT HERO @rent ----------- ', async ({ page, browser }) => {
+    await page.goto(`${url}`)
     await AllPopup.ClosePopup(page);
     await delay(2000)
     await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
@@ -605,7 +625,7 @@ test('---- RENT OUT HERO----- ', async ({ page, browser }) => {
     await metamask.connectAndSignAccount()
 
     await delay(2000)
-    await page.goto("https://staging.marketplace.thetanarena.com/profile?tab=inventory")
+    await page.goto("`${url}`/profile?tab=inventory")
     await delay(1200)
 
     var pageTotal = Texter.GetIntFromText(await page.locator(pageTotalLct).innerText())
@@ -632,7 +652,7 @@ test('---- RENT OUT HERO----- ', async ({ page, browser }) => {
             await page.locator(heroItemInventoryLct).nth(j).click()
             await delay(1000)
 
-            //let sellBtnLocator = page.locator(`//span[contains(.,"Sell")]`)
+            // kiểm tra có button RENT hay ko?
             let isRentOutBtnVisible = await rentOutBtnLocator.isVisible()
             if (!isRentOutBtnVisible) {
                 console.log("Khong tim thay sell btn")
@@ -640,6 +660,7 @@ test('---- RENT OUT HERO----- ', async ({ page, browser }) => {
                 continue
             }
 
+            // kiểm tra button RENT có enable ko?
             let isRentOutBtnEnable = await rentOutBtnLocator.isEnabled()
             if (!isRentOutBtnEnable) {
                 console.log("Sell btn disabled")
@@ -670,6 +691,7 @@ test('---- RENT OUT HERO----- ', async ({ page, browser }) => {
     await rentOutBtnLocator.click()
     await delay(2000)
 
+    // RANDOM GIÁ TỪ 50->100
     const rentingPrice = Price.GetRandomPrice(50, 100)
     console.log("- Price:", rentingPrice)
     await page.locator(`input.tyMBbWlgZp5BaqSW29K2`).fill(rentingPrice.toString()) // input renting price
@@ -693,13 +715,14 @@ test('---- RENT OUT HERO----- ', async ({ page, browser }) => {
     await delay(5000)
 
     // check new hero tren cho'
-    await page.goto('https://staging.marketplace.thetanarena.com/rental')
+    await page.goto('`${url}`/rental')
     await AllPopup.ClosePopup(page);
     await delay(2000)
     await page.locator(dropDownListLct).click() // click DDL filter latest
     await delay(2000)
     await page.locator(`//span[contains(.,"Latest")]`).click()
     await page.locator(heroItemMaketLct).first().click()
+
     //Check price
     const priceRentOutHero = await page.locator(`span.f9zZck_3CSpfmtllo7B2`).innerText()
     const priceRentOutHeroNum = parseFloat(priceRentOutHero.replace(",", ""))
@@ -727,9 +750,10 @@ test('---- RENT OUT HERO----- ', async ({ page, browser }) => {
     // if (!isVisible ){
     //     return false
     // }
+
     // Check history
     await delay(2000)
-    await page.goto('https://staging.marketplace.thetanarena.com/profile?tab=history')
+    await page.goto('`${url}`/profile?tab=history')
     await delay(2000)
     await page.locator(`.StJzsR5pcPKJ15moS3G3`, { hasText: "More" }).click()// more filter
     await delay(2000)
@@ -748,10 +772,8 @@ test('---- RENT OUT HERO----- ', async ({ page, browser }) => {
 
 });
 
-
-
-test('CANCEL RENT HERO @rent', async ({ page, browser }) => {
-    await page.goto("https://staging.marketplace.thetanarena.com/")
+test('----------- CANCEL RENT HERO @rent ------------', async ({ page, browser }) => {
+    await page.goto(`${url}`)
     await AllPopup.ClosePopup(page);
     await delay(2000)
     await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
@@ -817,11 +839,10 @@ test('CANCEL RENT HERO @rent', async ({ page, browser }) => {
     console.log("DONE")
 
 });
-
-
+ 
 // api simulate Hero, level 
-test('Check history after Rent ', async ({ page, browser }) => {
-    await page.goto("https://staging.marketplace.thetanarena.com/")
+test('---------- Check history after Rent @rent -----------', async ({ page, browser }) => {
+    await page.goto(`${url}`)
     await AllPopup.ClosePopup(page);
     await delay(2000)
     await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
@@ -839,7 +860,7 @@ test('Check history after Rent ', async ({ page, browser }) => {
 
     // Check history
     await delay(2000)
-    await page.goto('https://staging.marketplace.thetanarena.com/profile?tab=history')
+    await page.goto('`${url}`/profile?tab=history')
     await delay(2000)
     await page.locator(`.StJzsR5pcPKJ15moS3G3`, { hasText: "More" }).click()// more filter
     await delay(2000)
@@ -849,8 +870,8 @@ test('Check history after Rent ', async ({ page, browser }) => {
 
 });
 
-test('--------CHECK HERO DETAIL------', async ({ page, browser }) => {
-    // await page.goto("https://staging.marketplace.thetanarena.com/")
+test('---------- CHECK HERO DETAIL @hero ---------', async ({ page, browser }) => {
+    // await page.goto(`${url}`)
     // await AllPopup.ClosePopup(page);
     // await delay(2000)
     // await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
@@ -868,7 +889,7 @@ test('--------CHECK HERO DETAIL------', async ({ page, browser }) => {
 
     // Check hero detail
     await delay(2000)
-    await page.goto('https://staging.marketplace.thetanarena.com/item/6332de7d7af5e5ca7bb966b3')
+    await page.goto('`${url}`/item/6332de7d7af5e5ca7bb966b3')
     await delay(2000)
     const heroDetail = page.url()
     await delay(2000)
@@ -878,4 +899,5 @@ test('--------CHECK HERO DETAIL------', async ({ page, browser }) => {
     await delay(2000)
 
 });
+
 

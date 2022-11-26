@@ -7,7 +7,7 @@ function delay(ms: number) {
 
 export default class AllPopup {
     static async ClosePopup(page: Page): Promise<void> {
-        var locator = page.locator("img.qyN2w96htGOSy3f9Xj90")
+        var locator = page.locator(".q_3tXOCvuE6kBHJThucY")
 
         while (await locator.isVisible()) {
             await delay(2000)

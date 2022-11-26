@@ -308,7 +308,7 @@ test('---Evolve skin +function ---', async ({ request }) => {
 
 })
 
-test.only('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
+test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
     log4js.configure({
         appenders: {
             application: {

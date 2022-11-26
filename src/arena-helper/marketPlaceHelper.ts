@@ -111,7 +111,8 @@ export enum BoxType {
     Epic = 2,
     Legendary = 3,
     Halloween = 17,
-    Hattrick = 19
+    Hattrick = 19,
+    Glory = 20
 
 }
 export class ThetanBoxData {

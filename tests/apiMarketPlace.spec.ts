@@ -2,8 +2,6 @@ import { test, expect, chromium, BrowserContext, request } from '@playwright/tes
 //import AllPopup, { SendHeroReq } from '../src/arena-helper/ArenaHelper';
 import MaketPlace, { APIResp, SendHeroReq, SetMaterial, SetHeroLevel, SetHeroBattleCap, Box, BoxInfo, ThetanBoxData, BoxType, OpenBoxData, Skin, HeroInfo, Response } from '../src/arena-helper/MarketPlaceHelper';
 
-
-
 // export const test = base.extend<{
 //     context: BrowserContext;
 //     extensionId: string;
@@ -294,10 +292,12 @@ test('---full flow send box -> open box -> check ti le ---', async ({ request })
 })
 
 test('----DRAFF----SEND BOX -> OPEN BOX -> CHECK TI LE ------', async ({ request }) => {
-    let boxType = 19 // HATTRICK BOX
+    // let boxType = 19 // HATTRICK BOX
     // let boxType: 17  // HALLOWEEN BOX
-    let boxAmount = 1000
-    let openAmount = 10
+    let boxType =  20 // GLORY BOX
+
+    let boxAmount = 10000
+    let openAmount = 1000
     let boxInfo: BoxInfo = {
         boxType: boxType,
         amount: boxAmount
@@ -318,7 +318,7 @@ test('----DRAFF----SEND BOX -> OPEN BOX -> CHECK TI LE ------', async ({ request
     let a = await MaketPlace.GET<ThetanBoxData>(`https://data.staging.thetanarena.com/theta/v1/thetanbox`, request, {}, tokenUser)
     //console.log("--THETANBOX LIST", a.data?.boxDataArr[BoxType.Legendary])
     // console.log("--- SO LUONG BOX HALLOWEEN---", a.data?.boxDataArr[17].amount)
-    console.log("--- SO LUONG BOX---", a.data?.boxDataArr[boxInfo.boxType].amount)
+    console.log("--- SO LUONG BOX---", a.data?.boxDataArr[boxInfo.boxType]?.amount)
 
     // OPEN BOX
 
@@ -481,7 +481,7 @@ var thetanUrl = "https://data.staging.thetanarena.com/theta/v1/thetanbox"
 
 // ham kiem tra Free Box 
 function IsGiftBox(boxType: Number): boolean {
-    return boxType == 17 || boxType == 12
+    return boxType == 17 || boxType == 12 || boxType == 20
 }
 // hàm navigate đến giftbox inventory
 function BoxDataURL(boxType: Number): string {
@@ -489,12 +489,15 @@ function BoxDataURL(boxType: Number): string {
 }
 
 test('--------SEND BOX -> OPEN BOX -> CHECK TI LE ------', async ({ request }) => {
-    let boxType = 19 // HATTRICK BOX
-    let boxName = 'HATTRICK BOX'
+    // let boxType = 19 // HATTRICK BOX
+    // let boxName = 'HATTRICK BOX'
+    let boxType = 20
+    let boxName = 'GLORY BOX'
+
     // let boxType = 17  // HALLOWEEN BOX
     // let boxName = 'HALLOWEEN BOX'
-    let boxAmount = 2000
-    let openAmount = 20
+    let boxAmount = 20000
+    let openAmount = 1000
     let boxInfo: BoxInfo = {
         boxType: boxType,
         amount: boxAmount,
@@ -508,7 +511,7 @@ test('--------SEND BOX -> OPEN BOX -> CHECK TI LE ------', async ({ request }) =
 
     // SEND BOX
     let responseSendBox = await MaketPlace.SendBox<Box>(request, boby, tokenAdmin)
-    console.log("----SENDBOX ",`${boxName}`, responseSendBox)
+    console.log("----SENDBOX ", `${boxName}`, responseSendBox)
     await delay(1000)
 
     // KIEM TRA SO LUONG BOX TRONG INVENTORY
