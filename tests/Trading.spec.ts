@@ -55,6 +55,7 @@ var connectWalletBtn = "button.YtC7SW5QBXao_Bj5rMO5"
 var loginMetamaskBtn = ".ZPKehyuOXkcNnT3_AzFi"
 // var confirmBtn = "button.UbQxYBXfgGDIuLkCeyyJ"
 const confirmBtn = "button.btn-primary"
+var closePopup = "button.pLR7HMsTTEl5rpFrMLcR"
 
 var nextBtn = "button.btn-primary"
 var rentMenu = `//span[contains(.,"Rent")]`
@@ -65,22 +66,38 @@ var heroItemMaketLct = `.pTlq4suyqtK3Lmj4MH27`
 var understandBtn = `button.cOBQpozfZ4Q94cdPJ0MK`
 var dropDownListLct = `div.RzCtmnvJtc4BwmQPIiSK`
 var priceHeroLct = `.wlYd9YCSxc4V1_yktp93 > span.y0q8jlGWIeRjuoKU41e9`
-var url = 'https://staging.marketplace.thetanarena.com'
+var url = 'https://marketplace-preview-pr-559.staging.thetanarena.com'
 
-test('login', async ({ page, browser }) => {
+test('login1', async ({ page, browser }) => {
     page.goto(`${url}`)
-    await page.locator("button._trpA_NQ_KOKYFXSV2oa").click()
+    console.log("------------- START-------")
+
+    await delay(2000)
+    await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
+    await delay(2000)
     await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
 
-    // console.log("------------- START")
+    console.log("------------- 111--------")
+
+    await delay(2000)
     const [newPage] = await Promise.all([
+
         metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
-        page.locator(confirmBtn).click(),
+        // page.locator(confirmBtn).click(),
+        console.log("------------- 222--------")
     ]);
-    // console.log("------------- end")
+    // await delay(3000)
+    // page.locator(confirmBtn).click(),
+
+    console.log("------------- 333----")
+    await delay(2000)
 
     await newPage.waitForLoadState()
-    // await metamask.switchNetwork()
+    await delay(2000)
+
+    await metamask.switchNetwork()
+    await delay(2000)
+
     await metamask.connectAndSignAccount()
 
     await page.waitForLoadState()
@@ -88,9 +105,66 @@ test('login', async ({ page, browser }) => {
     await delay(10000)
 });
 
+test('--------- LOGIN  @login --------- ', async ({ page, browser }) => {
+    await page.goto(`${url}`)
+    await AllPopup.ClosePopup(page);
 
+    await delay(2000)
+    await page.locator(closePopup).click() // close popup
+
+    await page.locator(connectWalletBtn, { hasText: "Connect Wallet" }).click() // button connect wallet
+    await delay(1000)
+    await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
+
+    console.log("-------------- start")
+    const [newPage] = await Promise.all([
+        
+        metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
+        
+    ]);
+    await delay(3000)
+    page.locator(confirmBtn).click(),
+        console.log("-------------- METAMASK NEXT BUTTON ----")
+    // ]);
+
+    await newPage.waitForLoadState()
+    await delay(3000)
+    await newPage.locator(confirmBtn).click()
+    console.log("-------------- METAMASK CONNECT BUTTON ----")
+
+    await delay(3000)
+    await newPage.locator(confirmBtn).click()
+    console.log("-------------- METAMASK  APPROVE BUTTON ----")
+
+    await delay(3000)
+    await newPage.locator(confirmBtn).click()
+    console.log("-------------- 666 ----")
+
+    await delay(3000)
+    await newPage.locator(confirmBtn).click()
+    console.log("-------------- switch network ----")
+
+    await delay(5000)
+    console.log("-------------- Accept and Sign ----")
+    await page.locator(`//span[contains(.,"Accept and sign")]`).click()
+
+    await delay(3000)
+    await metamask.connectAndSignAccount()
+    console.log("-------------- FINISH Sign Signature ----")
+    await delay(3000)
+    await page.waitForLoadState()
+
+    // await page.locator(closePopup).click() // close popup
+    await page.locator("button.pLR7HMsTTEl5rpFrMLcR").click() // close 1st popup
+    await delay(2000)
+
+    await page.locator("button.X8V1duQb_w6mhY4h9ogt").click() // close 2nd popup
+    console.log("-------------- LOGIN SUCCESS ------")
+    
+
+});
 test.only('--------- BUY COMMON BOX @buy --------- ', async ({ page, browser }) => {
-    await page.goto("https://marketplace.uat.thetanarena.com/")
+    await page.goto("https://marketplace-preview-pr-559.staging.thetanarena.com/")
     await AllPopup.ClosePopup(page);
 
 
@@ -127,19 +201,56 @@ test.only('--------- BUY COMMON BOX @buy --------- ', async ({ page, browser }) 
     // const [newPage] = await Promise.all([
     //     metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
     page.locator(confirmBtn).click(),
-        console.log("-------------- stop 22222 ----")
+        console.log("--------------  222 ----")
     // ]);
 
     await newPage.waitForLoadState()
+    console.log("-------------- 333 ----")
+
     await delay(3000)
-    // await newPage.locator(confirmBtn).click()
+    await newPage.locator(confirmBtn).click()
+    console.log("-------------- 4444 ----")
+
+    await delay(3000)
+    await newPage.locator(confirmBtn).click()
+    console.log("-------------- 555 ----")
+
+    await delay(3000)
+    await newPage.locator(confirmBtn).click()
+    console.log("-------------- 666 ----")
+
+    await delay(2000)
+    await newPage.locator(confirmBtn).click()
+    console.log("-------------- switch network ----")
+
+    await delay(2000)
+    console.log("-------------- Accept and Sign ----")
+    await page.locator(`//span[contains(.,"Accept and sign")]`).click()
+
+
     // await delay(3000)
+    // await newPage.waitForLoadState()
+    // console.log("-------------- 777 ----")
+
     // await newPage.locator(confirmBtn).click()
+    // console.log("-------------- Sign Signature ----")
+
+    // await delay(200000)
+    // await newPage.locator(confirmBtn).click()
+    // console.log("-------------- switch network  ----")
+
     // await delay(3000)
-    await metamask.switchNetwork()
+    // await metamask.switchNetwork()
+    // console.log("-------------- 777 ----")
+
+    await delay(2000)
     await metamask.connectAndSignAccount()
+    console.log("-------------- Sign Signature ----")
+    await delay(20000)
+
     await page.waitForLoadState()
 
+    await delay(20000)
     // chọn menu thetanbox
     await page.locator(`//span[contains(.,"ThetanBox")]`).click()
     await delay(2000)
@@ -839,7 +950,7 @@ test('----------- CANCEL RENT HERO @rent ------------', async ({ page, browser }
     console.log("DONE")
 
 });
- 
+
 // api simulate Hero, level 
 test('---------- Check history after Rent @rent -----------', async ({ page, browser }) => {
     await page.goto(`${url}`)

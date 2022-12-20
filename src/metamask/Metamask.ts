@@ -4,10 +4,10 @@ import path from 'path'
 import fs from 'fs'
 import Waiter from '../helper/Helper';
 // // acc: 
-// const seed = "jaguar choose obey minute lawn calm club follow book seminar mesh question"
+const seed = "jaguar choose obey minute lawn calm club follow book seminar mesh question"
 const password = "12345678"
 // acc: trinhntl+stg1000@wolffungame.com
-const seed = "prize couple general enlist goat cushion bounce spin worth zone fix divide"
+// const seed = "prize couple general enlist goat cushion bounce spin worth zone fix divide"
 // const password = "12345678"
 
 export default class Metamask {
@@ -97,9 +97,8 @@ export default class Metamask {
 
         console.log("windows length: ", allWindows.length)
         allWindows.forEach(page => {
-            console.log("---------------", page.url())
+            console.log("---------switch net------", page.url())
         })
-
         await approvePage.locator(".btn-primary").click() // approve 
 
         await Waiter.ActAndWaitNewTab(approvePage.locator(".btn-primary").click(), this.browserContext)
@@ -124,8 +123,10 @@ export default class Metamask {
         let connectPage = allWindows[allWindows.length - 1];
 
         await connectPage.locator(".btn-primary").click() // next 
-        await connectPage.locator(".btn-primary").click() // connect 
-        await connectPage.locator(".btn-primary").click() // next 
+        console.log("-------------- Sign Signature metamask----")
+
+        // await connectPage.locator(".btn-primary").click() // connect 
+        // await connectPage.locator(".btn-primary").click() // next 
     }
 
     __createFolder(dir: string) {
