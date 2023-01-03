@@ -68,7 +68,7 @@ var dropDownListLct = `div.RzCtmnvJtc4BwmQPIiSK`
 var priceHeroLct = `.wlYd9YCSxc4V1_yktp93 > span.y0q8jlGWIeRjuoKU41e9`
 var url = 'https://marketplace-preview-pr-559.staging.thetanarena.com'
 
-test('login1', async ({ page, browser }) => {
+test('login old', async ({ page, browser }) => {
     page.goto(`${url}`)
     console.log("------------- START-------")
 
@@ -116,14 +116,17 @@ test('--------- LOGIN  @login --------- ', async ({ page, browser }) => {
     await delay(1000)
     await page.locator(loginMetamaskBtn, { hasText: "Login with Metamask" }).click()
 
-    console.log("-------------- start")
+    console.log("-------------- start-------")
     const [newPage] = await Promise.all([
         
         metamask.browserContext.waitForEvent('page', { timeout: 60000 }),
         
     ]);
-    await delay(3000)
-    page.locator(confirmBtn).click(),
+    await newPage.waitForLoadState()
+    await delay(6000)
+    page.locator(confirmBtn).click()
+    // await newPage.locator(confirmBtn).click()
+
         console.log("-------------- METAMASK NEXT BUTTON ----")
     // ]);
 
@@ -160,11 +163,13 @@ test('--------- LOGIN  @login --------- ', async ({ page, browser }) => {
 
     await page.locator("button.X8V1duQb_w6mhY4h9ogt").click() // close 2nd popup
     console.log("-------------- LOGIN SUCCESS ------")
+    await delay(20000)
+
     
 
 });
-test.only('--------- BUY COMMON BOX @buy --------- ', async ({ page, browser }) => {
-    await page.goto("https://marketplace-preview-pr-559.staging.thetanarena.com/")
+test('--------- BUY COMMON BOX @buy --------- ', async ({ page, browser }) => {
+    await page.goto(`${url}`)
     await AllPopup.ClosePopup(page);
 
 

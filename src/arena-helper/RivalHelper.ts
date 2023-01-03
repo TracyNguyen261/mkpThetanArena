@@ -4,7 +4,7 @@ import MyHttp, { Response } from "../helper/HttpUtil"
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
-var thetanRivalsUrl = 'https://thetan-rivals-service-preview-pr-232.staging.thetanarena.com/api/v1'
+var thetanRivalsUrl = 'https://thetan-rivals-service-preview-pr-471.staging.thetanarena.com/api/v1'
 
 export class APIResp<T>  {
     success: boolean = false
@@ -54,6 +54,22 @@ export class Inventory {
     inventories: Map<string, InventoryItem>
 }
 
+export class UserRanking {
+    trophy: number
+    rank: number
+    division: number
+    milestone: number
+    trophyCurRank: number
+    trophyHighest: number
+    seasonTrophyHighest: number
+    rankingLevelHighest: number
+    seasonID: number
+    rewards: [number]
+
+}
+export class Reward {
+
+}
 // export class Minion {
 
 //     id: string
@@ -104,6 +120,104 @@ export class SendMinionReq {
     addRivalBucks: number
     addMinion: number
 
+}
+export class AddRivalBoxReq {
+    boxType: BoxType
+    num: number
+}
+export enum BoxType {
+    RivalBox = 1,
+    BigBox = 2
+
+}
+
+export class UserProfile {
+    id: string
+    email: string
+    address: string
+    nickname: string
+    avatar: number
+    avatarFrame: number
+    changeNameTickets: number
+    biography: string
+    stats: Stats
+    country: string
+
+
+}
+export class Stats {
+    minion: number
+    battle: number
+    vitory: number
+    streak: number
+    curStreak: number
+    winRound: number
+}
+
+
+//  ham static battle end mock data
+export class BattleEndReq {
+    static battleMockData(playerId: string) {
+        return {
+            thetan: "thetan2",
+            matchId: "matchIds",
+            gameMode: 3,
+            inGameMode: 32,
+            listRoundInfo: [
+                {
+                    round: 1,
+                    mapId: 0
+                },
+                {
+                    round: 2,
+                    mapId: 1
+                },
+                {
+                    round: 3,
+                    mapId: 3
+                }
+
+            ],
+            operationSystem: "operationSystem2",
+            appVersion: "appVersion2",
+            listPlayers: [
+                {
+                    playerId: playerId,
+                    battleRank: 1
+                }
+            ]
+
+        }
+
+    }
+
+}
+
+export class BattleEnd {
+    trophySearch: number
+    seasonPoint: number
+    battleNumber: number
+    specialEventScore: number
+    exp: number
+    trophy: number
+}
+export class OpenRivalBox {
+    boxType: BoxType
+    version: string
+    seleted: number
+
+}
+export class RivalBoxDataArray {
+
+    data: RivalBoxInfo
+    kind: number
+}
+
+export class RivalBoxInfo {
+    amount: number
+    kind: number
+    decimal: number
+    type: number
 }
 
 export default class Rival {
@@ -160,5 +274,10 @@ export default class Rival {
 
     static async AdminSendMinion(request: APIRequestContext, boby: SendMinionReq, token: string): Promise<Response<APIResp<UserMinion>>> {
         return MyHttp.POST<APIResp<UserMinion>>(`https://thetan-rivals-service-preview-pr-232.staging.thetanarena.com/api/v1/season-pass/admin/simulate`, request, boby, token)
+    }
+
+    static async AddRivalBox(request: APIRequestContext, body: AddRivalBoxReq, token: string): Promise<Response<APIResp<any>>> {
+        return MyHttp.POST(`${thetanRivalsUrl}/rivals-box/addbox`, request, body, token)
+
     }
 }

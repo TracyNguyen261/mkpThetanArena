@@ -1,7 +1,7 @@
 import { test, expect, chromium, BrowserContext, request } from '@playwright/test';
 
 import MaketPlace, { DataResponse, Response } from '../src/arena-helper/MarketPlaceHelper';
-import Rival, { APIResp, InventoryResponse, EvolveSkin, MinionPagingResp, AdminSendInventoryReq, SendMinionReq, InventoryItem, Inventory, UserMinion, UserMinionsPaging } from '../src/arena-helper/RivalHelper';
+import Rival, { APIResp, InventoryResponse, EvolveSkin, MinionPagingResp, AdminSendInventoryReq, SendMinionReq, InventoryItem, Inventory, UserMinion, UserMinionsPaging, AddRivalBoxReq, BoxType, UserRanking, UserProfile, BattleEndReq, BattleEnd, RivalBoxDataArray, RivalBoxInfo, OpenRivalBox } from '../src/arena-helper/RivalHelper';
 import MyHttp from '../src/helper/HttpUtil';
 import log4js from "log4js";
 
@@ -123,18 +123,7 @@ test('---USER EVOLVE----', async ({ request }) => {
 //=============FULL FLOW EVOLVE SKIN =======
 var rivalUrl = 'https://data-rivals.staging.thetanarena.com/api/v1'
 
-// function evolveMinionToLevel(userId: string, minion: Minion, level: Number) {
-//     // for i := minion.level; i < level; i++ ------ 
-//     // get item type evolve minion len level <i>
-//     // send item type do cho userId
-//     // evolve <minionId> bang itemType mới gửi cho user
-//     // minion = get minion kiểm tra lại level
-//     // -----------
-// }
 
-
-// hàm: evolve(minion, cosmeticId) 
-// trả về: minion với level mới 
 
 test('---Evolve skin +function ---', async ({ request }) => {
     let level2 = [16000001, 16000002, 16000003, 16000004, 16000005, 16000006, 16000014, 16000015, 16000021, 16000022, 16000023, 16000007, 16000008, 16000009, 16000010, 16000016, 16000017, 16000024, 16000025, 16000026, 16000027, 16000028, 16000012, 16000013, 16000018, 16000019, 16000020, 16000029, 16000030, 16000001, 16000002, 16000003, 16000004, 16000005, 16000006, 16000014]
@@ -347,7 +336,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
 
     for (let i = 0; i < level2.length; i++) {
 
-    
+
         //========= 1.  send minion level 1 cho user <userId>
         let body: SendMinionReq = {
             userId: `${userId}`,
@@ -993,10 +982,6 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
 
 })
 
-
-
-
-
 test('---EVOLVE SKIN---LEVEL 2----', async ({ request }) => {
     let level2 = [16000001, 16000002, 16000003, 16000004, 16000005, 16000006, 16000014, 16000015, 16000021, 16000022, 16000023, 16000007, 16000008, 16000009, 16000010, 16000016, 16000017, 16000024, 16000025, 16000026, 16000027, 16000028, 16000012, 16000013, 16000018, 16000019, 16000020, 16000029, 16000030, 16000001, 16000002, 16000003, 16000004, 16000005, 16000006, 16000014]
     let level3 = [15000001, 15000002, 15000003, 15000004, 15000005, 15000006, 15000007, 15000008, 15000020, 15000021, 15000022, 15000023, 15000024, 15000025, 15000028, 15000031, 15000032, 15000009, 15000010, 15000011, 15000012, 15000013, 15000026, 15000027, 15000029, 15000033, 15000034, 15000035, 15000014, 15000015, 15000016, 15000017, 15000018, 15000019, 15000030, 15000036]
@@ -1274,4 +1259,112 @@ test('---EVOLVE SKIN---LEVEL 2----', async ({ request }) => {
 
 
 })
+
+////////////-------------------------------- RIVAL - OPENBOX----------------------////////////
+test.only('---- RIVAL OPEN FREEBOX ----', async ({ request }) => {
+
+    let thetanRivalsUrl = 'https://thetan-rivals-service-preview-pr-471.staging.thetanarena.com/api/v1'
+
+    // 1. LOGIN AS GUEST
+    // --- to get access token guest
+    let accessTokenGuest = ''
+    const responseLoginAsGuest = await request.post('https://auth.staging.thetanarena.com/auth/v1/loginAsGuest', {
+        data: {
+            "deviceId": "trinh_0001_Sat31122022_23h54"
+        }
+    })
+    // const data = await responseLogin.json()
+    let x: Response = await responseLoginAsGuest.json()
+    console.log('------ response login as guest:------', x)
+    accessTokenGuest = x.data.accessToken
+    console.log('------ accesstoken as guest:-------', accessTokenGuest)
+
+
+    // 2. ADD RIVAL BOX
+
+    // let boxType = BoxType.RivalBox
+
+    // 3. ADD RIVAL BOX +  BIG BOX
+    for (let i = 1; i < 3; i++) {
+        let bodyAddRivalBox: AddRivalBoxReq = {
+            boxType: i,
+            num: 1000000
+
+        }
+        let responseAddRivalBox = await Rival.AddRivalBox(request, bodyAddRivalBox, accessTokenGuest)
+        console.log('-------- Check response api box ', (BoxType[i]), '-----', responseAddRivalBox.bodyJson?.success)
+
+    }
+
+    // 4. GET USER RANKING
+    let responseUserRanking = await MyHttp.GET<APIResp<UserRanking>>(`${thetanRivalsUrl}/ranking-reward`, request, {}, accessTokenGuest)
+    if (responseUserRanking.bodyJson?.data?.rank == undefined) {
+        expect(responseUserRanking.bodyJson?.data?.rank, responseUserRanking.body).not.toBeFalsy
+        return
+    }
+    let responseRankingReward = responseUserRanking.bodyJson
+    console.log('----------- response Ranking Reward --------------', responseRankingReward)
+
+    // 5. GET MY MINION
+    let responseMyMinionGuest = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${thetanRivalsUrl}/minion`, request, {}, accessTokenGuest)
+    if (responseMyMinionGuest.bodyJson?.data?.minions == null) {
+        expect(responseMyMinionGuest.bodyJson?.data?.minions, responseMyMinionGuest.body).not.toBeFalsy
+        return
+    }
+    console.log('------------ Response My minion -------', responseMyMinionGuest.bodyJson?.data?.minions)
+    let userGuestId = responseMyMinionGuest.bodyJson?.data?.minions[0].userId
+    console.log('----------User Guest Id:--------', userGuestId)
+    // 6. GET PROFILE
+
+    let responseProfile = await MyHttp.GET<APIResp<UserProfile>>(`${thetanRivalsUrl}/profile`, request, {}, accessTokenGuest)
+    if (responseProfile.bodyJson?.data?.id == null) {
+        expect(responseProfile.bodyJson?.data?.id, responseProfile.body).not.toBeFalsy
+        return
+
+    }
+
+    console.log('------------ Repsonse my Profile -----', responseProfile.bodyJson)
+    console.log('------------ Check user guest Id trong my Profile -----', responseProfile.bodyJson?.data?.id)
+
+    // 7. BATTLE END AND OPEN BOX
+
+    // BATTLE END
+
+    let bodyBattleEndReq = await BattleEndReq.battleMockData(`${userGuestId}`)
+    console.log('-------------- bodyBattleEndReq ---', bodyBattleEndReq)
+
+    // let responseBattleEnd = await MyHttp.POST(`${thetanRivalsUrl}/battle-reward/battleend`,request,bodyBattleEndReq,accessTokenGuest )
+    let responseBattleEnd = await MyHttp.POST<APIResp<BattleEnd>>(`${thetanRivalsUrl}/battle-reward/battleend`, request, bodyBattleEndReq, accessTokenGuest)
+    if (responseBattleEnd.bodyJson?.data?.battleNumber == undefined) {
+        expect(responseBattleEnd.bodyJson?.data?.battleNumber, responseBattleEnd.body).not.toBeFalsy
+        return
+    }
+    console.log('--------- Response Battle End -----', responseBattleEnd.bodyJson)
+
+    // OPEN RIVAL BOX
+
+    let openRivalBoxBody: OpenRivalBox = {
+        boxType: BoxType.RivalBox,
+        version: '',
+        seleted: 1
+
+    }
+    let responseOpenRivalBox = await MyHttp.POST<APIResp<RivalBoxDataArray[]>>(`${thetanRivalsUrl}/rivals-box/openbox`, request, openRivalBoxBody, accessTokenGuest)
+    if (responseOpenRivalBox.bodyJson?.data == undefined || responseOpenRivalBox.bodyJson?.data?.length == 0) {
+        expect(responseOpenRivalBox.bodyJson?.data == undefined || responseOpenRivalBox.bodyJson?.data?.length == 0, responseOpenRivalBox.body).not.toBeFalsy()
+        return
+    }
+    console.log('------- Response Open Rival Box --------', responseOpenRivalBox.bodyJson?.data)
+
+    // looping
+    // ---- 7.1 BE 10lần > open Rival box 1 lần
+    // ---- 7.2 BE 10 lần > open Big box 1 lần 
+
+})
+
+
+
+function GetRandomPrice(arg0: number, arg1: number) {
+    throw new Error('Function not implemented.');
+}
 
