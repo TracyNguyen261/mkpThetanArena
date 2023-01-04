@@ -43,3 +43,8 @@ export class Price {
 export class Evolve{
     static EvolveMinion(minionId: string, level: number){}
 }
+export class Random {
+    static RandomNumber(min, max) { // min and max included 
+        return Math.round(Math.random() * (max - min) + min);
+      }
+    }

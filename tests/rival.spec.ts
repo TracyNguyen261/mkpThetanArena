@@ -1,6 +1,7 @@
 import { test, expect, chromium, BrowserContext, request } from '@playwright/test';
 
 import MaketPlace, { DataResponse, Response } from '../src/arena-helper/MarketPlaceHelper';
+import { Random } from '../src/helper/Helper';
 import Rival, { APIResp, InventoryResponse, EvolveSkin, MinionPagingResp, AdminSendInventoryReq, SendMinionReq, InventoryItem, Inventory, UserMinion, UserMinionsPaging, AddRivalBoxReq, BoxType, UserRanking, UserProfile, BattleEndReq, BattleEnd, RivalBoxDataArray, RivalBoxInfo, OpenRivalBox } from '../src/arena-helper/RivalHelper';
 import MyHttp from '../src/helper/HttpUtil';
 import log4js from "log4js";
@@ -15,17 +16,19 @@ var address = "0x3cc80663077111fcfe1f9ae36ebdaf5a99bfefcf"
 var adminEmail = "trinhntl@wolffungame.com"
 // var userEmail = "trinhntl+stgmeta01@wolffungame.com"
 // var userId = '62cbdf00f88e1482debba671'
-var userEmail = "trangnh+evolve7@wolffungame.com"
-var userId = '6364fa3e0a7a598c66d250ce'
-var tokenAdmin = ""
-var tokenUser = "" //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJKV1RfQVBJUyIsImNhbl9taW50IjpmYWxzZSwiZXhwIjoxNjY3MDU1MTgxLCJpc3MiOiJodHRwczovL2FwaS5tYXJrZXRwbGFjZS5hcHAiLCJuYmYiOjE2NjY0NTAzODEsInJvbGUiOjAsInNpZCI6IjB4M2NjODA2NjMwNzcxMTFmY2ZlMWY5YWUzNmViZGFmNWE5OWJmZWZjZiIsInN1YiI6InQtcmluZy1zdGciLCJ1c2VyX2lkIjoiNjJjYmRjOGVmODhlMTQ4MmRlYmJhNjZiIn0.wWqTYNjNnuJRkVitLf40w_RRkj8sbqU1D4TklXCVcPk"
+var userEmail = "trinhntl+stgmeta01@wolffungame.com"
+var userId = '62cbdf00f88e1482debba671'
+var adminToken = ""
+var userToken = ""
+var guestToken = ""
 var minionId = ""
 var urlInventory = 'https://data-rivals.staging.thetanarena.com/api/v1/inventory'
 var urlMinion = 'https://data-rivals.staging.thetanarena.com/api/v1/minion'
+var ThetaAuthUrl = 'https://auth.staging.thetanarena.com/auth/v1'
 
 test.beforeAll(async ({ request }) => {
     // ---------- goi api lay access token Admin
-    const responseAdmin = await request.post(`https://auth.staging.thetanarena.com/auth/v1/loginByEmail`, {
+    const responseAdmin = await request.post(`${ThetaAuthUrl}/loginByEmail`, {
         data: {
             "email": `${adminEmail}`
         }
@@ -34,21 +37,34 @@ test.beforeAll(async ({ request }) => {
     // console.log("-------response here---", data);
 
     let x: Response = await responseAdmin.json()
-    tokenAdmin = await x.data.accessToken
-    console.log(tokenAdmin)
+    adminToken = await x.data.accessToken
+    console.log(adminToken)
 
-    console.log("----ACCESS TOKEN ADMIN----", tokenAdmin.substring(tokenAdmin.length - 10, tokenAdmin.length))
+    console.log("----ACCESS TOKEN ADMIN----", adminToken.substring(adminToken.length - 10, adminToken.length))
 
-    const responseUser = await request.post(`https://auth.staging.thetanarena.com/auth/v1/loginByEmail`, {
+    // ------------ goi api lay access token cua user 
+
+    const responseUser = await request.post(`${ThetaAuthUrl}/loginByEmail`, {
         data: {
             "email": `${userEmail}`
         }
     })
     let y: Response = await responseUser.json()
-    tokenUser = await y.data.accessToken
-    console.log(tokenUser)
-    console.log("-----ACCESS TOKEN USER----", tokenUser.substring(tokenUser.length - 10, tokenUser.length))
+    userToken = await y.data.accessToken
+    console.log(userToken)
+    console.log("-----ACCESS TOKEN USER----", userToken.substring(userToken.length - 10, userToken.length))
 
+
+    // ------------ goi api lay access token cua Guest 
+
+    const responseGuest = await request.post(`${ThetaAuthUrl}/loginAsGuest`, {
+        data: {
+            "deviceId": `${Random.RandomNumber(1000, 99999)}`
+        }
+    })
+    let z: Response = await responseGuest.json()
+    guestToken = await z.data.accessToken
+    console.log("--------- ACCESS TOKEN GUEST ------", guestToken)
 })
 
 
@@ -57,7 +73,7 @@ test('--------  GET INVENTORY API ------', async ({ request }) => {
     // await delay(2000)
     const response = await request.get(`${urlInventory}`, {
         headers: {
-            'Authorization': `Bearer ${tokenUser}`,
+            'Authorization': `Bearer ${userToken}`,
         }
     })
     const data = await response.json()
@@ -65,7 +81,7 @@ test('--------  GET INVENTORY API ------', async ({ request }) => {
 });
 
 test('------- GET INVENTORY-----', async ({ request }) => {
-    let response = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, tokenUser)
+    let response = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, userToken)
     if (response.bodyJson?.data?.inventories == null) {
         expect(response.bodyJson?.data?.inventories).not.toBeFalsy()
         return
@@ -74,7 +90,7 @@ test('------- GET INVENTORY-----', async ({ request }) => {
     console.log("sss", response.bodyJson?.data?.inventories)
 
 
-    // let responseGetInventory = await MyHttp.GET<Inventory>(`${urlInventory}`, request, {}, tokenUser)
+    // let responseGetInventory = await MyHttp.GET<Inventory>(`${urlInventory}`, request, {}, userToken)
     // if (responseGetInventory.bodyJson?.inventories == null) {
     //     expect(responseGetInventory.bodyJson?.inventories).not.toBeFalsy()
     //     return
@@ -83,7 +99,7 @@ test('------- GET INVENTORY-----', async ({ request }) => {
 
 });
 test('--- GET MY MINION---', async ({ request }) => {
-    // let response = await MyHttp.GET<MinionResponse>(`${urlMinion}`, request, {}, tokenUser)
+    // let response = await MyHttp.GET<MinionResponse>(`${urlMinion}`, request, {}, userToken)
     // console.log('MY MINIONS LIST', response.bodyJson?.data)
     // console.log('LEVEL----', response.bodyJson?.minions[0].level)
     // console.log("lelvel---", response.bodyJson?.level)
@@ -107,18 +123,10 @@ test('----ADMIN SEND COSMETIC-----', async ({ request }) => {
     //     ]
 
     // }
-    // let response = await Rival.AdminSendInventory<Response>(request, body, tokenAdmin)
+    // let response = await Rival.AdminSendInventory<Response>(request, body, adminToken)
     // console.log("response---", response.data)
 })
-test('---USER EVOLVE----', async ({ request }) => {
 
-    let boby: EvolveSkin = {
-        minionId: '6329758077c0012bc1a2d5de',
-        cosmeticId: 16000001
-    }
-    let reponse = await Rival.PostEvolve<Response>(request, boby, tokenUser)
-    console.log("2222", reponse.data?.success)
-})
 
 //=============FULL FLOW EVOLVE SKIN =======
 var rivalUrl = 'https://data-rivals.staging.thetanarena.com/api/v1'
@@ -157,7 +165,7 @@ test('---Evolve skin +function ---', async ({ request }) => {
             addRivalBucks: 0,
             addMinion: 0
         }
-        let responseSendMinion = await Rival.AdminSendMinion(request, body, tokenAdmin)
+        let responseSendMinion = await Rival.AdminSendMinion(request, body, adminToken)
         expect(responseSendMinion.error, responseSendMinion.error).toBeFalsy()
         let minionId = await responseSendMinion.bodyJson?.data?.id
         console.log("---------- 1. MinionId: --------", minionId)
@@ -176,7 +184,7 @@ test('---Evolve skin +function ---', async ({ request }) => {
                     }
                 ]
             }
-            let responseInventory = await Rival.AdminSendInventory(request, bodyInventory, tokenAdmin)
+            let responseInventory = await Rival.AdminSendInventory(request, bodyInventory, adminToken)
             expect(responseSendMinion.error, responseInventory.body).toBeFalsy()
 
             let inventories = responseInventory.bodyJson?.data
@@ -201,7 +209,7 @@ test('---Evolve skin +function ---', async ({ request }) => {
             // get inventory
             // 3. lưu A = enhancer, B = so luong cosmetic Level 2
 
-            let responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, tokenUser)
+            let responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, userToken)
             if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
                 expect(responseGetInventory.bodyJson?.data?.inventories, responseGetInventory.body).not.toBeFalsy()
                 return
@@ -227,11 +235,11 @@ test('---Evolve skin +function ---', async ({ request }) => {
                 minionId: `${minionId}`,
                 cosmeticId: level2[i]
             }
-            let responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, tokenUser)
+            let responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, userToken)
             expect(responseEvolveSkin.bodyJson?.success).toBeTruthy()
 
             // get minion
-            let responseMyMinion = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${urlMinion}`, request, {}, tokenUser)
+            let responseMyMinion = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${urlMinion}`, request, {}, userToken)
             if (responseMyMinion.bodyJson?.data?.minions == null) {
                 expect(responseMyMinion.bodyJson?.data?.minions, responseMyMinion.body).not.toBeFalsy()
                 return
@@ -261,7 +269,7 @@ test('---Evolve skin +function ---', async ({ request }) => {
             // get inventory 
             //  6. kiểm tra số lượng cosmetic level[i] = B - 1
 
-            responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, tokenUser)
+            responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, userToken)
             if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
                 expect(responseGetInventory.bodyJson?.data?.inventories, responseGetInventory.body).not.toBeFalsy()
                 return
@@ -345,7 +353,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
             addRivalBucks: 0,
             addMinion: 0
         }
-        let responseSendMinion = await Rival.AdminSendMinion(request, body, tokenAdmin)
+        let responseSendMinion = await Rival.AdminSendMinion(request, body, adminToken)
         expect(responseSendMinion.error, responseSendMinion.error).toBeFalsy()
         let minionId = await responseSendMinion.bodyJson?.data?.id
         logger.info("---------- 1. MINION_ID: --------", minionId)
@@ -365,7 +373,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
                 }
             ]
         }
-        let responseInventory = await Rival.AdminSendInventory(request, bodyInventory, tokenAdmin)
+        let responseInventory = await Rival.AdminSendInventory(request, bodyInventory, adminToken)
         expect(responseInventory.error, responseInventory.body).toBeFalsy()
 
         let inventories = responseInventory.bodyJson?.data
@@ -389,7 +397,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
         //========= 3. get inventory
         // 3. lưu A = enhancer, B = so luong cosmetic Level 2
 
-        let responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, tokenUser)
+        let responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, userToken)
         if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
             expect(responseGetInventory.bodyJson?.data?.inventories, responseGetInventory.body).not.toBeFalsy()
             return
@@ -415,11 +423,11 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
             minionId: `${minionId}`,
             cosmeticId: level2[i]
         }
-        let responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, tokenUser)
+        let responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, userToken)
         expect(responseEvolveSkin.bodyJson?.success).toBeTruthy()
 
         //========= 5. get minion
-        let responseMyMinion = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${urlMinion}`, request, {}, tokenUser)
+        let responseMyMinion = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${urlMinion}`, request, {}, userToken)
         if (responseMyMinion.bodyJson?.data?.minions == null) {
             expect(responseMyMinion.bodyJson?.data?.minions, responseMyMinion.body).not.toBeFalsy()
             return
@@ -445,7 +453,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
 
         //========= 7. get inventory 
 
-        responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, tokenUser)
+        responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, userToken)
         if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
             expect(responseGetInventory.bodyJson?.data?.inventories, responseGetInventory.body).not.toBeFalsy()
             return
@@ -490,7 +498,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
                     }
                 ]
             }
-            let responseInventory = await Rival.AdminSendInventory(request, bodyInventory, tokenAdmin)
+            let responseInventory = await Rival.AdminSendInventory(request, bodyInventory, adminToken)
             expect(responseInventory.error, responseInventory.body).toBeFalsy()
 
             inventories = responseInventory.bodyJson?.data
@@ -512,7 +520,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
 
             // GET Inventory level 3 
 
-            responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, tokenUser)
+            responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, userToken)
             if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
                 expect(responseGetInventory.bodyJson?.data?.inventories, responseGetInventory.body).not.toBeFalsy()
                 return
@@ -537,13 +545,13 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
                 minionId: `${minionId}`,
                 cosmeticId: level3[i]
             }
-            responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, tokenUser)
+            responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, userToken)
 
             expect(responseEvolveSkin.bodyJson?.success, responseEvolveSkin.body).toBeTruthy()
 
             // Get minion
 
-            responseMyMinion = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${urlMinion}`, request, {}, tokenUser)
+            responseMyMinion = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${urlMinion}`, request, {}, userToken)
             if (responseMyMinion.bodyJson?.data?.minions == null) {
                 expect(responseMyMinion.bodyJson?.data?.minions, responseMyMinion.body).not.toBeFalsy()
                 return
@@ -571,7 +579,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
 
             // 6.2 Kieemr tra so luong cosmetic level3 [j] = B-1
 
-            responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, tokenUser)
+            responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, userToken)
             if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
                 expect(responseGetInventory.bodyJson?.data?.inventories, responseGetInventory.body).not.toBeFalsy()
                 return
@@ -622,7 +630,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
                         }
                     ]
                 }
-                let responseInventory = await Rival.AdminSendInventory(request, bodyInventory, tokenAdmin)
+                let responseInventory = await Rival.AdminSendInventory(request, bodyInventory, adminToken)
                 expect(responseInventory.error, responseInventory.body).toBeFalsy()
 
                 inventories = responseInventory.bodyJson?.data
@@ -644,7 +652,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
 
                 // GET Inventory level 4
 
-                responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, tokenUser)
+                responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, userToken)
                 if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
                     expect(responseGetInventory.bodyJson?.data?.inventories, responseGetInventory.body).not.toBeFalsy()
                     return
@@ -669,13 +677,13 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
                     minionId: `${minionId}`,
                     cosmeticId: level4[i]
                 }
-                responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, tokenUser)
+                responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, userToken)
 
                 expect(responseEvolveSkin.bodyJson?.success, responseEvolveSkin.body).toBeTruthy()
 
                 // Get minion
 
-                responseMyMinion = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${urlMinion}`, request, {}, tokenUser)
+                responseMyMinion = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${urlMinion}`, request, {}, userToken)
                 if (responseMyMinion.bodyJson?.data?.minions == null) {
                     expect(responseMyMinion.bodyJson?.data?.minions, responseMyMinion.body).not.toBeFalsy()
                     return
@@ -705,7 +713,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
 
                 // 6.2 Kieemr tra so luong cosmetic level4[i] = B-1
 
-                responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, tokenUser)
+                responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, userToken)
                 if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
                     expect(responseGetInventory.bodyJson?.data?.inventories, responseGetInventory.body).not.toBeFalsy()
                     return
@@ -756,7 +764,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
 
 
                     }
-                    responseInventory = await Rival.AdminSendInventory(request, bodyInventory, tokenAdmin)
+                    responseInventory = await Rival.AdminSendInventory(request, bodyInventory, adminToken)
 
                     inventories = responseInventory.bodyJson?.data
                     if (inventories == null) {
@@ -777,7 +785,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
 
                     //GET INVENTORY
 
-                    responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, tokenUser)
+                    responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, userToken)
                     if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
                         expect(responseGetInventory.bodyJson?.data?.inventories, responseGetInventory.body).not.toBeFalsy()
                         return
@@ -805,11 +813,11 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
                         cosmeticId: level5[i]
                     }
 
-                    responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, tokenUser)
+                    responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, userToken)
                     expect(responseEvolveSkin.bodyJson?.success, responseEvolveSkin.body).toBeTruthy()
 
                     // GET MINION SAU KHI EVOLVE
-                    responseMyMinion = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${urlMinion}`, request, {}, tokenUser)
+                    responseMyMinion = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${urlMinion}`, request, {}, userToken)
 
                     responseMyMinion.bodyJson?.data?.minions.forEach((value) => {
                         if (value.id == minionId) {
@@ -827,7 +835,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
                     expect(daDatVaoTrongEvolveSlots).toBeTruthy()
 
                     // GET INVENTORY
-                    responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, tokenUser)
+                    responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, userToken)
                     if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
                         expect(responseGetInventory.bodyJson?.data?.inventories, responseGetInventory.body).not.toBeFalsy()
                         return
@@ -869,7 +877,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
 
 
                         }
-                        responseInventory = await Rival.AdminSendInventory(request, bodyInventory, tokenAdmin)
+                        responseInventory = await Rival.AdminSendInventory(request, bodyInventory, adminToken)
                         inventories = responseInventory.bodyJson?.data
                         if (inventories == undefined) {
                             expect(inventories).not.toBeFalsy()
@@ -888,7 +896,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
 
                         // GET INVENTORY LEVEL 6
 
-                        responseGetInventory = await MyHttp.GET(`${urlInventory}`, request, {}, tokenUser)
+                        responseGetInventory = await MyHttp.GET(`${urlInventory}`, request, {}, userToken)
                         if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
                             expect(responseGetInventory.bodyJson?.data?.inventories).toBeTruthy()
                             return
@@ -914,12 +922,12 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
                             minionId: `${minionId}`,
                             cosmeticId: level6[i]
                         }
-                        responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, tokenUser)
+                        responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, userToken)
                         expect(responseEvolveSkin.bodyJson?.success, responseEvolveSkin.body).toBeTruthy()
 
 
                         // GET MINION 
-                        responseMyMinion = await MyHttp.GET(`${urlMinion}`, request, {}, tokenUser)
+                        responseMyMinion = await MyHttp.GET(`${urlMinion}`, request, {}, userToken)
                         responseMyMinion.bodyJson?.data?.minions.forEach((value) => {
                             if (value.id == minionId) {
                                 selectedAddIns = new Map(Object.entries(value.addIns))
@@ -939,7 +947,7 @@ test('--- LOOP EVOLVE SKIN ---', async ({ request }) => {
                         expect(daDatVaoTrongEvolveSlots).toBeTruthy()
 
                         // GET INVENTORY LEVEL 6
-                        responseGetInventory = await MyHttp.GET(`${urlInventory}`, request, {}, tokenUser)
+                        responseGetInventory = await MyHttp.GET(`${urlInventory}`, request, {}, userToken)
                         if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
                             expect(responseGetInventory.bodyJson?.data?.inventories).not.toBeFalsy()
                             return
@@ -1011,7 +1019,7 @@ test('---EVOLVE SKIN---LEVEL 2----', async ({ request }) => {
             addRivalBucks: 0,
             addMinion: 0
         }
-        let responseSendMinion = await Rival.AdminSendMinion(request, body, tokenAdmin)
+        let responseSendMinion = await Rival.AdminSendMinion(request, body, adminToken)
         expect(responseSendMinion.error, responseSendMinion.error).toBeFalsy()
         let minionId = await responseSendMinion.bodyJson?.data?.id
         console.log("---------- 1. MinionId: --------", minionId)
@@ -1030,7 +1038,7 @@ test('---EVOLVE SKIN---LEVEL 2----', async ({ request }) => {
                 }
             ]
         }
-        let responseInventory = await Rival.AdminSendInventory(request, bodyInventory, tokenAdmin)
+        let responseInventory = await Rival.AdminSendInventory(request, bodyInventory, adminToken)
         expect(responseSendMinion.error, responseInventory.body).toBeFalsy()
 
         let inventories = responseInventory.bodyJson?.data
@@ -1055,7 +1063,7 @@ test('---EVOLVE SKIN---LEVEL 2----', async ({ request }) => {
         // get inventory
         // 3. lưu A = enhancer, B = so luong cosmetic Level 2
 
-        let responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, tokenUser)
+        let responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, userToken)
         if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
             expect(responseGetInventory.bodyJson?.data?.inventories, responseGetInventory.body).not.toBeFalsy()
             return
@@ -1081,11 +1089,11 @@ test('---EVOLVE SKIN---LEVEL 2----', async ({ request }) => {
             minionId: `${minionId}`,
             cosmeticId: level2[i]
         }
-        let responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, tokenUser)
+        let responseEvolveSkin = await Rival.Evolve(request, bodyEvolve, userToken)
         expect(responseEvolveSkin.bodyJson?.success).toBeTruthy()
 
         // get minion
-        let responseMyMinion = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${urlMinion}`, request, {}, tokenUser)
+        let responseMyMinion = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${urlMinion}`, request, {}, userToken)
         if (responseMyMinion.bodyJson?.data?.minions == null) {
             expect(responseMyMinion.bodyJson?.data?.minions, responseMyMinion.body).not.toBeFalsy()
             return
@@ -1134,7 +1142,7 @@ test('---EVOLVE SKIN---LEVEL 2----', async ({ request }) => {
         // get inventory 
         //  6. kiểm tra số lượng cosmetic level[i] = B - 1
 
-        responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, tokenUser)
+        responseGetInventory = await MyHttp.GET<APIResp<Inventory>>(`${urlInventory}`, request, {}, userToken)
         if (responseGetInventory.bodyJson?.data?.inventories == undefined) {
             expect(responseGetInventory.bodyJson?.data?.inventories, responseGetInventory.body).not.toBeFalsy()
             return
@@ -1174,12 +1182,12 @@ test('---EVOLVE SKIN---LEVEL 2----', async ({ request }) => {
     //     addRivalBucks: 0,
     //     addMinion: 0
     // }
-    // // let responseSendMinion = await Rival.AdminSendMinion(request, body, tokenAdmin)
+    // // let responseSendMinion = await Rival.AdminSendMinion(request, body, adminToken)
     // // console.log("--Response sau khi send minion----", responseSendMinion.success, responseSendMinion.code)
 
     // // 2. get minionId có level 1
 
-    // let responseGetMinion = await MaketPlace.GET<Response>(`${urlMinion}`, request, {}, tokenUser)
+    // let responseGetMinion = await MaketPlace.GET<Response>(`${urlMinion}`, request, {}, userToken)
     // console.log("----Response My minion-----", responseGetMinion.data)
     // console.log("----Response My minion array-----", responseGetMinion.data?.minions)
     // console.log("--------get ID minion ---------", responseGetMinion.data?.minions[1].id)
@@ -1212,7 +1220,7 @@ test('---EVOLVE SKIN---LEVEL 2----', async ({ request }) => {
 
     // // 3. get inventory user để check current enhancer + cosmeticId
 
-    // let responseInventory = await MaketPlace.GET<Response>(`${urlInventory}`, request, {}, tokenUser)
+    // let responseInventory = await MaketPlace.GET<Response>(`${urlInventory}`, request, {}, userToken)
     // console.log('response Inventory full ----', responseInventory.data)
     // console.log('Check currrent Enhancer', responseInventory.data?.inventories['1_25'])
 
@@ -1231,19 +1239,19 @@ test('---EVOLVE SKIN---LEVEL 2----', async ({ request }) => {
     //         minionId: `${minionId}`,
     //         cosmeticId: cosmeticLevel2
     //     }
-    //     let reponseEvolve = await Rival.PostEvolve<Response>(request, boby, tokenUser)
+    //     let reponseEvolve = await Rival.PostEvolve<Response>(request, boby, userToken)
     //     console.log("reponseEvolve----", reponseEvolve.data?.success)
 
     //     // get inventory check enhancer amount at level 2 
-    //     let responseInventory = await MaketPlace.GET<Response>(`${urlInventory}`, request, {}, tokenUser)
+    //     let responseInventory = await MaketPlace.GET<Response>(`${urlInventory}`, request, {}, userToken)
     //     console.log('Check currrent Enhancer after evolve level 2', responseInventory.data?.inventories['1_25'])
 
     //     // check  minionId level from get minion
-    //     let responseGetMinion = await MaketPlace.GET<Response>(`${urlMinion}`, request, {}, tokenUser)
+    //     let responseGetMinion = await MaketPlace.GET<Response>(`${urlMinion}`, request, {}, userToken)
 
 
     //     // // get level minion => expected level 2
-    //     // let responseGetMinion = await MaketPlace.GET<Response>(`${urlMinion}`, request, {}, tokenUser)
+    //     // let responseGetMinion = await MaketPlace.GET<Response>(`${urlMinion}`, request, {}, userToken)
     //     // console.log("--------get Level minion ---------", responseGetMinion.data?.minions[t].level)
 
     //     //evolve minion to level 3
@@ -1261,7 +1269,7 @@ test('---EVOLVE SKIN---LEVEL 2----', async ({ request }) => {
 })
 
 ////////////-------------------------------- RIVAL - OPENBOX----------------------////////////
-test.only('---- RIVAL OPEN FREEBOX ----', async ({ request }) => {
+test('---- RIVAL OPEN FREEBOX ----', async ({ request }) => {
 
     let thetanRivalsUrl = 'https://thetan-rivals-service-preview-pr-471.staging.thetanarena.com/api/v1'
 
@@ -1362,9 +1370,105 @@ test.only('---- RIVAL OPEN FREEBOX ----', async ({ request }) => {
 
 })
 
+test.only('---- RIVAL RANKING REWARD ----', async ({ request }) => {
+
+    let thetanRivalsUrl = 'https://thetan-rivals-service-preview-pr-471.staging.thetanarena.com/api/v1'
+
+    // 1. LOGIN AS GUEST
+    // --- to get access token guest
+    let accessTokenGuest = ''
+    const responseLoginAsGuest = await request.post('https://auth.staging.thetanarena.com/auth/v1/loginAsGuest', {
+        data: {
+            "deviceId": "trinh_0001_Sat31122022_23h54"
+        }
+    })
+    // const data = await responseLogin.json()
+    let x: Response = await responseLoginAsGuest.json()
+    console.log('------ response login as guest:------', x)
+    accessTokenGuest = x.data.accessToken
+    console.log('------ accesstoken as guest:-------', accessTokenGuest)
 
 
-function GetRandomPrice(arg0: number, arg1: number) {
-    throw new Error('Function not implemented.');
-}
+    // 2. ADD RIVAL BOX
+
+    // let boxType = BoxType.RivalBox
+
+    // 3. ADD RIVAL BOX +  BIG BOX
+    for (let i = 1; i < 3; i++) {
+        let bodyAddRivalBox: AddRivalBoxReq = {
+            boxType: i,
+            num: 1000000
+
+        }
+        let responseAddRivalBox = await Rival.AddRivalBox(request, bodyAddRivalBox, accessTokenGuest)
+        console.log('-------- Check response api box ', (BoxType[i]), '-----', responseAddRivalBox.bodyJson?.success)
+
+    }
+
+    // 4. GET USER RANKING
+    let responseUserRanking = await MyHttp.GET<APIResp<UserRanking>>(`${thetanRivalsUrl}/ranking-reward`, request, {}, accessTokenGuest)
+    if (responseUserRanking.bodyJson?.data?.rank == undefined) {
+        expect(responseUserRanking.bodyJson?.data?.rank, responseUserRanking.body).not.toBeFalsy
+        return
+    }
+    let responseRankingReward = responseUserRanking.bodyJson
+    console.log('----------- response Ranking Reward --------------', responseRankingReward)
+
+    // 5. GET MY MINION
+    let responseMyMinionGuest = await MyHttp.GET<APIResp<UserMinionsPaging>>(`${thetanRivalsUrl}/minion`, request, {}, accessTokenGuest)
+    if (responseMyMinionGuest.bodyJson?.data?.minions == null) {
+        expect(responseMyMinionGuest.bodyJson?.data?.minions, responseMyMinionGuest.body).not.toBeFalsy
+        return
+    }
+    console.log('------------ Response My minion -------', responseMyMinionGuest.bodyJson?.data?.minions)
+    let userGuestId = responseMyMinionGuest.bodyJson?.data?.minions[0].userId
+    console.log('----------User Guest Id:--------', userGuestId)
+    // 6. GET PROFILE
+
+    let responseProfile = await MyHttp.GET<APIResp<UserProfile>>(`${thetanRivalsUrl}/profile`, request, {}, accessTokenGuest)
+    if (responseProfile.bodyJson?.data?.id == null) {
+        expect(responseProfile.bodyJson?.data?.id, responseProfile.body).not.toBeFalsy
+        return
+
+    }
+
+    console.log('------------ Repsonse my Profile -----', responseProfile.bodyJson)
+    console.log('------------ Check user guest Id trong my Profile -----', responseProfile.bodyJson?.data?.id)
+
+    // 7. BATTLE END AND OPEN BOX
+
+    // BATTLE END
+
+    let bodyBattleEndReq = await BattleEndReq.battleMockData(`${userGuestId}`)
+    console.log('-------------- bodyBattleEndReq ---', bodyBattleEndReq)
+
+    // let responseBattleEnd = await MyHttp.POST(`${thetanRivalsUrl}/battle-reward/battleend`,request,bodyBattleEndReq,accessTokenGuest )
+    let responseBattleEnd = await MyHttp.POST<APIResp<BattleEnd>>(`${thetanRivalsUrl}/battle-reward/battleend`, request, bodyBattleEndReq, accessTokenGuest)
+    if (responseBattleEnd.bodyJson?.data?.battleNumber == undefined) {
+        expect(responseBattleEnd.bodyJson?.data?.battleNumber, responseBattleEnd.body).not.toBeFalsy
+        return
+    }
+    console.log('--------- Response Battle End -----', responseBattleEnd.bodyJson)
+
+    // OPEN RIVAL BOX
+
+    let openRivalBoxBody: OpenRivalBox = {
+        boxType: BoxType.RivalBox,
+        version: '',
+        seleted: 1
+
+    }
+    let responseOpenRivalBox = await MyHttp.POST<APIResp<RivalBoxDataArray[]>>(`${thetanRivalsUrl}/rivals-box/openbox`, request, openRivalBoxBody, accessTokenGuest)
+    if (responseOpenRivalBox.bodyJson?.data == undefined || responseOpenRivalBox.bodyJson?.data?.length == 0) {
+        expect(responseOpenRivalBox.bodyJson?.data == undefined || responseOpenRivalBox.bodyJson?.data?.length == 0, responseOpenRivalBox.body).not.toBeFalsy()
+        return
+    }
+    console.log('------- Response Open Rival Box --------', responseOpenRivalBox.bodyJson?.data)
+
+    // looping
+    // ---- 7.1 BE 10lần > open Rival box 1 lần
+    // ---- 7.2 BE 10 lần > open Big box 1 lần 
+
+
+})
 
